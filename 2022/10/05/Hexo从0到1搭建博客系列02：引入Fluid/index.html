@@ -16,28 +16,28 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
+    <meta name="description" content="Hexo从0到1搭建博客系列02：引入Fluid1. Fluid简介 Fluid [官网](开始使用 | Hexo Fluid 用户手册) Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。 主题 GitHub: https:&#x2F;&#x2F;github.com&#x2F;fluid-dev&#x2F;hexo-theme-fluid 预览网站：Fluid’">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo从0到1搭建博客系列01：浅尝Hexo.md">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9701%EF%BC%9A%E6%B5%85%E5%B0%9DHexo-md/index.html">
+<meta property="og:title" content="Hexo从0到1搭建博客系列02：引入Fluid">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9702%EF%BC%9A%E5%BC%95%E5%85%A5Fluid/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
+<meta property="og:description" content="Hexo从0到1搭建博客系列02：引入Fluid1. Fluid简介 Fluid [官网](开始使用 | Hexo Fluid 用户手册) Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。 主题 GitHub: https:&#x2F;&#x2F;github.com&#x2F;fluid-dev&#x2F;hexo-theme-fluid 预览网站：Fluid’">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
-<meta property="article:published_time" content="2022-10-05T07:14:20.000Z">
-<meta property="article:modified_time" content="2022-10-05T07:34:23.194Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo02.jpg">
+<meta property="article:published_time" content="2022-10-05T08:37:59.000Z">
+<meta property="article:modified_time" content="2022-10-05T08:40:09.356Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo02.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo从0到1搭建博客系列01：浅尝Hexo.md - ltyzzz&#39;s Blog</title>
+  <title>Hexo从0到1搭建博客系列02：引入Fluid - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列01：浅尝Hexo.md"></span>
+            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列02：引入Fluid"></span>
           
         </div>
 
@@ -225,7 +225,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-05 15:14" pubdate>
+        <time datetime="2022-10-05 16:37" pubdate>
           2022年10月5日 下午
         </time>
       </span>
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          920 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          14 分钟
+          8 分钟
         
       </span>
     
@@ -294,91 +294,40 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo从0到1搭建博客系列01：浅尝Hexo.md</h1>
+            <h1 style="display: none">Hexo从0到1搭建博客系列02：引入Fluid</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo从0到1搭建博客系列01：浅尝Hexo"><a href="#Hexo从0到1搭建博客系列01：浅尝Hexo" class="headerlink" title="Hexo从0到1搭建博客系列01：浅尝Hexo"></a>Hexo从0到1搭建博客系列01：浅尝Hexo</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：</p>
-<ol>
-<li><p>制作一个博客网站需要这些技术：后端采用 <code>SpringBoot</code> 全家桶，前端采用 <code>Vue/React</code> 。如果追求快速搭建一个博客，可以使用全栈 <code>nodejs</code>（ <code>egg.js</code>、<code>express</code>、<code>koa</code> 等）。如果想让博客功能更强大，需要引入更多的技术。但这些技术的学习都很耗时费力，极可能劝退。</p>
-</li>
-<li><p>如果想让博客页面更好看，需要自己设计 <code>UI</code>。</p>
-</li>
-<li><p>博客最终展示给别人，需要部署到服务器上才能让大家看到。需要买服务器、买域名、域名备案、学习部署知识等等。</p>
-</li>
-<li><p>服务器后期需要维护，一年维护费用可能几百至上千不等。</p>
-</li>
-<li><p>服务器被人恶意攻击（ <code>DDOS</code>、 <code>SQL注入</code> 等），需要自己手动解决或花钱升级服务器。</p>
-</li>
-</ol>
-<p>如果你想要通过博客项目，以此学习前后端的知识、提升自己的编程水平甚至是将其作为一个简历上可以拿得出手的项目，我强烈建议你将以上步骤逐一完成，甚至可以将个人博客延伸为社交博客论坛（类似 <code>CSDN</code>、<code>掘金</code> 等），引入微服务与分布式技术。将这些做完，绝对会有明显的技术提升。</p>
-<p>但是，如果你只想有一个自己的网站去记录一些日常的学习等内容，继续往下看，我将会使用 <code>Hexo</code> 简化以上流程，从0到1实现一个美观精致高效的博客。</p>
-<h2 id="2-Hexo简介"><a href="#2-Hexo简介" class="headerlink" title="2. Hexo简介"></a>2. Hexo简介</h2><p>首先简单介绍一下 <code>Hexo</code></p>
-<blockquote>
-<p>引自[官方](<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">文档 | Hexo</a>)</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+                <h1 id="Hexo从0到1搭建博客系列02：引入Fluid"><a href="#Hexo从0到1搭建博客系列02：引入Fluid" class="headerlink" title="Hexo从0到1搭建博客系列02：引入Fluid"></a>Hexo从0到1搭建博客系列02：引入Fluid</h1><h2 id="1-Fluid简介"><a href="#1-Fluid简介" class="headerlink" title="1. Fluid简介"></a>1. Fluid简介</h2><blockquote>
+<p>Fluid [官网](<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/">开始使用 | Hexo Fluid 用户手册</a>)</p>
+<p>Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。</p>
+<p>主题 GitHub: <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
+<p>预览网站：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid’s blog</a> <a target="_blank" rel="noopener" href="https://zkqiang.cn/">zkqiang’s blog</a></p>
 </blockquote>
-<p>其实 <code>Hexo</code> 就是帮我们完成了大部分与书写博客无关的事情，我们只需要根据 <code>Hexo</code> 现有的框架，做一些简单的配置，即可做出一个博客网站。之后，我们就可以专注地写自己的博客啦</p>
-<p>在接下来的部分中，你只需要有以下几点前置知识，即可快速完成之后系列的全部内容：</p>
-<ol>
-<li><code>Node.js</code>：主要用于安装<code>Hexo</code>、发布文章、部署等操作</li>
+<p>Fluid其实就是基于Hexo现有功能，进行了更进一步的配置、美化，引入了很多新的功能，使我们的博客变得更加美观、简洁与高效。</p>
+<p>在进行Fluid实战之前，必须得先搭建好Hexo基础博客。</p>
+<h2 id="2-Fluid简单实战"><a href="#2-Fluid简单实战" class="headerlink" title="2. Fluid简单实战"></a>2. Fluid简单实战</h2><ol>
+<li>进入之前搭建好的 <code>Hexo</code> 博客目录，执行以下命令，安装 <code>fluid</code> 主题</li>
 </ol>
-<p>  安装 <code>Node.js</code> ：</p>
-<ol>
-<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">官网</a>安装</p>
-</li>
-<li><p>Mac可采用 <code>Homebrew</code> 安装</p>
-</li>
-<li><p><code>Git</code> 及 <code>Github</code>：最后的博客网站将发布到 <code>Github</code> 中</p>
-</li>
-<li><p><code>Markdown</code>：这个很简单，在 <code>CSDN</code> 或者用Typora写过博客的人都知道怎么用</p>
-</li>
-</ol>
-<p>之后全部的实战部分，均采用 <code>VSCode</code> 编辑器完成。如果你熟练使用命令行操作，也可以直接在命令行上完成全部操作。</p>
-<h2 id="3-Hexo简单实战"><a href="#3-Hexo简单实战" class="headerlink" title="3. Hexo简单实战"></a>3. Hexo简单实战</h2><ol>
-<li>首先打开命令行窗口，执行以下命令，安装Hexo。</li>
-</ol>
-  <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-install.png" srcset="/img/loading.gif" lazyload></p>
+  <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save hexo-theme-fluid</span><br></code></pre></td></tr></table></figure>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/fluid-install.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="2">
-<li>选择一个合适的位置（之后博客全部文件所在的地方），执行以下命令。</li>
+<li>在博客目录下创建 <code>_config.fluid.yml</code>，将 <code>fluid</code> 主题自己的 <code>_config.yml</code> 粘贴进去。</li>
 </ol>
-<p>  这里我博客命名为ltyzzz-blog</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> hexo init ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> <span class="hljs-built_in">cd</span> ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> npm install<br></code></pre></td></tr></table></figure>
+<p>  这一步很重要，一定要进入<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml%E8%BF%99%E4%B8%80%E7%BD%91%E9%A1%B5%EF%BC%8C">https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml这一网页，</a> 将对应的文件粘贴到之前创建好的空的<code>_config.fluid.yml</code>文件中。这个文件很长，所以没办法贴在这里，见谅~</p>
 <ol start="3">
-<li>通过 <code>VSCode</code> 打开创建好的博客目录</li>
+<li>打开创建好的 <code>Hexo</code> 博客目录下的 <code>_config.yml</code> ，将对应配置项修改为以下内容</li>
 </ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-file.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/hexofilepng"></p>
-<p>  介绍其中几个重要的文件：</p>
-<ul>
-<li><p>_config.yml：博客相关的配置均在这个文件中（之后引入Fluid主题后有所变化）</p>
-</li>
-<li><p>source：用来存放用户资源的位置（我们写的文章就存储在这里）</p>
-</li>
-</ul>
-<ol start="4">
-<li>执行以下命令，生成静态网页文件 <code>public</code></li>
-</ol>
-  <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs verilog">$ hexo <span class="hljs-keyword">generate</span><br></code></pre></td></tr></table></figure>
-<ol start="5">
-<li>执行以下命令，在本地服务器（默认为：<code>http://localhost:4000/</code>）启动博客</li>
-</ol>
-  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
-<p>最终Hexo基础博客页面如图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-page.png" srcset="/img/loading.gif" lazyload></p>
-<p>看到这里，是不是感觉Hexo页面十分的简陋甚至有点丑？</p>
-<p>没关系，之前的部分只是带大家简单尝试一下Hexo，了解一下基本的框架与命令使用。</p>
-<p>我们的重头戏将放在Fluid主题，通过该主题熟悉Hexo核心功能以及Fluid新增的功能。</p>
-<p>接下来的内容包括有：</p>
-<ol>
-<li>博客文章的编辑与发布</li>
-<li>评论区功能模块引入</li>
-<li>图床的最佳实践</li>
-<li>新增留言板界面</li>
-<li>将博客部署到Github</li>
-</ol>
-<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
+<p>  一定要注意这是 <code>yaml</code> 格式文件，冒号后一定要有空格。</p>
+<p>  灵活使用 <code>Ctrl + F</code> 搜索关键字</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+<p>仍然是使用 <code>hexo server</code> 命令运行到本地</p>
+<p>展示一下成品吧~</p>
+<p><img src="file:///Users/lty/Downloads/hexo-fluid-page.png?msec=1664956366776" srcset="/img/loading.gif" lazyload></p>
+<p>是不是瞬间比之前Hexo基础博客提升了一个档次？</p>
+<p>之后我们的大部分功能将在 <code>_config.fluid.yml</code> 文件里完成配置~</p>
+<h2 id="3-后记"><a href="#3-后记" class="headerlink" title="3. 后记"></a>3. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
 <p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
 <p>此外，从2022.10.1开始，为激励自己持续刷题，我开始持续日更Leetcode题解啦~</p>
 <p>所有题解均已放到<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Github仓库</a>中，欢迎大家Star并提出Issue~</p>
@@ -431,8 +380,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo从0到1搭建博客系列01：浅尝Hexo.md</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列01：浅尝Hexo-md/</div>
+      <div>Hexo从0到1搭建博客系列02：引入Fluid</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列02：引入Fluid/</div>
     </div>
     <div class="license-meta">
       
@@ -476,9 +425,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9702%EF%BC%9A%E5%BC%95%E5%85%A5Fluid/" title="Hexo从0到1搭建博客系列02：引入Fluid">
+                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9703%EF%BC%9A%E6%96%87%E7%AB%A0%E4%B8%8E%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/" title="Hexo从0到1搭建博客系列03：文章与评论模块">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列02：引入Fluid</span>
+                        <span class="hidden-mobile">Hexo从0到1搭建博客系列03：文章与评论模块</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -486,8 +435,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/" title="LC-Solution 811. Subdomain Visit Count">
-                        <span class="hidden-mobile">LC-Solution 811. Subdomain Visit Count</span>
+                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9701%EF%BC%9A%E6%B5%85%E5%B0%9DHexo-md/" title="Hexo从0到1搭建博客系列01：浅尝Hexo.md">
+                        <span class="hidden-mobile">Hexo从0到1搭建博客系列01：浅尝Hexo.md</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

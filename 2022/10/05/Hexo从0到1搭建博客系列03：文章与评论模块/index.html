@@ -16,28 +16,28 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
+    <meta name="description" content="Hexo从0到1搭建博客系列03：文章与评论模块1. 文章的编辑与发布在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。 这一部分我们仍然在Hexo博客根目录上操作。  执行以下命令，创建一篇新的文章。引号内为博客的标题    12hexo new &quot;&quot;e.g.: hexo new &quot;我的第一篇博客&quot;   如图所示，该博客已经被创建到 sou">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo从0到1搭建博客系列01：浅尝Hexo.md">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9701%EF%BC%9A%E6%B5%85%E5%B0%9DHexo-md/index.html">
+<meta property="og:title" content="Hexo从0到1搭建博客系列03：文章与评论模块">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9703%EF%BC%9A%E6%96%87%E7%AB%A0%E4%B8%8E%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
+<meta property="og:description" content="Hexo从0到1搭建博客系列03：文章与评论模块1. 文章的编辑与发布在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。 这一部分我们仍然在Hexo博客根目录上操作。  执行以下命令，创建一篇新的文章。引号内为博客的标题    12hexo new &quot;&quot;e.g.: hexo new &quot;我的第一篇博客&quot;   如图所示，该博客已经被创建到 sou">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
-<meta property="article:published_time" content="2022-10-05T07:14:20.000Z">
-<meta property="article:modified_time" content="2022-10-05T07:34:23.194Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
+<meta property="article:published_time" content="2022-10-05T08:40:23.000Z">
+<meta property="article:modified_time" content="2022-10-05T08:40:39.492Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo从0到1搭建博客系列01：浅尝Hexo.md - ltyzzz&#39;s Blog</title>
+  <title>Hexo从0到1搭建博客系列03：文章与评论模块 - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列01：浅尝Hexo.md"></span>
+            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列03：文章与评论模块"></span>
           
         </div>
 
@@ -225,7 +225,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-05 15:14" pubdate>
+        <time datetime="2022-10-05 16:40" pubdate>
           2022年10月5日 下午
         </time>
       </span>
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.5k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          14 分钟
+          13 分钟
         
       </span>
     
@@ -294,91 +294,73 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo从0到1搭建博客系列01：浅尝Hexo.md</h1>
+            <h1 style="display: none">Hexo从0到1搭建博客系列03：文章与评论模块</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo从0到1搭建博客系列01：浅尝Hexo"><a href="#Hexo从0到1搭建博客系列01：浅尝Hexo" class="headerlink" title="Hexo从0到1搭建博客系列01：浅尝Hexo"></a>Hexo从0到1搭建博客系列01：浅尝Hexo</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：</p>
+                <h1 id="Hexo从0到1搭建博客系列03：文章与评论模块"><a href="#Hexo从0到1搭建博客系列03：文章与评论模块" class="headerlink" title="Hexo从0到1搭建博客系列03：文章与评论模块"></a>Hexo从0到1搭建博客系列03：文章与评论模块</h1><h2 id="1-文章的编辑与发布"><a href="#1-文章的编辑与发布" class="headerlink" title="1. 文章的编辑与发布"></a>1. 文章的编辑与发布</h2><p>在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。</p>
+<p>这一部分我们仍然在Hexo博客根目录上操作。</p>
 <ol>
-<li><p>制作一个博客网站需要这些技术：后端采用 <code>SpringBoot</code> 全家桶，前端采用 <code>Vue/React</code> 。如果追求快速搭建一个博客，可以使用全栈 <code>nodejs</code>（ <code>egg.js</code>、<code>express</code>、<code>koa</code> 等）。如果想让博客功能更强大，需要引入更多的技术。但这些技术的学习都很耗时费力，极可能劝退。</p>
-</li>
-<li><p>如果想让博客页面更好看，需要自己设计 <code>UI</code>。</p>
-</li>
-<li><p>博客最终展示给别人，需要部署到服务器上才能让大家看到。需要买服务器、买域名、域名备案、学习部署知识等等。</p>
-</li>
-<li><p>服务器后期需要维护，一年维护费用可能几百至上千不等。</p>
-</li>
-<li><p>服务器被人恶意攻击（ <code>DDOS</code>、 <code>SQL注入</code> 等），需要自己手动解决或花钱升级服务器。</p>
-</li>
+<li>执行以下命令，创建一篇新的文章。引号内为博客的标题</li>
 </ol>
-<p>如果你想要通过博客项目，以此学习前后端的知识、提升自己的编程水平甚至是将其作为一个简历上可以拿得出手的项目，我强烈建议你将以上步骤逐一完成，甚至可以将个人博客延伸为社交博客论坛（类似 <code>CSDN</code>、<code>掘金</code> 等），引入微服务与分布式技术。将这些做完，绝对会有明显的技术提升。</p>
-<p>但是，如果你只想有一个自己的网站去记录一些日常的学习等内容，继续往下看，我将会使用 <code>Hexo</code> 简化以上流程，从0到1实现一个美观精致高效的博客。</p>
-<h2 id="2-Hexo简介"><a href="#2-Hexo简介" class="headerlink" title="2. Hexo简介"></a>2. Hexo简介</h2><p>首先简单介绍一下 <code>Hexo</code></p>
-<blockquote>
-<p>引自[官方](<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">文档 | Hexo</a>)</p>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<p>其实 <code>Hexo</code> 就是帮我们完成了大部分与书写博客无关的事情，我们只需要根据 <code>Hexo</code> 现有的框架，做一些简单的配置，即可做出一个博客网站。之后，我们就可以专注地写自己的博客啦</p>
-<p>在接下来的部分中，你只需要有以下几点前置知识，即可快速完成之后系列的全部内容：</p>
-<ol>
-<li><code>Node.js</code>：主要用于安装<code>Hexo</code>、发布文章、部署等操作</li>
-</ol>
-<p>  安装 <code>Node.js</code> ：</p>
-<ol>
-<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">官网</a>安装</p>
-</li>
-<li><p>Mac可采用 <code>Homebrew</code> 安装</p>
-</li>
-<li><p><code>Git</code> 及 <code>Github</code>：最后的博客网站将发布到 <code>Github</code> 中</p>
-</li>
-<li><p><code>Markdown</code>：这个很简单，在 <code>CSDN</code> 或者用Typora写过博客的人都知道怎么用</p>
-</li>
-</ol>
-<p>之后全部的实战部分，均采用 <code>VSCode</code> 编辑器完成。如果你熟练使用命令行操作，也可以直接在命令行上完成全部操作。</p>
-<h2 id="3-Hexo简单实战"><a href="#3-Hexo简单实战" class="headerlink" title="3. Hexo简单实战"></a>3. Hexo简单实战</h2><ol>
-<li>首先打开命令行窗口，执行以下命令，安装Hexo。</li>
-</ol>
-  <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-install.png" srcset="/img/loading.gif" lazyload></p>
+  <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;&quot;</span><br>e.g.: hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;我的第一篇博客&quot;</span><br></code></pre></td></tr></table></figure>
+<p>  如图所示，该博客已经被创建到 <code>source/_posts</code> 目录下啦</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/first-blog.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="2">
-<li>选择一个合适的位置（之后博客全部文件所在的地方），执行以下命令。</li>
+<li>编辑该页面，可以看到如下信息（可以采用 <a target="_blank" rel="noopener" href="https://github.com/marktext/marktext">MarkText</a> 进行编辑，这个是免费的）</li>
 </ol>
-<p>  这里我博客命名为ltyzzz-blog</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> hexo init ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> <span class="hljs-built_in">cd</span> ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> npm install<br></code></pre></td></tr></table></figure>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+<p>  其中包含了博客的 <code>title</code>、<code>date</code>、<code>tags</code>信息</p>
 <ol start="3">
-<li>通过 <code>VSCode</code> 打开创建好的博客目录</li>
+<li>接下来，我们编辑博客的 <code>tags</code> 与 <code>categories</code>，仍然需要注意 <code>yaml</code> 格式</li>
 </ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-file.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/hexofilepng"></p>
-<p>  介绍其中几个重要的文件：</p>
-<ul>
-<li><p>_config.yml：博客相关的配置均在这个文件中（之后引入Fluid主题后有所变化）</p>
-</li>
-<li><p>source：用来存放用户资源的位置（我们写的文章就存储在这里）</p>
-</li>
-</ul>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">学习感悟</span>, <span class="hljs-string">知识分享</span>, <span class="hljs-string">Java</span>]<br><span class="hljs-attr">categories:</span> [<span class="hljs-string">Java基础</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
 <ol start="4">
-<li>执行以下命令，生成静态网页文件 <code>public</code></li>
+<li>在下面接着编辑博客内容（可以采用 <a target="_blank" rel="noopener" href="https://github.com/marktext/marktext">MarkText</a> 进行编辑，这个是免费的）</li>
 </ol>
-  <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs verilog">$ hexo <span class="hljs-keyword">generate</span><br></code></pre></td></tr></table></figure>
+<p>  示例如下：</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">学习感悟</span>, <span class="hljs-string">知识分享</span>, <span class="hljs-string">Java</span>]<br><span class="hljs-attr">categories:</span> [<span class="hljs-string">Java基础</span>]<br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-comment"># 我的第一篇博客</span><br><br><span class="hljs-comment">## 1. Java基础</span><br><br><span class="hljs-string">Java是一门后端语言，我爱Java。</span><br><br><span class="hljs-comment">## 2. Java实战</span><br><br><span class="hljs-string">第一行代码</span><br><br><span class="hljs-string">```java</span><br><span class="hljs-string">System.out.println(&quot;Hello</span> <span class="hljs-string">World!&quot;);</span><br></code></pre></td></tr></table></figure>
 <ol start="5">
-<li>执行以下命令，在本地服务器（默认为：<code>http://localhost:4000/</code>）启动博客</li>
+<li><code>Ctrl + S</code> 保存，然后将博客运行到本地服务器。</li>
 </ol>
-  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
-<p>最终Hexo基础博客页面如图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-page.png" srcset="/img/loading.gif" lazyload></p>
-<p>看到这里，是不是感觉Hexo页面十分的简陋甚至有点丑？</p>
-<p>没关系，之前的部分只是带大家简单尝试一下Hexo，了解一下基本的框架与命令使用。</p>
-<p>我们的重头戏将放在Fluid主题，通过该主题熟悉Hexo核心功能以及Fluid新增的功能。</p>
-<p>接下来的内容包括有：</p>
+  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
+<p>这样一来就可以完成博客的编辑与发布啦，看看成品吧~</p>
+<p>下面那一篇是 <code>Hexo</code> 初始化的文章</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/blog-content1.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/blogcontentpng"></p>
+<p>进入 <code>分类</code>、<code>标签</code> 页可以看到相应的内容</p>
+<h2 id="2-引入评论模块"><a href="#2-引入评论模块" class="headerlink" title="2. 引入评论模块"></a>2. 引入评论模块</h2><p>引入评论听起来非常高大上。如果自己手动搭建一个评论系统，将是需要一定技术的工作，而在<code>Hexo-Fluid</code> 中，这仅仅只是一个简单的配置</p>
 <ol>
-<li>博客文章的编辑与发布</li>
-<li>评论区功能模块引入</li>
-<li>图床的最佳实践</li>
-<li>新增留言板界面</li>
-<li>将博客部署到Github</li>
+<li>打开之前粘贴好的 <code>_config.fluid.yml</code> 文件，找到以下内容。</li>
 </ol>
-<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">disqus</span><br></code></pre></td></tr></table></figure>
+<p>  这里我推荐使用另外一个评论插件 <code>Valine</code>，所以将type进行相应的更改。</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">valine</span><br></code></pre></td></tr></table></figure>
+<p>  其他评论插件官方文档有详细的写，如果想尝试其他的，请点击[这里](<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%AF%84%E8%AE%BA">配置指南 | Hexo Fluid 用户手册</a>)查找~</p>
+<ol start="2">
+<li><p>进入 <a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">Valine</a> 主页，注册一个 <code>LeanCloud</code> 账号，然后完成相应的实名认证。这一部分就比较简单啦，不再赘述。</p>
+</li>
+<li><p>进入 <code>LeanCloud</code> 个人主页控制台，左上角创建应用。</p>
+</li>
+</ol>
+<p>  我已经创建过啦，就不再创建了。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leadcloud-page.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="4">
+<li>点击进入创建好的应用，点击左侧菜单 设置 - 应用凭证，就可以看到相应的配置信息啦</li>
+</ol>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leancloud-key.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="5">
+<li>将 <code>AppID</code> 与 <code>AppKey</code> 复制并粘贴到 <code>_config.fluid.yml</code> 文件中如下相应的位置</li>
+</ol>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-string">xxxxx</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-string">xxxxx</span><br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>保存配置文件，再次运行博客到本地服务器</li>
+</ol>
+  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
+<p>打开之前发布的博客页，拉到最底部，即可看到评论界面啦~</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/comment.png" srcset="/img/loading.gif" lazyload></p>
+<p>由于 <code>Valine</code> 是一个无后端评论系统，想要管理评论的话，得去 <code>LeanCloud</code> 后台数据存储进行管理相关评论数据。</p>
+<h2 id="3-后记"><a href="#3-后记" class="headerlink" title="3. 后记"></a>3. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
 <p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
 <p>此外，从2022.10.1开始，为激励自己持续刷题，我开始持续日更Leetcode题解啦~</p>
 <p>所有题解均已放到<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Github仓库</a>中，欢迎大家Star并提出Issue~</p>
@@ -431,8 +413,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo从0到1搭建博客系列01：浅尝Hexo.md</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列01：浅尝Hexo-md/</div>
+      <div>Hexo从0到1搭建博客系列03：文章与评论模块</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列03：文章与评论模块/</div>
     </div>
     <div class="license-meta">
       
@@ -476,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9702%EF%BC%9A%E5%BC%95%E5%85%A5Fluid/" title="Hexo从0到1搭建博客系列02：引入Fluid">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列02：引入Fluid</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/" title="LC-Solution 811. Subdomain Visit Count">
-                        <span class="hidden-mobile">LC-Solution 811. Subdomain Visit Count</span>
+                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9702%EF%BC%9A%E5%BC%95%E5%85%A5Fluid/" title="Hexo从0到1搭建博客系列02：引入Fluid">
+                        <span class="hidden-mobile">Hexo从0到1搭建博客系列02：引入Fluid</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
