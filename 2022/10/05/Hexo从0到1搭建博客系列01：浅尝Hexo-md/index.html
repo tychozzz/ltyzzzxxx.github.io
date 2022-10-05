@@ -16,26 +16,28 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="811. 子域名访问计数题目描述网站域名 &quot;discuss.leetcode.com&quot; 由多个子域名组成。顶级域名为 &quot;com&quot; ，二级域名为 &quot;leetcode.com&quot; ，最低一级为 &quot;discuss.leetcode.com&quot; 。当访问域名 &quot;discuss.leetcode.com&quot; 时，同">
+    <meta name="description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 811. Subdomain Visit Count">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/index.html">
+<meta property="og:title" content="Hexo从0到1搭建博客系列01：浅尝Hexo.md">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9701%EF%BC%9A%E6%B5%85%E5%B0%9DHexo-md/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="811. 子域名访问计数题目描述网站域名 &quot;discuss.leetcode.com&quot; 由多个子域名组成。顶级域名为 &quot;com&quot; ，二级域名为 &quot;leetcode.com&quot; ，最低一级为 &quot;discuss.leetcode.com&quot; 。当访问域名 &quot;discuss.leetcode.com&quot; 时，同">
+<meta property="og:description" content="Hexo从0到1搭建博客系列01：浅尝Hexo1. 前言作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：  制作一个博客网站需要这些技术：后端采用 SpringBoot 全家桶，前端采用 Vue&#x2F;React 。如果追求快速搭建一个博客，可以使用全栈 nodejs（ egg">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/LC-811.jpg">
-<meta property="article:published_time" content="2022-10-05T06:01:07.000Z">
-<meta property="article:modified_time" content="2022-10-05T06:03:00.362Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
+<meta property="article:published_time" content="2022-10-05T07:14:20.000Z">
+<meta property="article:modified_time" content="2022-10-05T07:22:10.752Z">
 <meta property="article:author" content="ltyzzz">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/LC-811.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo01.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 811. Subdomain Visit Count - ltyzzz&#39;s Blog</title>
+  <title>Hexo从0到1搭建博客系列01：浅尝Hexo.md - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 811. Subdomain Visit Count"></span>
+            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列01：浅尝Hexo.md"></span>
           
         </div>
 
@@ -223,7 +225,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-05 14:01" pubdate>
+        <time datetime="2022-10-05 15:14" pubdate>
           2022年10月5日 下午
         </time>
       </span>
@@ -235,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.7k 字
         
       </span>
     
@@ -246,7 +248,7 @@
         
         
         
-          18 分钟
+          14 分钟
         
       </span>
     
@@ -292,54 +294,94 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 811. Subdomain Visit Count</h1>
+            <h1 style="display: none">Hexo从0到1搭建博客系列01：浅尝Hexo.md</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="811-子域名访问计数"><a href="#811-子域名访问计数" class="headerlink" title="811. 子域名访问计数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subdomain-visit-count/">811. 子域名访问计数</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>网站域名 <code>&quot;discuss.leetcode.com&quot;</code> 由多个子域名组成。顶级域名为 <code>&quot;com&quot;</code> ，二级域名为 <code>&quot;leetcode.com&quot;</code> ，最低一级为 <code>&quot;discuss.leetcode.com&quot;</code> 。当访问域名 <code>&quot;discuss.leetcode.com&quot;</code> 时，同时也会隐式访问其父域名 <code>&quot;leetcode.com&quot;</code> 以及 <code>&quot;com&quot;</code> 。</p>
-<p><strong>计数配对域名</strong> 是遵循 <code>&quot;rep d1.d2.d3&quot;</code> 或 <code>&quot;rep d1.d2&quot;</code> 格式的一个域名表示，其中 <code>rep</code> 表示访问域名的次数，<code>d1.d2.d3</code> 为域名本身。</p>
-<p>例如，<code>&quot;9001 discuss.leetcode.com&quot;</code> 就是一个 <strong>计数配对域名</strong> ，表示 <code>discuss.leetcode.com</code> 被访问了 <code>9001</code> 次。<br>给你一个 <strong>计数配对域名</strong> 组成的数组 <code>cpdomains</code> ，解析得到输入中每个子域名对应的 <strong>计数配对域名</strong> ，并以数组形式返回。可以按 <strong>任意顺序</strong> 返回答案。</p>
-<p><strong>示例1：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：cpdomains = [<span class="hljs-string">&quot;9001 discuss.leetcode.com&quot;</span>]<br>输出：[<span class="hljs-string">&quot;9001 leetcode.com&quot;</span>,<span class="hljs-string">&quot;9001 discuss.leetcode.com&quot;</span>,<span class="hljs-string">&quot;9001 com&quot;</span>]<br>解释：例子中仅包含一个网站域名：<span class="hljs-string">&quot;discuss.leetcode.com&quot;</span>。<br>按照前文描述，子域名 <span class="hljs-string">&quot;leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;com&quot;</span> 都会被访问，所以它们都被访问了 <span class="hljs-number">9001</span> 次。<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例2：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：cpdomains = [<span class="hljs-string">&quot;900 google.mail.com&quot;</span>, <span class="hljs-string">&quot;50 yahoo.com&quot;</span>, <span class="hljs-string">&quot;1 intel.mail.com&quot;</span>, <span class="hljs-string">&quot;5 wiki.org&quot;</span>]<br>输出：[<span class="hljs-string">&quot;901 mail.com&quot;</span>,<span class="hljs-string">&quot;50 yahoo.com&quot;</span>,<span class="hljs-string">&quot;900 google.mail.com&quot;</span>,<span class="hljs-string">&quot;5 wiki.org&quot;</span>,<span class="hljs-string">&quot;5 org&quot;</span>,<span class="hljs-string">&quot;1 intel.mail.com&quot;</span>,<span class="hljs-string">&quot;951 com&quot;</span>]<br>解释：按照前文描述，会访问 <span class="hljs-string">&quot;google.mail.com&quot;</span> <span class="hljs-number">900</span> 次，<span class="hljs-string">&quot;yahoo.com&quot;</span> <span class="hljs-number">50</span> 次，<span class="hljs-string">&quot;intel.mail.com&quot;</span> <span class="hljs-number">1</span> 次，<span class="hljs-string">&quot;wiki.org&quot;</span> <span class="hljs-number">5</span> 次。<br>而对于父域名，会访问 <span class="hljs-string">&quot;mail.com&quot;</span> <span class="hljs-number">900</span> + <span class="hljs-number">1</span> = <span class="hljs-number">901</span> 次，<span class="hljs-string">&quot;com&quot;</span> <span class="hljs-number">900</span> + <span class="hljs-number">50</span> + <span class="hljs-number">1</span> = <span class="hljs-number">951</span> 次，和 <span class="hljs-string">&quot;org&quot;</span> <span class="hljs-number">5</span> 次。<br></code></pre></td></tr></table></figure>
-
-<p>提示：</p>
-<ul>
-<li><p><code>1 &lt;= cpdomain.length &lt;= 100</code></p>
-</li>
-<li><p><code>1 &lt;= cpdomain[i].length &lt;= 100</code></p>
-</li>
-<li><p><code>cpdomain[i]</code> 会遵循 <code>&quot;repi d1i.d2i.d3i&quot;</code> 或 <code>&quot;repi d1i.d2i&quot;</code> 格式</p>
-</li>
-<li><p><code>repi</code> 是范围 <code>[1, 104]</code> 内的一个整数</p>
-</li>
-<li><p><code>d1i</code>、<code>d2i</code> 和 <code>d3i</code> 由小写英文字母组成</p>
-</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：哈希表"><a href="#方法一：哈希表" class="headerlink" title="方法一：哈希表"></a>方法一：哈希表</h3><p>通过哈希表统计 <code>cpdomains</code> 中所有的子域名的频率。</p>
-<p>以 <code>google.mail.com</code> 为例，<code>google.mail.com</code> 为三级域名，<code>mail.com</code> 为二级域名，<code>com</code>为顶级域名。</p>
-<p>思路如下：</p>
+                <h1 id="Hexo从0到1搭建博客系列01：浅尝Hexo"><a href="#Hexo从0到1搭建博客系列01：浅尝Hexo" class="headerlink" title="Hexo从0到1搭建博客系列01：浅尝Hexo"></a>Hexo从0到1搭建博客系列01：浅尝Hexo</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>作为一个程序员，我们总是想记录一些自己日常学习的东西、自己对于技术的思考以及自己平时折腾的一些小项目。但是自己手动搭建一个博客是很费时费力的一件事情，我们需要考虑一下几点难题：</p>
 <ol>
-<li><p>遍历 <code>cpdomains</code> 列表，获取每一个 <code>cpdomain</code> 的访问次数 <code>cnt</code> 与其域名 <code>domain</code></p>
+<li><p>制作一个博客网站需要这些技术：后端采用 <code>SpringBoot</code> 全家桶，前端采用 <code>Vue/React</code> 。如果追求快速搭建一个博客，可以使用全栈 <code>nodejs</code>（ <code>egg.js</code>、<code>express</code>、<code>koa</code> 等）。如果想让博客功能更强大，需要引入更多的技术。但这些技术的学习都很耗时费力，极可能劝退。</p>
 </li>
-<li><p>将 <code>domain</code> 的访问次数累加至原哈希表</p>
+<li><p>如果想让博客页面更好看，需要自己设计 <code>UI</code>。</p>
 </li>
-<li><p>继续遍历 <code>domain</code>的子域名字符串</p>
+<li><p>博客最终展示给别人，需要部署到服务器上才能让大家看到。需要买服务器、买域名、域名备案、学习部署知识等等。</p>
 </li>
-<li><p>若 <code>domain[i] == &#39;.&#39;</code>，说明其之后为一个完整的子域名，将其访问次数累加到哈希表中。</p>
+<li><p>服务器后期需要维护，一年维护费用可能几百至上千不等。</p>
 </li>
-<li><p>遍历结束之后，将哈希表的 <code>K</code> 与 <code>V</code> 以列表的形式返回</p>
+<li><p>服务器被人恶意攻击（ <code>DDOS</code>、 <code>SQL注入</code> 等），需要自己手动解决或花钱升级服务器。</p>
 </li>
 </ol>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">subdomainVisits</span>(<span class="hljs-params">self, cpdomains: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]:<br>        dic = defaultdict(<span class="hljs-built_in">int</span>)<br>        <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> cpdomains:<br>            ds = d.split()<br>            cnt, domain = <span class="hljs-built_in">int</span>(ds[<span class="hljs-number">0</span>]), ds[<span class="hljs-number">1</span>]<br>            dic[domain] += cnt<br>            <span class="hljs-keyword">for</span> i, x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(domain):<br>                <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;.&#x27;</span>:<br>                    dic[domain[i+<span class="hljs-number">1</span>:]] += cnt<br>        <span class="hljs-keyword">return</span> [<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;v&#125;</span> <span class="hljs-subst">&#123;k&#125;</span>&quot;</span> <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> dic.items()]<br></code></pre></td></tr></table></figure>
-
-<h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
-<p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第13篇题解，欢迎各位star并提出Issue~</p>
-<p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
+<p>如果你想要通过博客项目，以此学习前后端的知识、提升自己的编程水平甚至是将其作为一个简历上可以拿得出手的项目，我强烈建议你将以上步骤逐一完成，甚至可以将个人博客延伸为社交博客论坛（类似 <code>CSDN</code>、<code>掘金</code> 等），引入微服务与分布式技术。将这些做完，绝对会有明显的技术提升。</p>
+<p>但是，如果你只想有一个自己的网站去记录一些日常的学习等内容，继续往下看，我将会使用 <code>Hexo</code> 简化以上流程，从0到1实现一个美观精致高效的博客。</p>
+<h2 id="2-Hexo简介"><a href="#2-Hexo简介" class="headerlink" title="2. Hexo简介"></a>2. Hexo简介</h2><p>首先简单介绍一下 <code>Hexo</code></p>
+<blockquote>
+<p>引自[官方](<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">文档 | Hexo</a>)</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<p>其实 <code>Hexo</code> 就是帮我们完成了大部分与书写博客无关的事情，我们只需要根据 <code>Hexo</code> 现有的框架，做一些简单的配置，即可做出一个博客网站。之后，我们就可以专注地写自己的博客啦</p>
+<p>在接下来的部分中，你只需要有以下几点前置知识，即可快速完成之后系列的全部内容：</p>
+<ol>
+<li><code>Node.js</code>：主要用于安装<code>Hexo</code>、发布文章、部署等操作</li>
+</ol>
+<p>  安装 <code>Node.js</code> ：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">官网</a>安装</p>
+</li>
+<li><p>Mac可采用 <code>Homebrew</code> 安装</p>
+</li>
+<li><p><code>Git</code> 及 <code>Github</code>：最后的博客网站将发布到 <code>Github</code> 中</p>
+</li>
+<li><p><code>Markdown</code>：这个很简单，在 <code>CSDN</code> 或者用Typora写过博客的人都知道怎么用</p>
+</li>
+</ol>
+<p>之后全部的实战部分，均采用 <code>VSCode</code> 编辑器完成。如果你熟练使用命令行操作，也可以直接在命令行上完成全部操作。</p>
+<h2 id="3-Hexo简单实战"><a href="#3-Hexo简单实战" class="headerlink" title="3. Hexo简单实战"></a>3. Hexo简单实战</h2><ol>
+<li>首先打开命令行窗口，执行以下命令，安装Hexo。</li>
+</ol>
+  <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-install.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>选择一个合适的位置（之后博客全部文件所在的地方），执行以下命令。</li>
+</ol>
+<p>  这里我博客命名为ltyzzz-blog</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> hexo init ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> <span class="hljs-built_in">cd</span> ltyzzz<span class="hljs-literal">-blog</span><br><span class="hljs-variable">$</span> npm install<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>通过 <code>VSCode</code> 打开创建好的博客目录</li>
+</ol>
+<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-file.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/hexofilepng"></p>
+<p>  介绍其中几个重要的文件：</p>
+<ul>
+<li><p>_config.yml：博客相关的配置均在这个文件中（之后引入Fluid主题后有所变化）</p>
+</li>
+<li><p>source：用来存放用户资源的位置（我们写的文章就存储在这里）</p>
+</li>
+</ul>
+<ol start="4">
+<li>执行以下命令，生成静态网页文件 <code>public</code></li>
+</ol>
+  <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs verilog">$ hexo <span class="hljs-keyword">generate</span><br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>执行以下命令，在本地服务器（默认为：<code>http://localhost:4000/</code>）启动博客</li>
+</ol>
+  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
+<p>最终Hexo基础博客页面如图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo-page.png" srcset="/img/loading.gif" lazyload></p>
+<p>看到这里，是不是感觉Hexo页面十分的简陋甚至有点丑？</p>
+<p>没关系，之前的部分只是带大家简单尝试一下Hexo，了解一下基本的框架与命令使用。</p>
+<p>我们的重头戏将放在Fluid主题，通过该主题熟悉Hexo核心功能以及Fluid新增的功能。</p>
+<p>接下来的内容包括有：</p>
+<ol>
+<li>博客文章的编辑与发布</li>
+<li>评论区功能模块引入</li>
+<li>图床的最佳实践</li>
+<li>新增留言板界面</li>
+<li>将博客部署到Github</li>
+</ol>
+<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
+<p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
+<p>此外，从2022.10.1开始，为激励自己持续刷题，我开始持续日更Leetcode题解啦~</p>
+<p>所有题解均已放到<a href="(https://github.com/ltyzzzxxx/Leetcode-Everyday">Github仓库</a>中，欢迎大家Star并提出Issue~</p>
 
                 
               </div>
@@ -358,7 +400,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Leetcode%E9%A2%98%E8%A7%A3/" class="category-chain-item">Leetcode题解</a>
+  <a href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="category-chain-item">Hexo搭建博客</a>
   
   
 
@@ -373,7 +415,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+        <a href="/tags/Fluid/">#Fluid</a>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2/">#博客</a>
       
     </div>
   
@@ -385,8 +431,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 811. Subdomain Visit Count</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/</div>
+      <div>Hexo从0到1搭建博客系列01：浅尝Hexo.md</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列01：浅尝Hexo-md/</div>
     </div>
     <div class="license-meta">
       
@@ -430,18 +476,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9701%EF%BC%9A%E6%B5%85%E5%B0%9DHexo-md/" title="Hexo从0到1搭建博客系列01：浅尝Hexo.md">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列01：浅尝Hexo.md</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/04/LC-Solution-921-Minumum-Add-to-Make-Parentheses-Valid/" title="LC-Solution 921. Minumum Add to Make Parentheses Valid">
-                        <span class="hidden-mobile">LC-Solution 921. Minumum Add to Make Parentheses Valid</span>
+                      <a href="/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/" title="LC-Solution 811. Subdomain Visit Count">
+                        <span class="hidden-mobile">LC-Solution 811. Subdomain Visit Count</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
