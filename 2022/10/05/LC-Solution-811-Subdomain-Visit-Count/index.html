@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="921. 使括号有效的最少添加题目描述只有满足下面几点之一，括号字符串才是有效的：  它是一个空字符串，或者  它可以被写成 AB （A 与 B 连接）, 其中 A 和 B 都是有效字符串，或者  它可以被写作 (A)，其中 A 是有效字符串。   给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。 例如，如果 s &#x3D; &quot;()))&quot; ，你可以插入一个开">
+    <meta name="description" content="811. 子域名访问计数题目描述网站域名 &quot;discuss.leetcode.com&quot; 由多个子域名组成。顶级域名为 &quot;com&quot; ，二级域名为 &quot;leetcode.com&quot; ，最低一级为 &quot;discuss.leetcode.com&quot; 。当访问域名 &quot;discuss.leetcode.com&quot; 时，同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 921. Minumum Add to Make Parentheses Valid">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/04/LC-Solution-921-Minumum-Add-to-Make-Parentheses-Valid/index.html">
+<meta property="og:title" content="LC-Solution 811. Subdomain Visit Count">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="921. 使括号有效的最少添加题目描述只有满足下面几点之一，括号字符串才是有效的：  它是一个空字符串，或者  它可以被写成 AB （A 与 B 连接）, 其中 A 和 B 都是有效字符串，或者  它可以被写作 (A)，其中 A 是有效字符串。   给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。 例如，如果 s &#x3D; &quot;()))&quot; ，你可以插入一个开">
+<meta property="og:description" content="811. 子域名访问计数题目描述网站域名 &quot;discuss.leetcode.com&quot; 由多个子域名组成。顶级域名为 &quot;com&quot; ，二级域名为 &quot;leetcode.com&quot; ，最低一级为 &quot;discuss.leetcode.com&quot; 。当访问域名 &quot;discuss.leetcode.com&quot; 时，同">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc-926.jpg">
-<meta property="article:published_time" content="2022-10-04T05:44:32.000Z">
-<meta property="article:modified_time" content="2022-10-04T05:51:40.167Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/LC-811.jpg">
+<meta property="article:published_time" content="2022-10-05T06:01:07.000Z">
+<meta property="article:modified_time" content="2022-10-05T06:03:00.362Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc-926.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/LC-811.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 921. Minumum Add to Make Parentheses Valid - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 811. Subdomain Visit Count - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 921. Minumum Add to Make Parentheses Valid"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 811. Subdomain Visit Count"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-04 13:44" pubdate>
-          2022年10月4日 下午
+        <time datetime="2022-10-05 14:01" pubdate>
+          2022年10月5日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.1k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          16 分钟
+          18 分钟
         
       </span>
     
@@ -292,64 +292,53 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 921. Minumum Add to Make Parentheses Valid</h1>
+            <h1 style="display: none">LC-Solution 811. Subdomain Visit Count</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="921-使括号有效的最少添加"><a href="#921-使括号有效的最少添加" class="headerlink" title="921. 使括号有效的最少添加"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid/">921. 使括号有效的最少添加</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>只有满足下面几点之一，括号字符串才是有效的：</p>
-<ul>
-<li><p>它是一个空字符串，或者</p>
-</li>
-<li><p>它可以被写成 <code>AB</code> （<code>A</code> 与 <code>B</code> 连接）, 其中 <code>A</code> 和 <code>B</code> 都是有效字符串，或者</p>
-</li>
-<li><p>它可以被写作 <code>(A)</code>，其中 <code>A</code> 是有效字符串。</p>
-</li>
-</ul>
-<p>给定一个括号字符串 <code>s</code> ，移动N次，你就可以在字符串的任何位置插入一个括号。</p>
-<p>例如，如果 <code>s = &quot;()))&quot;</code> ，你可以插入一个开始括号为 <code>&quot;(()))&quot;</code> 或结束括号为 <code>&quot;())))&quot;</code> 。<br>返回 为使结果字符串 <code>s</code> 有效而必须添加的最少括号数。</p>
+                <h1 id="811-子域名访问计数"><a href="#811-子域名访问计数" class="headerlink" title="811. 子域名访问计数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subdomain-visit-count/">811. 子域名访问计数</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>网站域名 <code>&quot;discuss.leetcode.com&quot;</code> 由多个子域名组成。顶级域名为 <code>&quot;com&quot;</code> ，二级域名为 <code>&quot;leetcode.com&quot;</code> ，最低一级为 <code>&quot;discuss.leetcode.com&quot;</code> 。当访问域名 <code>&quot;discuss.leetcode.com&quot;</code> 时，同时也会隐式访问其父域名 <code>&quot;leetcode.com&quot;</code> 以及 <code>&quot;com&quot;</code> 。</p>
+<p><strong>计数配对域名</strong> 是遵循 <code>&quot;rep d1.d2.d3&quot;</code> 或 <code>&quot;rep d1.d2&quot;</code> 格式的一个域名表示，其中 <code>rep</code> 表示访问域名的次数，<code>d1.d2.d3</code> 为域名本身。</p>
+<p>例如，<code>&quot;9001 discuss.leetcode.com&quot;</code> 就是一个 <strong>计数配对域名</strong> ，表示 <code>discuss.leetcode.com</code> 被访问了 <code>9001</code> 次。<br>给你一个 <strong>计数配对域名</strong> 组成的数组 <code>cpdomains</code> ，解析得到输入中每个子域名对应的 <strong>计数配对域名</strong> ，并以数组形式返回。可以按 <strong>任意顺序</strong> 返回答案。</p>
 <p><strong>示例1：</strong></p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">输入：s <span class="hljs-operator">=</span> <span class="hljs-string">&quot;())&quot;</span><br>输出：<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：cpdomains = [<span class="hljs-string">&quot;9001 discuss.leetcode.com&quot;</span>]<br>输出：[<span class="hljs-string">&quot;9001 leetcode.com&quot;</span>,<span class="hljs-string">&quot;9001 discuss.leetcode.com&quot;</span>,<span class="hljs-string">&quot;9001 com&quot;</span>]<br>解释：例子中仅包含一个网站域名：<span class="hljs-string">&quot;discuss.leetcode.com&quot;</span>。<br>按照前文描述，子域名 <span class="hljs-string">&quot;leetcode.com&quot;</span> 和 <span class="hljs-string">&quot;com&quot;</span> 都会被访问，所以它们都被访问了 <span class="hljs-number">9001</span> 次。<br></code></pre></td></tr></table></figure>
 
 <p><strong>示例2：</strong></p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">输入：s <span class="hljs-operator">=</span> <span class="hljs-string">&quot;(((&quot;</span><br>输出：<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：cpdomains = [<span class="hljs-string">&quot;900 google.mail.com&quot;</span>, <span class="hljs-string">&quot;50 yahoo.com&quot;</span>, <span class="hljs-string">&quot;1 intel.mail.com&quot;</span>, <span class="hljs-string">&quot;5 wiki.org&quot;</span>]<br>输出：[<span class="hljs-string">&quot;901 mail.com&quot;</span>,<span class="hljs-string">&quot;50 yahoo.com&quot;</span>,<span class="hljs-string">&quot;900 google.mail.com&quot;</span>,<span class="hljs-string">&quot;5 wiki.org&quot;</span>,<span class="hljs-string">&quot;5 org&quot;</span>,<span class="hljs-string">&quot;1 intel.mail.com&quot;</span>,<span class="hljs-string">&quot;951 com&quot;</span>]<br>解释：按照前文描述，会访问 <span class="hljs-string">&quot;google.mail.com&quot;</span> <span class="hljs-number">900</span> 次，<span class="hljs-string">&quot;yahoo.com&quot;</span> <span class="hljs-number">50</span> 次，<span class="hljs-string">&quot;intel.mail.com&quot;</span> <span class="hljs-number">1</span> 次，<span class="hljs-string">&quot;wiki.org&quot;</span> <span class="hljs-number">5</span> 次。<br>而对于父域名，会访问 <span class="hljs-string">&quot;mail.com&quot;</span> <span class="hljs-number">900</span> + <span class="hljs-number">1</span> = <span class="hljs-number">901</span> 次，<span class="hljs-string">&quot;com&quot;</span> <span class="hljs-number">900</span> + <span class="hljs-number">50</span> + <span class="hljs-number">1</span> = <span class="hljs-number">951</span> 次，和 <span class="hljs-string">&quot;org&quot;</span> <span class="hljs-number">5</span> 次。<br></code></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
+<p>提示：</p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 1000</code></li>
-<li><code>s</code> 只包含 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 字符。</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：栈"><a href="#方法一：栈" class="headerlink" title="方法一：栈"></a>方法一：栈</h3><p>对于成对出现的括号题，合法的每一对括号是具有顺序的，可以直观地想到用栈解决。</p>
-<p>将成对的括号移除出栈，最后栈中保留的一定是无法成对的括号数量，最终栈的大小即为需要添加的括号次数。</p>
-<p>遍历字符串 <code>s</code>：</p>
-<ul>
-<li><p>若 <code>s[i] == &#39;(&#39;</code>，直接入栈。</p>
+<li><p><code>1 &lt;= cpdomain.length &lt;= 100</code></p>
 </li>
-<li><p>若 <code>s[i] == &#39;)&#39;</code>，且当前栈不为空 and 栈顶元素为 <code>&#39;(&#39;</code>，说明此时构成了一对合法括号，可以将栈顶的 <code>&#39;(&#39;</code>出栈。若不满足此条件，则将 <code>s[i]</code> 入栈</p>
+<li><p><code>1 &lt;= cpdomain[i].length &lt;= 100</code></p>
 </li>
-</ul>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">minAddToMakeValid</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        q = deque() <br>        <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> s:<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                q.append(x)<br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> q[-<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                    q.pop()<br>                <span class="hljs-keyword">else</span>:<br>                    q.append(x)<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(q)<br></code></pre></td></tr></table></figure>
-
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minAddToMakeValid</span><span class="hljs-params">(String s)</span> &#123;<br>        Deque&lt;Character&gt; d = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> x : s.toCharArray()) &#123;<br>            <span class="hljs-keyword">if</span>(x == <span class="hljs-string">&#x27;(&#x27;</span>) &#123;<br>                d.addLast(x);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span>(!d.isEmpty() &amp;&amp; d.peekLast() == <span class="hljs-string">&#x27;(&#x27;</span>) &#123;<br>                    d.pollLast();<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    d.addLast(x);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> d.size();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="方法二：模拟计数"><a href="#方法二：模拟计数" class="headerlink" title="方法二：模拟计数"></a>方法二：模拟计数</h3><p>根据题意进行模拟，用 <code>cnt</code> 表示 <code>&#39;(&#39;</code>的个数。</p>
-<p>遍历字符串 <code>s</code></p>
-<ul>
-<li><p>若 <code>s[i] == &#39;(&#39;</code>，cnt++</p>
+<li><p><code>cpdomain[i]</code> 会遵循 <code>&quot;repi d1i.d2i.d3i&quot;</code> 或 <code>&quot;repi d1i.d2i&quot;</code> 格式</p>
 </li>
-<li><p>若 <code>s[i] == &#39;)&#39;</code>，cnt–，相当于消除一个 <code>&#39;(&#39;</code></p>
-<ul>
-<li>若此时进行 <code>cnt--</code> 操作之后，cnt变为-1，说明 <code>&#39;(&#39;</code>数量不足，需要添加一个 <code>&#39;(&#39;</code>进行额外配对，并将 <code>cnt</code> 重新置为0</li>
-</ul>
+<li><p><code>repi</code> 是范围 <code>[1, 104]</code> 内的一个整数</p>
+</li>
+<li><p><code>d1i</code>、<code>d2i</code> 和 <code>d3i</code> 由小写英文字母组成</p>
 </li>
 </ul>
-<h4 id="Python3-1"><a href="#Python3-1" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">minAddToMakeValid</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        cnt, ans = <span class="hljs-number">0</span>, <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> s:<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                cnt += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                cnt -= <span class="hljs-number">1</span><br>            <span class="hljs-keyword">if</span> cnt == -<span class="hljs-number">1</span>:<br>                cnt = <span class="hljs-number">0</span><br>                ans += <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> ans + cnt<br></code></pre></td></tr></table></figure>
-
-<h4 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minAddToMakeValid</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> x : s.toCharArray()) &#123;<br>            cnt += x == <span class="hljs-string">&#x27;(&#x27;</span> ? <span class="hljs-number">1</span> : -<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(cnt == -<span class="hljs-number">1</span>) &#123;<br>                cnt = <span class="hljs-number">0</span>;<br>                ans++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans + cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：哈希表"><a href="#方法一：哈希表" class="headerlink" title="方法一：哈希表"></a>方法一：哈希表</h3><p>通过哈希表统计 <code>cpdomains</code> 中所有的子域名的频率。</p>
+<p>以 <code>google.mail.com</code> 为例，<code>google.mail.com</code> 为三级域名，<code>mail.com</code> 为二级域名，<code>com</code>为顶级域名。</p>
+<p>思路如下：</p>
+<ol>
+<li><p>遍历 <code>cpdomains</code> 列表，获取每一个 <code>cpdomain</code> 的访问次数 <code>cnt</code> 与其域名 <code>domain</code></p>
+</li>
+<li><p>将 <code>domain</code> 的访问次数累加至原哈希表</p>
+</li>
+<li><p>继续遍历 <code>domain</code>的子域名字符串</p>
+</li>
+<li><p>若 <code>domain[i] == &#39;.&#39;</code>，说明其之后为一个完整的子域名，将其访问次数累加到哈希表中。</p>
+</li>
+<li><p>遍历结束之后，将哈希表的 <code>K</code> 与 <code>V</code> 以列表的形式返回</p>
+</li>
+</ol>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">subdomainVisits</span>(<span class="hljs-params">self, cpdomains: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]:<br>        dic = defaultdict(<span class="hljs-built_in">int</span>)<br>        <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> cpdomains:<br>            ds = d.split()<br>            cnt, domain = <span class="hljs-built_in">int</span>(ds[<span class="hljs-number">0</span>]), ds[<span class="hljs-number">1</span>]<br>            dic[domain] += cnt<br>            <span class="hljs-keyword">for</span> i, x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(domain):<br>                <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;.&#x27;</span>:<br>                    dic[domain[i+<span class="hljs-number">1</span>:]] += cnt<br>        <span class="hljs-keyword">return</span> [<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;v&#125;</span> <span class="hljs-subst">&#123;k&#125;</span>&quot;</span> <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> dic.items()]<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第12篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第13篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -396,8 +385,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 921. Minumum Add to Make Parentheses Valid</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/04/LC-Solution-921-Minumum-Add-to-Make-Parentheses-Valid/</div>
+      <div>LC-Solution 811. Subdomain Visit Count</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/</div>
     </div>
     <div class="license-meta">
       
@@ -409,7 +398,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月5日</div>
         </div>
       
       
@@ -441,18 +430,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/LC-Solution-811-Subdomain-Visit-Count/" title="LC-Solution 811. Subdomain Visit Count">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 811. Subdomain Visit Count</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/03/LC-Solution-926-Flip-String-to-Monotone-Increasing/" title="LC-Solution 926. Flip String to Monotone Increasing">
-                        <span class="hidden-mobile">LC-Solution 926. Flip String to Monotone Increasing</span>
+                      <a href="/2022/10/04/LC-Solution-921-Minumum-Add-to-Make-Parentheses-Valid/" title="LC-Solution 921. Minumum Add to Make Parentheses Valid">
+                        <span class="hidden-mobile">LC-Solution 921. Minumum Add to Make Parentheses Valid</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
