@@ -16,28 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo从0到1搭建博客系列03：文章与评论模块1. 文章的编辑与发布在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。 这一部分我们仍然在Hexo博客根目录上操作。  执行以下命令，创建一篇新的文章。引号内为博客的标题    12hexo new &quot;&quot;e.g.: hexo new &quot;我的第一篇博客&quot;   如图所示，该博客已经被创建到 sou">
+    <meta name="description" content="1800. 最大升序子数组和 题目描述给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。 子数组是数组中的一个连续数字序列。 已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l &lt;&#x3D; i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo从0到1搭建博客系列03：文章与评论模块">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9703%EF%BC%9A%E6%96%87%E7%AB%A0%E4%B8%8E%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="LC-Solution 1800. Maximum Ascending Subarray Sum">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="Hexo从0到1搭建博客系列03：文章与评论模块1. 文章的编辑与发布在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。 这一部分我们仍然在Hexo博客根目录上操作。  执行以下命令，创建一篇新的文章。引号内为博客的标题    12hexo new &quot;&quot;e.g.: hexo new &quot;我的第一篇博客&quot;   如图所示，该博客已经被创建到 sou">
+<meta property="og:description" content="1800. 最大升序子数组和 题目描述给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。 子数组是数组中的一个连续数字序列。 已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l &lt;&#x3D; i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
-<meta property="article:published_time" content="2022-10-05T08:40:23.000Z">
-<meta property="article:modified_time" content="2022-10-05T08:40:39.492Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1800.jpg">
+<meta property="article:published_time" content="2022-10-07T05:35:20.000Z">
+<meta property="article:modified_time" content="2022-10-07T05:38:47.133Z">
 <meta property="article:author" content="ltyzzz">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
-<meta property="article:tag" content="博客">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1800.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo从0到1搭建博客系列03：文章与评论模块 - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 1800. Maximum Ascending Subarray Sum - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列03：文章与评论模块"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 1800. Maximum Ascending Subarray Sum"></span>
           
         </div>
 
@@ -225,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-05 16:40" pubdate>
-          2022年10月5日 下午
+        <time datetime="2022-10-07 13:35" pubdate>
+          2022年10月7日 下午
         </time>
       </span>
     
@@ -237,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.2k 字
         
       </span>
     
@@ -248,7 +246,7 @@
         
         
         
-          13 分钟
+          11 分钟
         
       </span>
     
@@ -294,76 +292,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo从0到1搭建博客系列03：文章与评论模块</h1>
+            <h1 style="display: none">LC-Solution 1800. Maximum Ascending Subarray Sum</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo从0到1搭建博客系列03：文章与评论模块"><a href="#Hexo从0到1搭建博客系列03：文章与评论模块" class="headerlink" title="Hexo从0到1搭建博客系列03：文章与评论模块"></a>Hexo从0到1搭建博客系列03：文章与评论模块</h1><h2 id="1-文章的编辑与发布"><a href="#1-文章的编辑与发布" class="headerlink" title="1. 文章的编辑与发布"></a>1. 文章的编辑与发布</h2><p>在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。</p>
-<p>这一部分我们仍然在Hexo博客根目录上操作。</p>
-<ol>
-<li>执行以下命令，创建一篇新的文章。引号内为博客的标题</li>
-</ol>
-  <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;&quot;</span><br>e.g.: hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;我的第一篇博客&quot;</span><br></code></pre></td></tr></table></figure>
-<p>  如图所示，该博客已经被创建到 <code>source/_posts</code> 目录下啦</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/first-blog.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="2">
-<li>编辑该页面，可以看到如下信息（可以采用 <a target="_blank" rel="noopener" href="https://github.com/marktext/marktext">MarkText</a> 进行编辑，这个是免费的）</li>
-</ol>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
-<p>  其中包含了博客的 <code>title</code>、<code>date</code>、<code>tags</code>信息</p>
-<ol start="3">
-<li>接下来，我们编辑博客的 <code>tags</code> 与 <code>categories</code>，仍然需要注意 <code>yaml</code> 格式</li>
-</ol>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">学习感悟</span>, <span class="hljs-string">知识分享</span>, <span class="hljs-string">Java</span>]<br><span class="hljs-attr">categories:</span> [<span class="hljs-string">Java基础</span>]<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
-<ol start="4">
-<li>在下面接着编辑博客内容（可以采用 <a target="_blank" rel="noopener" href="https://github.com/marktext/marktext">MarkText</a> 进行编辑，这个是免费的）</li>
-</ol>
-<p>  示例如下：</p>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">我的第一篇博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022-10-05 16:00:30</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">学习感悟</span>, <span class="hljs-string">知识分享</span>, <span class="hljs-string">Java</span>]<br><span class="hljs-attr">categories:</span> [<span class="hljs-string">Java基础</span>]<br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-comment"># 我的第一篇博客</span><br><br><span class="hljs-comment">## 1. Java基础</span><br><br><span class="hljs-string">Java是一门后端语言，我爱Java。</span><br><br><span class="hljs-comment">## 2. Java实战</span><br><br><span class="hljs-string">第一行代码</span><br><br><span class="hljs-string">```java</span><br><span class="hljs-string">System.out.println(&quot;Hello</span> <span class="hljs-string">World!&quot;);</span><br></code></pre></td></tr></table></figure>
-<ol start="5">
-<li><code>Ctrl + S</code> 保存，然后将博客运行到本地服务器。</li>
-</ol>
-  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
-<p>这样一来就可以完成博客的编辑与发布啦，看看成品吧~</p>
-<p>下面那一篇是 <code>Hexo</code> 初始化的文章</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/blog-content1.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/blogcontentpng"></p>
-<p>进入 <code>分类</code>、<code>标签</code> 页可以看到相应的内容</p>
-<h2 id="2-引入评论模块"><a href="#2-引入评论模块" class="headerlink" title="2. 引入评论模块"></a>2. 引入评论模块</h2><p>引入评论听起来非常高大上。如果自己手动搭建一个评论系统，将是需要一定技术的工作，而在<code>Hexo-Fluid</code> 中，这仅仅只是一个简单的配置</p>
-<ol>
-<li>打开之前粘贴好的 <code>_config.fluid.yml</code> 文件，找到以下内容。</li>
-</ol>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">disqus</span><br></code></pre></td></tr></table></figure>
-<p>  这里我推荐使用另外一个评论插件 <code>Valine</code>，所以将type进行相应的更改。</p>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">valine</span><br></code></pre></td></tr></table></figure>
-<p>  其他评论插件官方文档有详细的写，如果想尝试其他的，请点击[这里](<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%AF%84%E8%AE%BA">配置指南 | Hexo Fluid 用户手册</a>)查找~</p>
-<ol start="2">
-<li><p>进入 <a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">Valine</a> 主页，注册一个 <code>LeanCloud</code> 账号，然后完成相应的实名认证。这一部分就比较简单啦，不再赘述。</p>
+                <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-ascending-subarray-sum/">1800. 最大升序子数组和</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个正整数组成的数组 <code>nums</code> ，返回 <code>nums</code> 中一个 <strong>升序</strong> 子数组的最大可能元素和。</p>
+<p>子数组是数组中的一个连续数字序列。</p>
+<p>已知子数组 <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，若对所有 <code>i</code>（<code>l &lt;= i &lt; r</code>），<code>numsi</code> &lt; <code>numsi+1</code> 都成立，则称这一子数组为 <strong>升序</strong> 子数组。注意，大小为 1 的子数组也视作 <strong>升序</strong> 子数组。</p>
+<p><strong>示例1：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[10,20,30,5,10,50]</span><br>输出：65<br>解释：<span class="hljs-comment">[5,10,50]</span> 是元素和最大的升序子数组，最大元素和为 65 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例2：</strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：nums = <span class="hljs-string">[10,20,30,40,50]</span><br>输出：<span class="hljs-number">150</span><br>解释：<span class="hljs-string">[10,20,30,40,50]</span> 是元素和最大的升序子数组，最大元素和为 <span class="hljs-number">150</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例3：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[12,17,15,13,10,11,12]</span><br>输出：33<br>解释：<span class="hljs-comment">[10,11,12]</span> 是元素和最大的升序子数组，最大元素和为 33 。 <br></code></pre></td></tr></table></figure>
+
+<p><strong>示例4：</strong></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">100,10,1</span>]<br>输出：<span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：简单模拟"><a href="#方法一：简单模拟" class="headerlink" title="方法一：简单模拟"></a>方法一：简单模拟</h3><p>遍历数组，比较相邻元素之间是否满足升序条件。</p>
+<p>用 <code>s</code> 记录当前升序子数组的和，用 <code>ans</code> 记录最终最大的和。</p>
+<ul>
+<li><p>若当前元素大于前一个元素（ <code>nums[i] &gt; nums[i - 1</code>] ），将当前元素 <code>nums[i]</code> 累加到 <code>s</code> 中，并更新 <code>ans = max(ans, s)</code></p>
 </li>
-<li><p>进入 <code>LeanCloud</code> 个人主页控制台，左上角创建应用。</p>
+<li><p>否则，将 <code>s</code> 重置为当前元素，即 <code>s = nums[i]</code></p>
 </li>
-</ol>
-<p>  我已经创建过啦，就不再创建了。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leadcloud-page.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="4">
-<li>点击进入创建好的应用，点击左侧菜单 设置 - 应用凭证，就可以看到相应的配置信息啦</li>
-</ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leancloud-key.png" srcset="/img/loading.gif" lazyload></p>
-<ol start="5">
-<li>将 <code>AppID</code> 与 <code>AppKey</code> 复制并粘贴到 <code>_config.fluid.yml</code> 文件中如下相应的位置</li>
-</ol>
-  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-string">xxxxx</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-string">xxxxx</span><br></code></pre></td></tr></table></figure>
-<ol start="6">
-<li>保存配置文件，再次运行博客到本地服务器</li>
-</ol>
-  <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
-<p>打开之前发布的博客页，拉到最底部，即可看到评论界面啦~</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/comment.png" srcset="/img/loading.gif" lazyload></p>
-<p>由于 <code>Valine</code> 是一个无后端评论系统，想要管理评论的话，得去 <code>LeanCloud</code> 后台数据存储进行管理相关评论数据。</p>
-<h2 id="3-后记"><a href="#3-后记" class="headerlink" title="3. 后记"></a>3. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
-<p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
-<p>此外，从2022.10.1开始，为激励自己持续刷题，我开始持续日更Leetcode题解啦~</p>
-<p>所有题解均已放到<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Github仓库</a>中，欢迎大家Star并提出Issue~</p>
+</ul>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">maxAscendingSum</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        ans = s = nums[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)):<br>            <span class="hljs-keyword">if</span> nums[i] &gt; nums[i - <span class="hljs-number">1</span>]:<br>                s += nums[i]<br>                ans = <span class="hljs-built_in">max</span>(ans, s)<br>            <span class="hljs-keyword">else</span>:<br>                s = nums[i]<br>        <span class="hljs-keyword">return</span> ans      <br></code></pre></td></tr></table></figure>
+
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxAscendingSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> nums[<span class="hljs-number">0</span>], sum = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &gt; nums[i - <span class="hljs-number">1</span>]) &#123;<br>                sum += nums[i];<br>                ans = Math.max(ans, sum);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                sum = nums[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
+<p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第14篇题解，欢迎各位star并提出Issue~</p>
+<p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
               </div>
@@ -382,7 +352,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="category-chain-item">Hexo搭建博客</a>
+  <a href="/categories/Leetcode%E9%A2%98%E8%A7%A3/" class="category-chain-item">Leetcode题解</a>
   
   
 
@@ -397,11 +367,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/">#Hexo</a>
-      
-        <a href="/tags/Fluid/">#Fluid</a>
-      
-        <a href="/tags/%E5%8D%9A%E5%AE%A2/">#博客</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
       
     </div>
   
@@ -413,8 +379,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo从0到1搭建博客系列03：文章与评论模块</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/05/Hexo从0到1搭建博客系列03：文章与评论模块/</div>
+      <div>LC-Solution 1800. Maximum Ascending Subarray Sum</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/</div>
     </div>
     <div class="license-meta">
       
@@ -426,7 +392,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月5日</div>
+          <div>2022年10月7日</div>
         </div>
       
       
@@ -458,18 +424,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/" title="LC-Solution 1800. Maximum Ascending Subarray Sum">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 1800. Maximum Ascending Subarray Sum</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9702%EF%BC%9A%E5%BC%95%E5%85%A5Fluid/" title="Hexo从0到1搭建博客系列02：引入Fluid">
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列02：引入Fluid</span>
+                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9703%EF%BC%9A%E6%96%87%E7%AB%A0%E4%B8%8E%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/" title="Hexo从0到1搭建博客系列03：文章与评论模块">
+                        <span class="hidden-mobile">Hexo从0到1搭建博客系列03：文章与评论模块</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
