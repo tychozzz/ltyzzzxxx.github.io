@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1800. 最大升序子数组和 题目描述给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。 子数组是数组中的一个连续数字序列。 已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l &lt;&#x3D; i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为">
+    <meta name="description" content="870. Advantage Shuffle题目描述给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。 返回 nums1 的任意排列，使其相对于 nums2 的优势最大化。 示例 1： 12输入：nums1 &#x3D; [2,7,11,15], nums2 &#x3D; [1,10,4,11]输">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 1800. Maximum Ascending Subarray Sum">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/index.html">
+<meta property="og:title" content="LC-Solution 870. Advantage Shuffle">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/08/LC-Solution-870-Advantage-Shuffle/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="1800. 最大升序子数组和 题目描述给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。 子数组是数组中的一个连续数字序列。 已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l &lt;&#x3D; i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为">
+<meta property="og:description" content="870. Advantage Shuffle题目描述给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。 返回 nums1 的任意排列，使其相对于 nums2 的优势最大化。 示例 1： 12输入：nums1 &#x3D; [2,7,11,15], nums2 &#x3D; [1,10,4,11]输">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1800.jpg">
-<meta property="article:published_time" content="2022-10-07T05:35:20.000Z">
-<meta property="article:modified_time" content="2022-10-07T05:38:47.133Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc870.jpg">
+<meta property="article:published_time" content="2022-10-08T07:43:39.000Z">
+<meta property="article:modified_time" content="2022-10-08T07:44:27.237Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1800.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc870.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 1800. Maximum Ascending Subarray Sum - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 870. Advantage Shuffle - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 1800. Maximum Ascending Subarray Sum"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 870. Advantage Shuffle"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-07 13:35" pubdate>
-          2022年10月7日 下午
+        <time datetime="2022-10-08 15:43" pubdate>
+          2022年10月8日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.8k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          11 分钟
+          16 分钟
         
       </span>
     
@@ -292,47 +292,55 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 1800. Maximum Ascending Subarray Sum</h1>
+            <h1 style="display: none">LC-Solution 870. Advantage Shuffle</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-ascending-subarray-sum/">1800. 最大升序子数组和</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个正整数组成的数组 <code>nums</code> ，返回 <code>nums</code> 中一个 <strong>升序</strong> 子数组的最大可能元素和。</p>
-<p>子数组是数组中的一个连续数字序列。</p>
-<p>已知子数组 <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，若对所有 <code>i</code>（<code>l &lt;= i &lt; r</code>），<code>numsi</code> &lt; <code>numsi+1</code> 都成立，则称这一子数组为 <strong>升序</strong> 子数组。注意，大小为 1 的子数组也视作 <strong>升序</strong> 子数组。</p>
-<p><strong>示例1：</strong></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[10,20,30,5,10,50]</span><br>输出：65<br>解释：<span class="hljs-comment">[5,10,50]</span> 是元素和最大的升序子数组，最大元素和为 65 。<br></code></pre></td></tr></table></figure>
+                <h1 id="870-Advantage-Shuffle"><a href="#870-Advantage-Shuffle" class="headerlink" title="870. Advantage Shuffle"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/advantage-shuffle/">870. Advantage Shuffle</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定两个大小相等的数组 <code>nums1</code> 和 <code>nums2</code>，<code>nums1</code> 相对于 <code>nums</code> 的优势可以用满足 <code>nums1[i]</code> &gt; <code>nums2[i]</code> 的索引 <code>i</code> 的数目来描述。</p>
+<p>返回 <code>nums1</code> 的任意排列，使其相对于 <code>nums2</code> 的优势最大化。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：nums1 = <span class="hljs-string">[2,7,11,15]</span>, nums2 = <span class="hljs-string">[1,10,4,11]</span><br>输出：<span class="hljs-string">[2,11,7,15]</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>示例2：</strong></p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：nums = <span class="hljs-string">[10,20,30,40,50]</span><br>输出：<span class="hljs-number">150</span><br>解释：<span class="hljs-string">[10,20,30,40,50]</span> 是元素和最大的升序子数组，最大元素和为 <span class="hljs-number">150</span> 。<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例3：</strong></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[12,17,15,13,10,11,12]</span><br>输出：33<br>解释：<span class="hljs-comment">[10,11,12]</span> 是元素和最大的升序子数组，最大元素和为 33 。 <br></code></pre></td></tr></table></figure>
-
-<p><strong>示例4：</strong></p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">100,10,1</span>]<br>输出：<span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：nums1 = <span class="hljs-string">[12,24,8,32]</span>, nums2 = <span class="hljs-string">[13,25,32,11]</span><br>输出：<span class="hljs-string">[24,32,8,12]</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 100</code></li>
-<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
+<li><p>1 &lt;&#x3D; nums1.length &lt;&#x3D; 105</p>
+</li>
+<li><p>nums2.length &#x3D;&#x3D; nums1.length</p>
+</li>
+<li><p>0 &lt;&#x3D; nums1[i], nums2[i] &lt;&#x3D; 109</p>
+</li>
 </ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：简单模拟"><a href="#方法一：简单模拟" class="headerlink" title="方法一：简单模拟"></a>方法一：简单模拟</h3><p>遍历数组，比较相邻元素之间是否满足升序条件。</p>
-<p>用 <code>s</code> 记录当前升序子数组的和，用 <code>ans</code> 记录最终最大的和。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：田忌赛马-gt-贪心-双指针"><a href="#方法一：田忌赛马-gt-贪心-双指针" class="headerlink" title="方法一：田忌赛马 -&gt; 贪心 + 双指针"></a>方法一：田忌赛马 -&gt; 贪心 + 双指针</h3><p>该方案采用的是 <a href="%5B%E5%8A%9B%E6%89%A3%5D(https://leetcode.cn/problems/advantage-shuffle/solution/tian-ji-sai-ma-by-endlesscheng-yxm6/)">灵神</a> 的题解，下面我说一下我的理解</p>
+<p>题目要求使 <code>nums1</code> 数组 <strong>“战胜”</strong> <code>nums2</code> 数组的次数最大化</p>
+<p>通过此很容易想到贪心思路，对 <code>nums1</code> 与 <code>nums2</code> 分别进行排序，</p>
+<p>然后对比 <code>nums1</code> 当前最小值 与 <code>nums2</code> 当前最小值</p>
 <ul>
-<li><p>若当前元素大于前一个元素（ <code>nums[i] &gt; nums[i - 1</code>] ），将当前元素 <code>nums[i]</code> 累加到 <code>s</code> 中，并更新 <code>ans = max(ans, s)</code></p>
+<li><p>若 <code>nums1</code> 的当前最小值大于 <code>nums2</code> 的当前最小值，则 <code>nums1</code> 获胜</p>
 </li>
-<li><p>否则，将 <code>s</code> 重置为当前元素，即 <code>s = nums[i]</code></p>
+<li><p>否则，说明 <code>nums1</code> 的当前最小值无法战胜 <code>nums2</code> 的所有值，所以让 <code>nums1</code> 的当前最小值与 <code>nums2</code> 的当前最大值作战（即当“炮灰”），这样可以抵消掉 <code>nums2</code> 的最大值。</p>
 </li>
 </ul>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">maxAscendingSum</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        ans = s = nums[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)):<br>            <span class="hljs-keyword">if</span> nums[i] &gt; nums[i - <span class="hljs-number">1</span>]:<br>                s += nums[i]<br>                ans = <span class="hljs-built_in">max</span>(ans, s)<br>            <span class="hljs-keyword">else</span>:<br>                s = nums[i]<br>        <span class="hljs-keyword">return</span> ans      <br></code></pre></td></tr></table></figure>
+<p>这就是典型的 <code>田忌赛马</code> 思路，用下等马去战胜上等马！</p>
+<ul>
+<li><code>nums1</code> 的下等马无法战胜 <code>nums2</code> 的下等马时，就让其当炮灰去对战 <code>nums2</code> 的上等马</li>
+</ul>
+<p>每一个 “作战回合” 结束之后，需要将本回合用过的元素摒弃掉。</p>
+<p>而 <code>nums2</code> 的最小值（即数组尾元素）或最大值（即数组首元素）均可能被使用，所以本题采用 <code>首尾双指针</code> 思路，逐渐缩小问题规模，最终得到全部对应关系。</p>
+<p>但在代码具体实现过程中，如果对两个数组均进行排序，则丢失了原本的 ”作战“ 顺序，所以只对 <code>nums1</code> 进行排序。用额外的下标数组 <code>ids</code>，根据 <code>nums2</code> 的元素大小，对其下标进行排序。<code>ids[0]</code> 对应 <code>nums2</code> 第一小值下标，<code>ids[1]</code> 对应 <code>nums2</code> 第二小值下标…</p>
+<p>通过 <code>ids</code> 数组，就可以知道当前 <code>nums2</code> 下标所要对应的 <code>nums1</code> 元素。</p>
+<p>感觉这道题直接看代码更容易理解。</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">advantageCount</span>(<span class="hljs-params">self, nums1: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>], nums2: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:<br>        n = <span class="hljs-built_in">len</span>(nums1)<br>        ans = [<span class="hljs-number">0</span>] * n<br>        nums1.sort()<br>        ids = <span class="hljs-built_in">sorted</span>(<span class="hljs-built_in">range</span>(n), key=<span class="hljs-keyword">lambda</span> i: nums2[i])<br>        left, right = <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> nums1:<br>            <span class="hljs-keyword">if</span> x &gt; nums2[ids[left]]:<br>                ans[ids[left]] = x  <br>                left += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                ans[ids[right]] = x  <br>                right -= <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> ans<br></code></pre></td></tr></table></figure>
 
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxAscendingSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> nums[<span class="hljs-number">0</span>], sum = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &gt; nums[i - <span class="hljs-number">1</span>]) &#123;<br>                sum += nums[i];<br>                ans = Math.max(ans, sum);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                sum = nums[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p>注意：Java采用比较器排序时，只能使用包装类Integer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] advantageCount(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> nums2.length;<br>        Integer[] ids = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[len];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) ids[i] = i;<br>        Arrays.sort(nums1);<br>        Arrays.sort(ids, (a, b) -&gt; nums2[a] - nums2[b]);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, q = len - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[len];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x : nums1) &#123;<br>            <span class="hljs-keyword">if</span>(x &gt; nums2[ids[p]]) ans[ids[p++]] = x;<br>            <span class="hljs-keyword">else</span> ans[ids[q--]] = x;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第14篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第15篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -379,8 +387,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 1800. Maximum Ascending Subarray Sum</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/</div>
+      <div>LC-Solution 870. Advantage Shuffle</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/08/LC-Solution-870-Advantage-Shuffle/</div>
     </div>
     <div class="license-meta">
       
@@ -392,7 +400,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月7日</div>
+          <div>2022年10月8日</div>
         </div>
       
       
@@ -424,18 +432,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/08/LC-Solution-870-Advantage-Shuffle/" title="LC-Solution 870. Advantage Shuffle">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 870. Advantage Shuffle</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/05/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9703%EF%BC%9A%E6%96%87%E7%AB%A0%E4%B8%8E%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/" title="Hexo从0到1搭建博客系列03：文章与评论模块">
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列03：文章与评论模块</span>
+                      <a href="/2022/10/07/LC-Solution-1800-Maximum-Ascending-Subarray-Sum/" title="LC-Solution 1800. Maximum Ascending Subarray Sum">
+                        <span class="hidden-mobile">LC-Solution 1800. Maximum Ascending Subarray Sum</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
