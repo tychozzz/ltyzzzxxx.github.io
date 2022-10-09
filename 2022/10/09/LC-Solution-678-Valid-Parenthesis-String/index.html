@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="856. Score of Parentheses题目描述给定一个平衡括号字符串 S，按下述规则计算该字符串的分数：  () 得 1 分。 AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。 (A) 得 2 * A 分，其中 A 是平衡括号字符串。  示例1： 12输入： &quot;()&quot;输出： 1  示例2： 12输入： &quot;(())&quot;输出： 2  示例">
+    <meta name="description" content="678. 有效的括号字符串题目描述给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：  任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例1：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 856. Score of Parentheses">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/09/LC-Solution-856-Score-of-Parentheses/index.html">
+<meta property="og:title" content="LC-Solution 678. Valid Parenthesis String">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/09/LC-Solution-678-Valid-Parenthesis-String/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="856. Score of Parentheses题目描述给定一个平衡括号字符串 S，按下述规则计算该字符串的分数：  () 得 1 分。 AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。 (A) 得 2 * A 分，其中 A 是平衡括号字符串。  示例1： 12输入： &quot;()&quot;输出： 1  示例2： 12输入： &quot;(())&quot;输出： 2  示例">
+<meta property="og:description" content="678. 有效的括号字符串题目描述给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：  任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例1：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc856.jpg">
-<meta property="article:published_time" content="2022-10-09T06:13:29.000Z">
-<meta property="article:modified_time" content="2022-10-09T06:16:32.530Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc678.jpg">
+<meta property="article:published_time" content="2022-10-09T09:05:07.000Z">
+<meta property="article:modified_time" content="2022-10-09T09:05:56.647Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc856.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc678.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 856. Score of Parentheses - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 678. Valid Parenthesis String - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 856. Score of Parentheses"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 678. Valid Parenthesis String"></span>
           
         </div>
 
@@ -223,7 +223,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-09 14:13" pubdate>
+        <time datetime="2022-10-09 17:05" pubdate>
           2022年10月9日 下午
         </time>
       </span>
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.2k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          17 分钟
+          19 分钟
         
       </span>
     
@@ -292,73 +292,65 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 856. Score of Parentheses</h1>
+            <h1 style="display: none">LC-Solution 678. Valid Parenthesis String</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="856-Score-of-Parentheses"><a href="#856-Score-of-Parentheses" class="headerlink" title="856. Score of Parentheses"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/score-of-parentheses/">856. Score of Parentheses</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个平衡括号字符串 <code>S</code>，按下述规则计算该字符串的分数：</p>
-<ul>
-<li><code>()</code> 得 1 分。</li>
-<li><code>AB</code> 得 <code>A + B</code> 分，其中 A 和 B 是平衡括号字符串。</li>
-<li><code>(A)</code> 得 <code>2 * A</code> 分，其中 A 是平衡括号字符串。</li>
-</ul>
+                <h1 id="678-有效的括号字符串"><a href="#678-有效的括号字符串" class="headerlink" title="678. 有效的括号字符串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parenthesis-string/">678. 有效的括号字符串</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个只包含三种字符的字符串：<code>（</code> ，<code>）</code> 和 <code>*</code>，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：</p>
+<ol>
+<li>任何左括号 <code>(</code> 必须有相应的右括号 <code>)</code>。</li>
+<li>任何右括号 <code>)</code> 必须有相应的左括号 <code>(</code> 。</li>
+<li>左括号 <code>(</code> 必须在对应的右括号之前 <code>)</code>。</li>
+<li><code>*</code> 可以被视为单个右括号 <code>)</code> ，或单个左括号 <code>(</code> ，或一个空字符串。</li>
+<li>一个空字符串也被视为有效字符串。</li>
+</ol>
 <p><strong>示例1：</strong></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs 1c">输入： <span class="hljs-string">&quot;()&quot;</span><br>输出： <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">输入: <span class="hljs-string">&quot;()&quot;</span><br>输出: <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>示例2：</strong></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs 1c">输入： <span class="hljs-string">&quot;(())&quot;</span><br>输出： <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">输入: <span class="hljs-string">&quot;(*)&quot;</span><br>输出: <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>示例3：</strong></p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss">输入： &quot;()()&quot;<br>输出： <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">输入: <span class="hljs-string">&quot;(*))&quot;</span><br>输出: <span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>示例4：</strong></p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss">输入： &quot;(()(()))&quot;<br>输出： <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<p><strong>注意:</strong></p>
 <ol>
-<li><code>S</code> 是平衡括号字符串，且只含有 <code>(</code> 和 <code>)</code> 。</li>
-<li><code>2 &lt;= S.length &lt;= 50</code></li>
+<li>字符串大小将在 [1，100] 范围内。</li>
 </ol>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：根据-计数"><a href="#方法一：根据-计数" class="headerlink" title="方法一：根据()计数"></a>方法一：根据()计数</h3><p>分析题意可知，外层括号所累加的分数都与最里括号 <code>&#39;()&#39;</code> 有关。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：双栈"><a href="#方法一：双栈" class="headerlink" title="方法一：双栈"></a>方法一：双栈</h3><p>遇到括号题，第一反应便是栈。因为栈的先进后出的特性与括号之间嵌套的特性相一致。</p>
+<p>栈内总是存储左括号 <code>&#39;(&#39;</code>，通过右括号 <code>&#39;)&#39;</code> 与左括号 <code>&#39;(&#39;</code> 配对，使左括号出栈。</p>
+<p>本题思路：</p>
+<p><code>&#39;*&#39;</code> 可以表示三种字符：<code>&#39;&#39;</code> 、 <code>&#39;(&#39;</code> 、<code>&#39;)&#39;</code>，优先将 <code>&#39;*&#39;</code> 当作左括号使用。</p>
+<p>因此使用两个栈分别存储 <code>&#39;*&#39;</code> 与 <code>&#39;(&#39;</code> 对应于 <code>s</code> 的下标。</p>
 <ul>
-<li><p>假设当前括号深度为 <code>d</code>，每一个 <code>&#39;()&#39;</code> 的得分为 <code>2 ** d</code> 或者 <code>1 &lt;&lt; d</code></p>
-</li>
-<li><p>最后的总分数与 <code>&#39;()&#39;</code> 的数量有关。</p>
+<li><p>存储下标的意义在于：由于我们是优先将 <code>&#39;*&#39;</code> 当作左括号使用，当右括号 <code>&#39;)&#39;</code> 全部消耗完。这时候多余的 <code>&#39;*&#39;</code> 将要作为右括号 <code>&#39;)&#39;</code> 与剩余的 <code>&#39;(&#39;</code> 进行配对。右括号必须在左括号之后。因此存储下标可以帮助我们判断 <code>&#39;*&#39;</code> 与 <code>&#39;(&#39;</code> 的先后顺序是否符合合法括号的要求。</p>
+<p><code>&#39;(&#39;</code> 使用优先级 <strong>大于</strong> <code>&#39;*&#39;</code></p>
 </li>
 </ul>
-<p>举例说明：<code>&#39;(()(()))&#39;</code>，利用乘法分配律可表示为 <code>&#39;(()) + ((()))&#39;</code></p>
-<p>共有两个 <code>&#39;()&#39;</code>，其分数为 <code>2 ** 1 + 2 ** 2 = 6</code></p>
-<p>所以，我们只需要找到 <code>s</code> 中的每一个 <code>&#39;()&#39;</code> 即可</p>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">scoreOfParentheses</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        ans, d = <span class="hljs-number">0</span>, <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i, v <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(s):<br>            d += <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> v == <span class="hljs-string">&#x27;(&#x27;</span> <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span><br>            <span class="hljs-keyword">if</span> v == <span class="hljs-string">&#x27;)&#x27;</span> <span class="hljs-keyword">and</span> s[i - <span class="hljs-number">1</span>] ==<span class="hljs-string">&#x27;(&#x27;</span>:<br>                ans += <span class="hljs-number">1</span> &lt;&lt; d<br>        <span class="hljs-keyword">return</span> ans<br></code></pre></td></tr></table></figure>
-
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">scoreOfParentheses</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, d = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); i++) &#123;<br>            d += s.charAt(i) == <span class="hljs-string">&#x27;(&#x27;</span> ? <span class="hljs-number">1</span> : -<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(s.charAt(i) == <span class="hljs-string">&#x27;)&#x27;</span> &amp;&amp; s.charAt(i - <span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;(&#x27;</span>) &#123;<br>                ans += <span class="hljs-number">1</span> &lt;&lt; d;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="方法二：栈"><a href="#方法二：栈" class="headerlink" title="方法二：栈"></a>方法二：栈</h3><p>采用栈记录字符串 <code>s</code> 对应的分数。初始栈顶部的分数为0。</p>
-<p>遍历字符串：</p>
 <ol>
-<li><p>若 <code>s[i] == &#39;(&#39;</code>，先将分数0压入栈顶占位</p>
-</li>
-<li><p>若 <code>s[i] == &#39;)&#39;</code>，此时有两种情况：</p>
-</li>
+<li>遍历字符串 <code>s</code> ：</li>
 </ol>
-<ul>
-<li><p><code>s[i - 1] == &#39;(&#39;</code>，这是一个 <code>&#39;()&#39;</code>， 此时栈顶值 <code>v</code> 为0，该分数为1</p>
-</li>
-<li><p><code>s[i - 1] != &#39;(&#39;</code>，这是一个外层括号，该分数为栈顶值 <code>v</code> × 2</p>
-</li>
-</ul>
-<p>  两种情况综合为 <code>max(v * 2, 1)</code></p>
-<p>  将栈顶值出栈计算完成之后，再将计算结果累加到当前的栈顶值。</p>
-<p>最终返回结果为栈顶值。</p>
-<p>这是因为一开始还未遍历字符串 <code>s</code> 时，就已经初始化了栈顶值。而且该字符串 <code>s</code> 为平衡括号字符串，说明 <code>&#39;(&#39; </code>与 <code>&#39;)&#39;</code> 数量一致，所以最后栈中一个值，即为最终分数。</p>
-<h4 id="Python3-1"><a href="#Python3-1" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">scoreOfParentheses</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        stack = [<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> s:<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                stack.append(<span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">else</span>:<br>                v = stack.pop()<br>                stack[-<span class="hljs-number">1</span>] += <span class="hljs-built_in">max</span>(v * <span class="hljs-number">2</span>, <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> stack[<span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
+<p>  . 若 <code>s[i] == &#39;(&#39;</code>， 将其添加到 <code>&#39;(&#39;</code> 栈中</p>
+<p>  . 若 <code>s[i] == &#39;*&#39;</code>， 将其添加到 <code>&#39;*&#39;</code> 栈中</p>
+<p>  . 若 <code>s[i] == &#39;*&#39;</code>：</p>
+<p>  . <code>&#39;(&#39;</code> 栈 或 <code>&#39;*&#39;</code> 栈不为空时，优先使用 <code>&#39;(&#39;</code> 栈进行出栈</p>
+<p>  . 否则，没有字符与 <code>&#39;(&#39;</code> 进行配对，返回 <code>False</code></p>
+<ol start="2">
+<li>遍历 <code>&#39;(&#39;</code> 与 <code>&#39;*&#39;</code> 栈，将 <code>&#39;*&#39;</code> 当作 <code>&#39;)&#39;</code> 与 剩余 <code>&#39;(&#39;</code> 进行匹配</li>
+</ol>
+<p>  . 若弹出的 <code>&#39;*&#39;</code> 下标 <strong>小于</strong> 弹出的 <code>&#39;(&#39;</code>， 返回False</p>
+<ol start="3">
+<li>最终判断是否仍然有剩余的 <code>&#39;(&#39;</code></li>
+</ol>
+<p>  . 若仍然有，返回False；否则，返回True</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">checkValidString</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bool</span>:<br>        stack1, stack2 = [], []<br>        <span class="hljs-keyword">for</span> i, x <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(s):<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;(&#x27;</span>:<br>                stack1.append(i)<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;*&#x27;</span>:<br>                stack2.append(i)<br>            <span class="hljs-keyword">if</span> x == <span class="hljs-string">&#x27;)&#x27;</span>:<br>                <span class="hljs-keyword">if</span> stack1:<br>                    stack1.pop()<br>                <span class="hljs-keyword">elif</span> stack2:<br>                    stack2.pop()<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>        <span class="hljs-keyword">while</span> stack1 <span class="hljs-keyword">and</span> stack2:<br>            idx1, idx2 = stack1.pop(), stack2.pop()<br>            <span class="hljs-keyword">if</span> idx1 &gt; idx2:<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">not</span> stack1<br></code></pre></td></tr></table></figure>
 
-<h4 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">scoreOfParentheses</span><span class="hljs-params">(String s)</span> &#123;<br>        Deque&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        stack.addLast(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c : s.toCharArray()) &#123;<br>            <span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;(&#x27;</span>) stack.addLast(<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">v</span> <span class="hljs-operator">=</span> stack.pollLast();<br>                stack.addLast(stack.pollLast() + Math.max(v * <span class="hljs-number">2</span>, <span class="hljs-number">1</span>));<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> stack.pollLast();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">checkValidString</span><span class="hljs-params">(String s)</span> &#123;<br>        Deque&lt;Integer&gt; stack1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        Deque&lt;Integer&gt; stack2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        <span class="hljs-type">char</span>[] cs = s.toCharArray();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cs.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(cs[i] == <span class="hljs-string">&#x27;(&#x27;</span>) stack1.addLast(i);<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(cs[i] == <span class="hljs-string">&#x27;*&#x27;</span>) stack2.addLast(i);<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span>(!stack1.isEmpty()) stack1.pollLast();<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!stack2.isEmpty()) stack2.pollLast();<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(!stack1.isEmpty() &amp;&amp; !stack2.isEmpty()) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx1</span> <span class="hljs-operator">=</span> stack1.pollLast(), idx2 = stack2.pollLast();<br>            <span class="hljs-keyword">if</span>(idx1 &gt; idx2) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> stack1.isEmpty();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第16篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第17篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -405,8 +397,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 856. Score of Parentheses</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/09/LC-Solution-856-Score-of-Parentheses/</div>
+      <div>LC-Solution 678. Valid Parenthesis String</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/09/LC-Solution-678-Valid-Parenthesis-String/</div>
     </div>
     <div class="license-meta">
       
@@ -450,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/09/LC-Solution-678-Valid-Parenthesis-String/" title="LC-Solution 678. Valid Parenthesis String">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 678. Valid Parenthesis String</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/09/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="分布式锁学习笔记">
-                        <span class="hidden-mobile">分布式锁学习笔记</span>
+                      <a href="/2022/10/09/LC-Solution-856-Score-of-Parentheses/" title="LC-Solution 856. Score of Parentheses">
+                        <span class="hidden-mobile">LC-Solution 856. Score of Parentheses</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
