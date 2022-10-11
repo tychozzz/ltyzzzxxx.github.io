@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1790. 仅执行一次字符串交换能否使两个字符串相等题目描述给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。 如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。 示例 1： 123输入：s1 &#x3D; &quot;bank&quot;,">
+    <meta name="description" content="1833. 雪糕的最大数量题目描述夏日炎炎，小男孩 Tony 想买一些雪糕消消暑。 商店中新到 n 支雪糕，用长度为 n 的数组 costs 表示雪糕的定价，其中 costs[i] 表示第 i 支雪糕的现金价格。Tony 一共有 coins 现金可以用于消费，他想要买尽可能多的雪糕。 给你价格数组 costs 和现金量 coins ，请你计算并返回 Tony 用 coins 现金能够买到的雪糕的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 1790. Check if One String Swap Can Make Strings Equal">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/11/LC-Solution-1790-Check-if-One-String-Swap-Can-Make-Strings-Equal/index.html">
+<meta property="og:title" content="LC-Solution 1833. Maximum Ice Cream Bars">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/11/LC-Solution-1833-Maximum-Ice-Cream-Bars/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="1790. 仅执行一次字符串交换能否使两个字符串相等题目描述给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。 如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。 示例 1： 123输入：s1 &#x3D; &quot;bank&quot;,">
+<meta property="og:description" content="1833. 雪糕的最大数量题目描述夏日炎炎，小男孩 Tony 想买一些雪糕消消暑。 商店中新到 n 支雪糕，用长度为 n 的数组 costs 表示雪糕的定价，其中 costs[i] 表示第 i 支雪糕的现金价格。Tony 一共有 coins 现金可以用于消费，他想要买尽可能多的雪糕。 给你价格数组 costs 和现金量 coins ，请你计算并返回 Tony 用 coins 现金能够买到的雪糕的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1790.jpg">
-<meta property="article:published_time" content="2022-10-11T04:25:55.000Z">
-<meta property="article:modified_time" content="2022-10-11T04:26:57.225Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1833.jpg">
+<meta property="article:published_time" content="2022-10-11T07:17:27.000Z">
+<meta property="article:modified_time" content="2022-10-11T07:18:44.457Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1790.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/lc1833.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 1790. Check if One String Swap Can Make Strings Equal - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 1833. Maximum Ice Cream Bars - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 1790. Check if One String Swap Can Make Strings Equal"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 1833. Maximum Ice Cream Bars"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-11 12:25" pubdate>
-          2022年10月11日 中午
+        <time datetime="2022-10-11 15:17" pubdate>
+          2022年10月11日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          1.2k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          21 分钟
+          10 分钟
         
       </span>
     
@@ -292,68 +292,43 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 1790. Check if One String Swap Can Make Strings Equal</h1>
+            <h1 style="display: none">LC-Solution 1833. Maximum Ice Cream Bars</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1790-仅执行一次字符串交换能否使两个字符串相等"><a href="#1790-仅执行一次字符串交换能否使两个字符串相等" class="headerlink" title="1790. 仅执行一次字符串交换能否使两个字符串相等"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/check-if-one-string-swap-can-make-strings-equal/">1790. 仅执行一次字符串交换能否使两个字符串相等</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你长度相等的两个字符串 <code>s1</code> 和 <code>s2</code> 。一次 <strong>字符串交换</strong> 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。</p>
-<p>如果对 <strong>其中一个字符串</strong> 执行 <strong>最多一次字符串交换</strong> 就可以使两个字符串相等，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+                <h1 id="1833-雪糕的最大数量"><a href="#1833-雪糕的最大数量" class="headerlink" title="1833. 雪糕的最大数量"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-ice-cream-bars/">1833. 雪糕的最大数量</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>夏日炎炎，小男孩 Tony 想买一些雪糕消消暑。</p>
+<p>商店中新到 <code>n</code> 支雪糕，用长度为 <code>n</code> 的数组 <code>costs</code> 表示雪糕的定价，其中 <code>costs[i]</code> 表示第 <code>i</code> 支雪糕的现金价格。Tony 一共有 <code>coins</code> 现金可以用于消费，他想要买尽可能多的雪糕。</p>
+<p>给你价格数组 <code>costs</code> 和现金量 <code>coins</code> ，请你计算并返回 Tony 用 <code>coins</code> 现金能够买到的雪糕的 <strong>最大数量</strong> 。</p>
+<p><strong>注意：</strong> Tony 可以按任意顺序购买雪糕。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入：<span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;bank&quot;</span>, <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;kanb&quot;</span><br>输出：true<br>解释：例如，交换 <span class="hljs-built_in">s2</span> 中的第一个和最后一个字符可以得到 <span class="hljs-string">&quot;bank&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：costs = [1,3,2,4,1], coins = 7<br>输出：4<br>解释：Tony 可以买下标为 0、1、2、4 的雪糕，总价为<span class="hljs-number"> 1 </span>+<span class="hljs-number"> 3 </span>+<span class="hljs-number"> 2 </span>+<span class="hljs-number"> 1 </span>= 7<br></code></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入：<span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;attack&quot;</span>, <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;defend&quot;</span><br>输出：false<br>解释：一次字符串交换无法使两个字符串相等<br></code></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：costs = <span class="hljs-string">[10,6,8,7,7,8]</span>, coins = <span class="hljs-number">5</span><br>输出：<span class="hljs-number">0</span><br>解释：Tony 没有足够的钱买任何一支雪糕。<br></code></pre></td></tr></table></figure>
 
 <p><strong>示例 3：</strong></p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入：<span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;kelb&quot;</span>, <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;kelb&quot;</span><br>输出：true<br>解释：两个字符串已经相等，所以不需要进行字符串交换<br></code></pre></td></tr></table></figure>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：costs = [1,6,3,1,2,5], coins = 20<br>输出：6<br>解释：Tony 可以买下所有的雪糕，总价为<span class="hljs-number"> 1 </span>+<span class="hljs-number"> 6 </span>+<span class="hljs-number"> 3 </span>+<span class="hljs-number"> 1 </span>+<span class="hljs-number"> 2 </span>+<span class="hljs-number"> 5 </span>=<span class="hljs-number"> 18 </span>。<br></code></pre></td></tr></table></figure>
 
-<p><strong>示例 4：</strong></p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入：<span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;abcd&quot;</span>, <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;dcba&quot;</span><br>输出：false<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>costs.length == n</code></li>
+<li><code>1 &lt;= n &lt;= 105</code></li>
+<li><code>1 &lt;= costs[i] &lt;= 105</code></li>
+<li><code>1 &lt;= coins &lt;= 108</code></li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：贪心"><a href="#方法一：贪心" class="headerlink" title="方法一：贪心"></a>方法一：贪心</h3><p>用有限的钱，买到最多的雪糕。</p>
+<p>从此很容易可以想到，对于价格便宜的雪糕，购买优先级高。</p>
+<p>因此，对雪糕的价格数组 <code>costs</code> 进行排序。</p>
+<p>每个雪糕只能买一次，因此遍历 <code>costs</code> 数组，用 <code>cnt</code> 计数买到雪糕的数量。</p>
+<p>当将 <code>coins</code> 花完的时候，便可以得到可以购买的最大数量。</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">maxIceCream</span>(<span class="hljs-params">self, costs: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>], coins: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        costs.sort()<br>        cnt = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> costs:<br>            <span class="hljs-keyword">if</span> coins - c &gt;= <span class="hljs-number">0</span>:<br>                coins -= c<br>                cnt += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">return</span> cnt<br></code></pre></td></tr></table></figure>
 
-<p><strong>提示</strong></p>
-<ul>
-<li><code>1 &lt;= s1.length, s2.length &lt;= 100</code></li>
-<li><code>s1.length == s2.length</code></li>
-<li><code>s1</code> 和 <code>s2</code> 仅由小写英文字母组成</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：哈希表-计数"><a href="#方法一：哈希表-计数" class="headerlink" title="方法一：哈希表 + 计数"></a>方法一：哈希表 + 计数</h3><p>思路：</p>
-<ul>
-<li><p>先用哈希表统计字符串 <code>s1</code> 与 <code>s2</code> 的词频，只有词频相同的情况下，才可能满足题目要求的交换一次便得到相同字符串。</p>
-</li>
-<li><p>计数：遍历，对两个字符串逐个判断，得到不同字符数量 <code>cnt</code> 。</p>
-<ul>
-<li>若 <code>s1[i] != s2[i]</code>，<code>cnt += 1</code></li>
-</ul>
-</li>
-<li><p>最终，当 <code>cnt == 0</code> 或 <code>cnt == 2</code>，分别对应着交换次数为0和交换次数为1的情况。（前提是两字符串词频相同）</p>
-</li>
-</ul>
-<p>该方法缺点在于空间复杂度为O(n)</p>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">areAlmostEqual</span>(<span class="hljs-params">self, s1: <span class="hljs-built_in">str</span>, s2: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bool</span>:<br>        dic1, dic2 = Counter(s1), Counter(s2)<br>        cnt = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(s1)):<br>            <span class="hljs-keyword">if</span> s1[i] != s2[i]:<br>                cnt += <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> (cnt == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> cnt == <span class="hljs-number">2</span>) <span class="hljs-keyword">and</span> dic1 == dic2<br></code></pre></td></tr></table></figure>
-
-<h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">areAlmostEqual</span><span class="hljs-params">(String s1, String s2)</span> &#123;<br>        <span class="hljs-type">char</span>[] cs1 = s1.toCharArray(), cs2 = s2.toCharArray();<br>        Map&lt;Character, Integer&gt; map1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;(), map2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cs1.length; i++) &#123;<br>            map1.put(cs1[i], map1.getOrDefault(cs1[i], <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>            map2.put(cs2[i], map2.getOrDefault(cs2[i], <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span>(cs1[i] != cs2[i]) cnt++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> (cnt == <span class="hljs-number">0</span> || cnt == <span class="hljs-number">2</span>) &amp;&amp; map1.equals(map2);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="方法二：纯计数"><a href="#方法二：纯计数" class="headerlink" title="方法二：纯计数"></a>方法二：纯计数</h3><p>思路：</p>
-<p>仍然是同时遍历两字符串 <code>s1</code> 与 <code>s2</code>，用 <code>cnt</code> 统计相同下标不同字符的数量。</p>
-<p>但不采用哈希表统计词频，而是用两个变量 <code>c1</code> 与 <code>c2</code> 记录上一次相同下标的情况下 <code>s1</code> 与 <code>s2</code> 不相同的字符。</p>
-<p>若 <code>cnt == 2</code>时，当前 <code>s1[i] != c2</code> 或 <code>s2[i] != c1</code>，此时可能出现如下情况</p>
-<ul>
-<li><p><code>bank</code> 与 <code>canb</code>，隐含的意思就是两字符串词频不同，只不过这个方法咱们没有用哈希表进行统计。</p>
-<p>因为题目中说只可交换一次，所以只需判断 <code>cnt == 2</code> 这种情况下词频是否相同。</p>
-</li>
-</ul>
-<p>最终遍历完成之后，还需要判断 cnt 是否等于 1，防止出现如下情况</p>
-<ul>
-<li><code>bank</code> 与 <code>cank</code>，只有一个下标的字符不相同，隐含意思是词频不相同，无法交换。</li>
-</ul>
-<h4 id="Python3-1"><a href="#Python3-1" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">areAlmostEqual</span>(<span class="hljs-params">self, s1: <span class="hljs-built_in">str</span>, s2: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bool</span>:<br>        cnt = <span class="hljs-number">0</span><br>        c1, c2 = <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(s1)):<br>            <span class="hljs-keyword">if</span> s1[i] != s2[i]:<br>                cnt += <span class="hljs-number">1</span><br>                <span class="hljs-keyword">if</span> cnt &gt; <span class="hljs-number">2</span> <span class="hljs-keyword">or</span> (cnt == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> (s1[i] != c2 <span class="hljs-keyword">or</span> s2[i] != c1)):<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>                c1, c2 = s1[i], s2[i]<br>        <span class="hljs-keyword">return</span> cnt != <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">areAlmostEqual</span><span class="hljs-params">(String s1, String s2)</span> &#123;<br>        <span class="hljs-type">char</span>[] cs1 = s1.toCharArray(), cs2 = s2.toCharArray();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">char</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, c2 = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cs1.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(cs1[i] != cs2[i]) &#123;<br>                <span class="hljs-keyword">if</span>(++cnt &gt; <span class="hljs-number">2</span> || (cnt == <span class="hljs-number">2</span> &amp;&amp; (cs1[i] != c2 || cs2[i] != c1))) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125;<br>                c1 = cs1[i];<br>                c2 = cs2[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt != <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxIceCream</span><span class="hljs-params">(<span class="hljs-type">int</span>[] costs, <span class="hljs-type">int</span> coins)</span> &#123;<br>        Arrays.sort(costs);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> c : costs) &#123;<br>            <span class="hljs-keyword">if</span>(coins - c &gt;= <span class="hljs-number">0</span>) &#123;<br>                coins -= c;<br>                cnt++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第19篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第20篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -400,8 +375,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 1790. Check if One String Swap Can Make Strings Equal</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/11/LC-Solution-1790-Check-if-One-String-Swap-Can-Make-Strings-Equal/</div>
+      <div>LC-Solution 1833. Maximum Ice Cream Bars</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/11/LC-Solution-1833-Maximum-Ice-Cream-Bars/</div>
     </div>
     <div class="license-meta">
       
@@ -445,9 +420,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/11/LC-Solution-1833-Maximum-Ice-Cream-Bars/" title="LC-Solution 1833. Maximum Ice Cream Bars">
+                      <a href="/2022/10/11/LC-Solution-1846-Maximum-Element-After-Decreasing-and-Rearranging/" title="LC-Solution 1846. Maximum Element After Decreasing and Rearranging">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 1833. Maximum Ice Cream Bars</span>
+                        <span class="hidden-mobile">LC-Solution 1846. Maximum Element After Decreasing and Rearranging</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -455,8 +430,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/09/LC-Solution-1249-Minimum-Remove-to-Make-Valid-Parentheses/" title="LC-Solution 1249. Minimum Remove to Make Valid Parentheses">
-                        <span class="hidden-mobile">LC-Solution 1249. Minimum Remove to Make Valid Parentheses</span>
+                      <a href="/2022/10/11/LC-Solution-1790-Check-if-One-String-Swap-Can-Make-Strings-Equal/" title="LC-Solution 1790. Check if One String Swap Can Make Strings Equal">
+                        <span class="hidden-mobile">LC-Solution 1790. Check if One String Swap Can Make Strings Equal</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
