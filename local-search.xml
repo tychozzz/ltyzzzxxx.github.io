@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>LC-Solution 817. Linked List Components</title>
+    <link href="/2022/10/12/LC-Solution-817-Linked-List-Components/"/>
+    <url>/2022/10/12/LC-Solution-817-Linked-List-Components/</url>
+    
+    <content type="html"><![CDATA[<h1 id="817-链表组件"><a href="#817-链表组件" class="headerlink" title="817. 链表组件"></a><a href="https://leetcode.cn/problems/linked-list-components/">817. 链表组件</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定链表头结点 <code>head</code>，该链表上的每个结点都有一个 <strong>唯一的整型值</strong> 。同时给定列表 <code>nums</code>，该列表是上述链表中整型值的一个子集。</p><p>返回列表 <code>nums</code> 中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表 <code>nums</code> 中）构成的集合。</p><p><strong>示例 1：</strong></p><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: head = <span class="hljs-comment">[0,1,2,3]</span>, nums = <span class="hljs-comment">[0,1,3]</span><br>输出: 2<br>解释: 链表中,0 和 1 是相连接的，且 nums 中不包含 2，所以 <span class="hljs-comment">[0, 1]</span> 是 nums 的一个组件，同理 <span class="hljs-comment">[3]</span> 也是一个组件，故返回 2。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: head = <span class="hljs-comment">[0,1,2,3,4]</span>, nums = <span class="hljs-comment">[0,3,1,4]</span><br>输出: 2<br>解释: 链表中，0 和 1 是相连接的，3 和 4 是相连接的，所以 <span class="hljs-comment">[0, 1]</span> 和 <span class="hljs-comment">[3, 4]</span> 是两个组件，故返回 2。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li>链表中节点数为<code>n</code></li><li><code>1 &lt;= n &lt;= 104</code></li><li><code>0 &lt;= Node.val &lt; n</code></li><li><code>Node.val</code> 中所有值 <strong>不同</strong></li><li><code>1 &lt;= nums.length &lt;= n</code></li><li><code>0 &lt;= nums[i] &lt; n</code></li><li><code>nums</code> 中所有值 <strong>不同</strong></li></ul><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：模拟-哈希表-链表遍历"><a href="#方法一：模拟-哈希表-链表遍历" class="headerlink" title="方法一：模拟 + 哈希表 + 链表遍历"></a>方法一：模拟 + 哈希表 + 链表遍历</h3><p>分析题意可知，需要返回链表中连通量的个数（连通量中的值必须在 <code>nums</code> 中）</p><p>因此我们可以通过遍历列表，判断当前节点 <code>cur.val</code> 以及其前驱节点 <code>pre.val</code> 是否存在于 <code>nums</code> 中，如下分类讨论：</p><ol><li>若 <code>cur.val</code> 在 <code>nums</code> 中，但 <code>pre.val</code> 不在 <code>nums</code> 中：</li></ol><p>  说明此时产生了新的连通分量，需要进行计数</p><ol start="2"><li><p>若 <code>cur.val</code> 不在 <code>nums</code> 中，<code>pre.val</code> 也不在 <code>nums</code> 中：没有新的连通分量产生</p></li><li><p>若 <code>cur.val</code> 不在 <code>nums</code> 中，但<code>pre.val</code> 在 <code>nums</code> 中：没有新的连通分量产生</p></li><li><p>若 <code>cur.val</code> 在 <code>nums</code> 中，<code>pre.val</code> 也在 <code>nums</code> 中：</p></li></ol><p>  没有新的连通分量产生，<code>cur</code> 归属于前一个连通分量集合中</p><p>因此，只有第一种情况下，我们需要进行计数，其他情况不用体现在代码中。</p><p>为了提高判断链表节点值是否在 <code>nums</code> 中，我们将其转换为 <code>set</code> 集合，更加高效。</p><h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">numComponents</span>(<span class="hljs-params">self, head: <span class="hljs-type">Optional</span>[ListNode], nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        cur = head<br>        ans, pre = <span class="hljs-number">0</span>, ListNode(-<span class="hljs-number">1</span>)<br>        s = <span class="hljs-built_in">set</span>(nums)<br>        <span class="hljs-keyword">while</span> cur:<br>            <span class="hljs-keyword">if</span> cur.val <span class="hljs-keyword">in</span> s <span class="hljs-keyword">and</span> pre.val <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> s:<br>                    ans += <span class="hljs-number">1</span><br>            pre, cur = cur, cur.<span class="hljs-built_in">next</span><br>        <span class="hljs-keyword">return</span> ans<br></code></pre></td></tr></table></figure><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numComponents</span><span class="hljs-params">(ListNode head, <span class="hljs-type">int</span>[] nums)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> n : nums) set.add(n);<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> head, pre = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(-<span class="hljs-number">1</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(cur != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">if</span>(set.contains(cur.val) &amp;&amp; !set.contains(pre.val)) &#123;<br>                ans++;<br>            &#125;<br>            pre = cur;<br>            cur = cur.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p><p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p><p>这是我搭建<a href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第23篇题解，欢迎各位star并提出Issue~</p><p>点击<a href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>详解JDK锁01:Lock接口</title>
     <link href="/2022/10/12/%E8%AF%A6%E8%A7%A3JDK%E9%94%8101-Lock%E6%8E%A5%E5%8F%A3/"/>
     <url>/2022/10/12/%E8%AF%A6%E8%A7%A3JDK%E9%94%8101-Lock%E6%8E%A5%E5%8F%A3/</url>
@@ -20,11 +45,11 @@
     
     <tags>
       
+      <tag>JUC</tag>
+      
       <tag>Java</tag>
       
       <tag>锁</tag>
-      
-      <tag>JUC</tag>
       
     </tags>
     
@@ -226,13 +251,13 @@
       
       <tag>Java</tag>
       
+      <tag>锁</tag>
+      
       <tag>SpringBoot</tag>
       
       <tag>MySQL</tag>
       
       <tag>Redis</tag>
-      
-      <tag>锁</tag>
       
       <tag>分布式</tag>
       
