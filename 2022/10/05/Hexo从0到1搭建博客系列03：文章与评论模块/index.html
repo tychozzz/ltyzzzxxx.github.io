@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/avatar.jpeg">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/avatar.jpeg">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
+  <link rel="icon" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
 <meta property="og:description" content="Hexo从0到1搭建博客系列03：文章与评论模块1. 文章的编辑与发布在这一部分，我们主要学习如何编辑文章，并将其发布在Hexo博客上。 这一部分我们仍然在Hexo博客根目录上操作。  执行以下命令，创建一篇新的文章。引号内为博客的标题    12hexo new &quot;&quot;e.g.: hexo new &quot;我的第一篇博客&quot;   如图所示，该博客已经被创建到 sou">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/hexo03.jpg">
 <meta property="article:published_time" content="2022-10-05T08:40:23.000Z">
-<meta property="article:modified_time" content="2022-10-05T08:40:39.492Z">
+<meta property="article:modified_time" content="2022-10-13T06:08:29.148Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/hexo03.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/hexo03.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -208,7 +208,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/banner.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/banner.jpeg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -306,7 +306,7 @@
 </ol>
   <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;&quot;</span><br>e.g.: hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;我的第一篇博客&quot;</span><br></code></pre></td></tr></table></figure>
 <p>  如图所示，该博客已经被创建到 <code>source/_posts</code> 目录下啦</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/first-blog.png" srcset="/img/loading.gif" lazyload></p>
+<p>  <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/first-blog.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="2">
 <li>编辑该页面，可以看到如下信息（可以采用 <a target="_blank" rel="noopener" href="https://github.com/marktext/marktext">MarkText</a> 进行编辑，这个是免费的）</li>
 </ol>
@@ -327,7 +327,7 @@
   <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
 <p>这样一来就可以完成博客的编辑与发布啦，看看成品吧~</p>
 <p>下面那一篇是 <code>Hexo</code> 初始化的文章</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/blog-content1.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/blogcontentpng"></p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/blog-content1.png" srcset="/img/loading.gif" lazyload alt="https//cdnjsdelivrnet/gh/ltyzzzxxx/ltyzzzImageBed/blogimg/blogcontentpng"></p>
 <p>进入 <code>分类</code>、<code>标签</code> 页可以看到相应的内容</p>
 <h2 id="2-引入评论模块"><a href="#2-引入评论模块" class="headerlink" title="2. 引入评论模块"></a>2. 引入评论模块</h2><p>引入评论听起来非常高大上。如果自己手动搭建一个评论系统，将是需要一定技术的工作，而在<code>Hexo-Fluid</code> 中，这仅仅只是一个简单的配置</p>
 <ol>
@@ -344,11 +344,11 @@
 </li>
 </ol>
 <p>  我已经创建过啦，就不再创建了。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leadcloud-page.png" srcset="/img/loading.gif" lazyload></p>
+<p>  <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/leadcloud-page.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="4">
 <li>点击进入创建好的应用，点击左侧菜单 设置 - 应用凭证，就可以看到相应的配置信息啦</li>
 </ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/leancloud-key.png" srcset="/img/loading.gif" lazyload></p>
+<p>  <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/leancloud-key.png" srcset="/img/loading.gif" lazyload></p>
 <ol start="5">
 <li>将 <code>AppID</code> 与 <code>AppKey</code> 复制并粘贴到 <code>_config.fluid.yml</code> 文件中如下相应的位置</li>
 </ol>
@@ -358,7 +358,7 @@
 </ol>
   <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
 <p>打开之前发布的博客页，拉到最底部，即可看到评论界面啦~</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ltyzzzxxx/ltyzzz-ImageBed/blog-img/comment.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/comment.png" srcset="/img/loading.gif" lazyload></p>
 <p>由于 <code>Valine</code> 是一个无后端评论系统，想要管理评论的话，得去 <code>LeanCloud</code> 后台数据存储进行管理相关评论数据。</p>
 <h2 id="3-后记"><a href="#3-后记" class="headerlink" title="3. 后记"></a>3. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
 <p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
