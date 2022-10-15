@@ -16,26 +16,28 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1441. 用栈操作构建数组题目描述给你一个数组 target 和一个整数 n。每次迭代，需要从 list &#x3D; &amp;#123; 1 , 2 , 3 ..., n &amp;#125; 中依次读取一个数字。 请使用下述操作来构建目标数组 target ：  &quot;Push&quot;：从 list 中读取一个新元素， 并将其推入数组中。 &quot;Pop&quot;：删除数组中的最后一个元素。 如果目">
+    <meta name="description" content="Hexo从0到1搭建博客系列04：图床的最佳实践1. 前言：为什么要使用图床？之前我们已经讲过如何用Hexo发表文章。但是，一篇优秀的知识分享与技术博客，怎么能少得了图片呢？ 但是，文章中的图片存储在哪里？  当我们在本地写博客做笔记（用Typora或MarkText）时，我们一般会把图片存在当前文章的路径下 当我们在CSDN、掘金或知乎等平台上写博客时，我们的图片会被存储到这些网站对应的服务器中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 1441. Build an Array With Stack Operations">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/15/LC-Solution-1441-Build-an-Array-With-Stack-Operations/index.html">
+<meta property="og:title" content="Hexo从0到1搭建博客系列04：图床的最佳实践">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/15/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9704%EF%BC%9A%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="1441. 用栈操作构建数组题目描述给你一个数组 target 和一个整数 n。每次迭代，需要从 list &#x3D; &amp;#123; 1 , 2 , 3 ..., n &amp;#125; 中依次读取一个数字。 请使用下述操作来构建目标数组 target ：  &quot;Push&quot;：从 list 中读取一个新元素， 并将其推入数组中。 &quot;Pop&quot;：删除数组中的最后一个元素。 如果目">
+<meta property="og:description" content="Hexo从0到1搭建博客系列04：图床的最佳实践1. 前言：为什么要使用图床？之前我们已经讲过如何用Hexo发表文章。但是，一篇优秀的知识分享与技术博客，怎么能少得了图片呢？ 但是，文章中的图片存储在哪里？  当我们在本地写博客做笔记（用Typora或MarkText）时，我们一般会把图片存在当前文章的路径下 当我们在CSDN、掘金或知乎等平台上写博客时，我们的图片会被存储到这些网站对应的服务器中">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1441.jpg">
-<meta property="article:published_time" content="2022-10-15T11:47:08.000Z">
-<meta property="article:modified_time" content="2022-10-15T11:47:34.270Z">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/hexo04.jpg">
+<meta property="article:published_time" content="2022-10-15T12:38:06.000Z">
+<meta property="article:modified_time" content="2022-10-15T12:42:41.155Z">
 <meta property="article:author" content="ltyzzz">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1441.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/hexo04.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 1441. Build an Array With Stack Operations - ltyzzz&#39;s Blog</title>
+  <title>Hexo从0到1搭建博客系列04：图床的最佳实践 - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 1441. Build an Array With Stack Operations"></span>
+            <span id="subtitle" data-typed-text="Hexo从0到1搭建博客系列04：图床的最佳实践"></span>
           
         </div>
 
@@ -223,7 +225,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-15 19:47" pubdate>
+        <time datetime="2022-10-15 20:38" pubdate>
           2022年10月15日 晚上
         </time>
       </span>
@@ -235,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.8k 字
         
       </span>
     
@@ -246,7 +248,7 @@
         
         
         
-          14 分钟
+          16 分钟
         
       </span>
     
@@ -292,52 +294,90 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 1441. Build an Array With Stack Operations</h1>
+            <h1 style="display: none">Hexo从0到1搭建博客系列04：图床的最佳实践</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1441-用栈操作构建数组"><a href="#1441-用栈操作构建数组" class="headerlink" title="1441. 用栈操作构建数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/build-an-array-with-stack-operations/">1441. 用栈操作构建数组</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个数组 <code>target</code> 和一个整数 <code>n</code>。每次迭代，需要从 <code>list = &#123; 1 , 2 , 3 ..., n &#125;</code> 中依次读取一个数字。</p>
-<p>请使用下述操作来构建目标数组 <code>target</code> ：</p>
-<ul>
-<li><code>&quot;Push&quot;</code>：从 <code>list</code> 中读取一个新元素， 并将其推入数组中。</li>
-<li><code>&quot;Pop&quot;</code>：删除数组中的最后一个元素。</li>
-<li>如果目标数组构建完成，就停止读取更多元素。</li>
-</ul>
-<p>题目数据保证目标数组严格递增，并且只包含 <code>1</code> 到 <code>n</code> 之间的数字。</p>
-<p>请返回构建目标数组所用的操作序列。如果存在多个可行方案，返回任一即可。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：target = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>], n = <span class="hljs-number">3</span><br>输出：[<span class="hljs-string">&quot;Push&quot;</span>,<span class="hljs-string">&quot;Push&quot;</span>,<span class="hljs-string">&quot;Pop&quot;</span>,<span class="hljs-string">&quot;Push&quot;</span>]<br>解释： <br>读取 <span class="hljs-number">1</span> 并自动推入数组 -&gt; [<span class="hljs-number">1</span>]<br>读取 <span class="hljs-number">2</span> 并自动推入数组，然后删除它 -&gt; [<span class="hljs-number">1</span>]<br>读取 <span class="hljs-number">3</span> 并自动推入数组 -&gt; [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：target = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], n = <span class="hljs-number">3</span><br>输出：[<span class="hljs-string">&quot;Push&quot;</span>,<span class="hljs-string">&quot;Push&quot;</span>,<span class="hljs-string">&quot;Push&quot;</span>]<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：target = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], n = <span class="hljs-number">4</span><br>输出：[<span class="hljs-string">&quot;Push&quot;</span>,<span class="hljs-string">&quot;Push&quot;</span>]<br>解释：只需要读取前 <span class="hljs-number">2</span> 个数字就可以停止。<br></code></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= target.length &lt;= 100</code></li>
-<li><code>1 &lt;= n &lt;= 100</code></li>
-<li><code>1 &lt;= target[i] &lt;= n</code></li>
-<li><code>target</code> 严格递增</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：简单模拟"><a href="#方法一：简单模拟" class="headerlink" title="方法一：简单模拟"></a>方法一：简单模拟</h3><p>题目给定的条件：<code>target</code> 数组严格递增升序且只包含1~n之间的数字</p>
+                <h1 id="Hexo从0到1搭建博客系列04：图床的最佳实践"><a href="#Hexo从0到1搭建博客系列04：图床的最佳实践" class="headerlink" title="Hexo从0到1搭建博客系列04：图床的最佳实践"></a>Hexo从0到1搭建博客系列04：图床的最佳实践</h1><h2 id="1-前言：为什么要使用图床？"><a href="#1-前言：为什么要使用图床？" class="headerlink" title="1. 前言：为什么要使用图床？"></a>1. 前言：为什么要使用图床？</h2><p>之前我们已经讲过如何用Hexo发表文章。但是，一篇优秀的知识分享与技术博客，怎么能少得了图片呢？</p>
+<p>但是，文章中的图片存储在哪里？</p>
 <ol>
-<li>对于 <code>target</code> 中缺少的数字，分类讨论<ol>
-<li>该数字小于 <code>target[-1]</code>（数组最后一个元素），需要进行 ‘Push’ + ‘Pop’ 操作</li>
-<li>该数字大于 <code>target[-1]</code>（数组最后一个元素），无需进行操作，因为该数已经不在 <code>target</code> 内了</li>
+<li>当我们在本地写博客做笔记（用Typora或MarkText）时，我们一般会把图片存在当前文章的路径下</li>
+<li>当我们在CSDN、掘金或知乎等平台上写博客时，我们的图片会被存储到这些网站对应的服务器中</li>
+<li>而当我们的博客发布在Hexo上时，图片的加载路径有以下两种方式：<ol>
+<li>参照我们本地写博客的方式，将图片存储到Hexo下的public资源文件夹下</li>
+<li>参照在技术论坛写博客的方式，将图片存储到服务器上</li>
 </ol>
 </li>
-<li>对于 <code>target</code> 中存在的数字，我只需要进行 ‘Push’ 操作</li>
 </ol>
-<p>根据上述分析可知，我们根本不需要用到题目给定的 n，因为 n 中大于 <code>target[-1]</code> 的数不需要处理，而小于 <code>target[-1]</code> 的数只需要遍历 <code>target</code> 数组即可</p>
-<p>因此，遍历 <code>target</code> 数组，找出 <code>target</code> 缺少的数字。通过初始化 <code>j = 1</code>，判断当前遍历的数是否等于 <code>j</code> 来判断是否缺少该数。</p>
-<p>直接看代码更好理解！</p>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python3">class Solution:<br>    def buildArray(self, target: List[int], n: int) -&gt; List[str]:<br>        ans = []<br>        j = 1<br>        for i in range(len(target)):<br>            while target[i] != j:<br>                ans.append(&#x27;Push&#x27;)<br>                ans.append(&#x27;Pop&#x27;)<br>                j += 1<br>            ans.append(&#x27;Push&#x27;)<br>            j += 1 # 当target[i] == j时，处理完之后还需要在自增一次j<br>        return ans<br></code></pre></td></tr></table></figure>
-
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">buildArray</span><span class="hljs-params">(<span class="hljs-type">int</span>[] target, <span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> target.length;<br>        List&lt;String&gt; ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>            <span class="hljs-keyword">while</span>(target[i] != j) &#123;<br>                ans.add(<span class="hljs-string">&quot;Push&quot;</span>);<br>                ans.add(<span class="hljs-string">&quot;Pop&quot;</span>);<br>                j++;<br>            &#125;<br>            ans.add(<span class="hljs-string">&quot;Push&quot;</span>)<br>            j++; <span class="hljs-comment">// 当target[i] == j时，处理完之后还需要在自增一次j</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<p>如果将图片资源都存储到Hexo的文件中，会变得很臃肿，所以不采用该方案。</p>
+<p>我们这里所要说的就是将图片存储到服务器上，即图床这种方式。</p>
+<p>但这时候你会想，本来使用Hexo做博客就是为了省事省钱、不买服务器，而为了存图片，再买服务器吗？</p>
+<p>不必担心，各大云服务商平台都提供了图片存储，也是对象存储的云服务器！而且价格远低于服务器！</p>
+<p>接下来进入正题！</p>
+<h2 id="2-方案选择"><a href="#2-方案选择" class="headerlink" title="2. 方案选择"></a>2. 方案选择</h2><p>以下几种方案都极其简单，原理都很类似</p>
+<h3 id="方案一：Github仓库-Picgo-jsDelivr-CDN"><a href="#方案一：Github仓库-Picgo-jsDelivr-CDN" class="headerlink" title="方案一：Github仓库 + Picgo + jsDelivr CDN"></a>方案一：Github仓库 + Picgo + jsDelivr CDN</h3><p>这一种方案我在实操之后，发现国内用户无法访问，是因为最近国内将jsDelivrCDN给墙了，无法通过其对Github进行加速</p>
+<p>但是我还是简单介绍一下，</p>
+<ol>
+<li><p>创建Github公共仓库，名字随便，注意一定要是公共的，否则别人无法访问到图片资源。</p>
+</li>
+<li><p>下载 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">Picgo</a></p>
+<blockquote>
+<p>  <strong>PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具</strong></p>
+</blockquote>
+</li>
+<li><p>将Github创建仓库信息配置到Picgo中。打开Picgo，点击图床设置，选择Github图床，填写如下信息。</p>
+<p>仓库名就写你之前创建好的仓库名</p>
+<p>分支填现有的分支就可以</p>
+<p>其中的Token可以在Github - Settings - Personal access tokens 中生成，只选择repo选项就可以</p>
+<ul>
+<li>如果不知道如何生成的话，可以查看现成的相关<a target="_blank" rel="noopener" href="https://www.cnblogs.com/leon-2016/p/9284837.html">攻略</a></li>
+</ul>
+<p>指定存储路径可填可不填</p>
+<p>自定义域名这里填写：<code>https://cdn.jsdelivr.net/gh/用户名/仓库名</code>，因为我们采用了jsDelivr CDN进行加速，虽然现在没有任何卵用</p>
+<p>最后保存为默认图床即可</p>
+</li>
+</ol>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015200744589.png" srcset="/img/loading.gif" lazyload alt="image-20221015200744589"></p>
+<h3 id="方案二：Gitee仓库-Picgo"><a href="#方案二：Gitee仓库-Picgo" class="headerlink" title="方案二：Gitee仓库 + Picgo"></a>方案二：Gitee仓库 + Picgo</h3><p>Gitee虽然说是国内平台，访问是没问题的。但是听说它经常崩，我有点担心，就没有去尝试。</p>
+<p>其方法和Github几乎一模一样，只是选择了用Gitee创建仓库。</p>
+<p>在这里我也不推荐使用这种方案</p>
+<h3 id="方案三：阿里云对象存储-Picgo"><a href="#方案三：阿里云对象存储-Picgo" class="headerlink" title="方案三：阿里云对象存储 + Picgo"></a>方案三：阿里云对象存储 + Picgo</h3><p>之前没有使用过阿里云的小伙伴可以仔细学一学啦，</p>
+<p>以后搭建个人网站都需要用到服务器，网站上的图片视频资源也肯定需要用到云存储，所以不可避免要和各类云服务商打交道。</p>
+<p>而阿里云应该是国内最知名的几家云服务商之一了</p>
+<ol>
+<li>登录阿里云网站，进入工作台页面，搜索对象存储，进入该页面，然后点击bucket列表</li>
+</ol>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015202120960.png" srcset="/img/loading.gif" lazyload alt="image-20221015202120960"></p>
+<ol start="2">
+<li><p>进入页面，点击创建bucket.</p>
+<ul>
+<li>Bucket名称和地域必填。地域选择一个距离自己近一些的地方。</li>
+<li>读写权限选择为公共读，其余均默认</li>
+</ul>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015202336953.png" srcset="/img/loading.gif" lazyload alt="image-20221015202336953"></p>
+</li>
+<li><p>点击网页右上角的头像，再点击AccessKey管理，进入该页面</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015202601913.png" srcset="/img/loading.gif" lazyload alt="image-20221015202601913"></p>
+</li>
+<li><p>点击创建AccessKey，将创建号的key复制保存下来，之后在Picgo上需要用到</p>
+</li>
+<li><p>打开Picgo，点击图床设置，选择阿里云OSS，填写如下信息。</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015202826913.png" srcset="/img/loading.gif" lazyload alt="image-20221015202826913"></p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>结合历史经验，为了网站图片存储的稳定，我们还是选择方案三作为我们图床实践的最佳选择</p>
+<p>可能后期图片访问量大的话，需要充一点钱，但是也很便宜，大概一年40GB只需要9块钱，相当划算啦</p>
+<h2 id="3-结合Typora使用"><a href="#3-结合Typora使用" class="headerlink" title="3. 结合Typora使用"></a>3. 结合Typora使用</h2><p>当我们成功搭建好图床之后，每次写Markdown文档时，都需要先截图，再保存，然后手动打开Picgo完成上传，最后将图片地址复制到Markdown文档中。</p>
+<p>如何做到更加高效地上传图片到图床呢？</p>
+<p>用Typora写笔记，只需要先截图，再粘贴到Markdown文档，即可直接跳过上传操作，Typora帮我们自动完成。</p>
+<p>操作为：打开Typora的设置，点击图像，按照我给的图片进行设置</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221015203547504.png" srcset="/img/loading.gif" lazyload alt="image-20221015203547504"></p>
+<p>之后，我们便可以愉快地用Hexo写图文并茂的博客啦~</p>
+<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>如果大家觉得我的内容写的还不错，可以在评论区留言支持一下呀~</p>
+<p>欢迎大家来逛一逛我的<a href="https://ltyzzzxxx.github.io/">个人博客</a>~</p>
+<p>此外，从2022.10.1开始，为激励自己持续刷题，我开始持续日更Leetcode题解啦~</p>
+<p>所有题解均已放到<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Github仓库</a>中，欢迎大家Star并提出Issue~</p>
 
                 
               </div>
@@ -356,7 +396,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Leetcode%E9%A2%98%E8%A7%A3/" class="category-chain-item">Leetcode题解</a>
+  <a href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="category-chain-item">Hexo搭建博客</a>
   
   
 
@@ -371,7 +411,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+        <a href="/tags/Fluid/">#Fluid</a>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2/">#博客</a>
       
     </div>
   
@@ -383,8 +427,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 1441. Build an Array With Stack Operations</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/15/LC-Solution-1441-Build-an-Array-With-Stack-Operations/</div>
+      <div>Hexo从0到1搭建博客系列04：图床的最佳实践</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/15/Hexo从0到1搭建博客系列04：图床的最佳实践/</div>
     </div>
     <div class="license-meta">
       
@@ -428,18 +472,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/15/Hexo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%9704%EF%BC%9A%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" title="Hexo从0到1搭建博客系列04：图床的最佳实践">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo从0到1搭建博客系列04：图床的最佳实践</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/14/LC-Solution-5-Longest-Palindromic-Substring/" title="LC-Solution 5. Longest Palindromic Substring">
-                        <span class="hidden-mobile">LC-Solution 5. Longest Palindromic Substring</span>
+                      <a href="/2022/10/15/LC-Solution-1441-Build-an-Array-With-Stack-Operations/" title="LC-Solution 1441. Build an Array With Stack Operations">
+                        <span class="hidden-mobile">LC-Solution 1441. Build an Array With Stack Operations</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
