@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="779. K-th Symbol in Grammar题目描述我们构建了一个包含 n 行( 索引从 1 开始 )的表。首先在第一行我们写上一个 0。接下来的每一行，将前一行中的0替换为01，1替换为10。  例如，对于 n &#x3D; 3 ，第 1 行是 0 ，第 2 行是 01 ，第3行是 0110 。  给定行数 n 和序数 k，返回第 n 行中第 k 个字符。（ k 从索引 1 开始） 示例 1:">
+    <meta name="description" content="901. 股票价格跨度题目描述编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。 今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。 例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。 示例： 12345">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-Solution 779. K-th Symbol in Grammar">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/20/LC-Solution-779-K-th-Symbol-in-Grammar/index.html">
+<meta property="og:title" content="LC-Solution 901. Online Stock Span">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/21/LC-Solution-901-Online-Stock-Span/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="779. K-th Symbol in Grammar题目描述我们构建了一个包含 n 行( 索引从 1 开始 )的表。首先在第一行我们写上一个 0。接下来的每一行，将前一行中的0替换为01，1替换为10。  例如，对于 n &#x3D; 3 ，第 1 行是 0 ，第 2 行是 01 ，第3行是 0110 。  给定行数 n 和序数 k，返回第 n 行中第 k 个字符。（ k 从索引 1 开始） 示例 1:">
+<meta property="og:description" content="901. 股票价格跨度题目描述编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。 今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。 例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。 示例： 12345">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc779.jpg">
-<meta property="article:published_time" content="2022-10-20T05:45:27.000Z">
-<meta property="article:modified_time" content="2022-10-20T05:46:14.758Z">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc901.jpg">
+<meta property="article:published_time" content="2022-10-21T04:33:44.000Z">
+<meta property="article:modified_time" content="2022-10-21T04:34:45.018Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc779.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc901.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC-Solution 779. K-th Symbol in Grammar - ltyzzz&#39;s Blog</title>
+  <title>LC-Solution 901. Online Stock Span - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-Solution 779. K-th Symbol in Grammar"></span>
+            <span id="subtitle" data-typed-text="LC-Solution 901. Online Stock Span"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-20 13:45" pubdate>
-          2022年10月20日 下午
+        <time datetime="2022-10-21 12:33" pubdate>
+          2022年10月21日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.3k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          15 分钟
+          20 分钟
         
       </span>
     
@@ -292,58 +292,45 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-Solution 779. K-th Symbol in Grammar</h1>
+            <h1 style="display: none">LC-Solution 901. Online Stock Span</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="779-K-th-Symbol-in-Grammar"><a href="#779-K-th-Symbol-in-Grammar" class="headerlink" title="779. K-th Symbol in Grammar"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/k-th-symbol-in-grammar/">779. K-th Symbol in Grammar</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>我们构建了一个包含 <code>n</code> 行( <strong>索引从 1 开始</strong> )的表。首先在第一行我们写上一个 <code>0</code>。接下来的每一行，将前一行中的<code>0</code>替换为<code>01</code>，<code>1</code>替换为<code>10</code>。</p>
+                <h1 id="901-股票价格跨度"><a href="#901-股票价格跨度" class="headerlink" title="901. 股票价格跨度"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/online-stock-span/">901. 股票价格跨度</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>编写一个 <code>StockSpanner</code> 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。</p>
+<p>今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。</p>
+<p>例如，如果未来7天股票的价格是 <code>[100, 80, 60, 70, 60, 75, 85]</code>，那么股票跨度将是 <code>[1, 1, 1, 2, 1, 4, 6]</code>。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs stylus">输入：<span class="hljs-selector-attr">[<span class="hljs-string">&quot;StockSpanner&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>,<span class="hljs-string">&quot;next&quot;</span>]</span>, <span class="hljs-selector-attr">[[]</span>,<span class="hljs-selector-attr">[100]</span>,<span class="hljs-selector-attr">[80]</span>,<span class="hljs-selector-attr">[60]</span>,<span class="hljs-selector-attr">[70]</span>,<span class="hljs-selector-attr">[60]</span>,<span class="hljs-selector-attr">[75]</span>,<span class="hljs-selector-attr">[85]</span>]<br>输出：<span class="hljs-selector-attr">[null,1,1,1,2,1,4,6]</span><br>解释：<br>首先，初始化 S = <span class="hljs-built_in">StockSpanner</span>()，然后：<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">100</span>) 被调用并返回 <span class="hljs-number">1</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">80</span>) 被调用并返回 <span class="hljs-number">1</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">60</span>) 被调用并返回 <span class="hljs-number">1</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">70</span>) 被调用并返回 <span class="hljs-number">2</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">60</span>) 被调用并返回 <span class="hljs-number">1</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">75</span>) 被调用并返回 <span class="hljs-number">4</span>，<br>S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">85</span>) 被调用并返回 <span class="hljs-number">6</span>。<br><br>注意 (例如) S<span class="hljs-selector-class">.next</span>(<span class="hljs-number">75</span>) 返回 <span class="hljs-number">4</span>，因为截至今天的最后 <span class="hljs-number">4</span> 个价格<br>(包括今天的价格 <span class="hljs-number">75</span>) 小于或等于今天的价格。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ol>
+<li>调用 <code>StockSpanner.next(int price)</code> 时，将有 <code>1 &lt;= price &lt;= 10^5</code>。</li>
+<li>每个测试用例最多可以调用 <code>10000</code> 次 <code>StockSpanner.next</code>。</li>
+<li>在所有测试用例中，最多调用 <code>150000</code> 次 <code>StockSpanner.next</code>。</li>
+<li>此问题的总时间限制减少了 50%。</li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：单调栈"><a href="#方法一：单调栈" class="headerlink" title="方法一：单调栈"></a>方法一：单调栈</h3><p>题目要求我们返回比不超过当前股票价格的最大连续天数：进一步分析可知，我们只要找到之前第一个大于当前股票价格的下标，两个天数对应的下标相减，便是答案。</p>
+<p>因此我们可以运用单调栈，按照股票的价格以降序入栈。</p>
+<p>每个单调栈中存放形如 <code>[prices, days]</code>这样的数组：</p>
 <ul>
-<li>例如，对于 <code>n = 3</code> ，第 <code>1</code> 行是 <code>0</code> ，第 <code>2</code> 行是 <code>01</code> ，第3行是 <code>0110</code> 。</li>
+<li>prices：当前股票的价格</li>
+<li>days：股票价格的跨度（即在此之前，不超过当前股票价格的最大连续天数）</li>
 </ul>
-<p>给定行数 <code>n</code> 和序数 <code>k</code>，返回第 <code>n</code> 行中第 <code>k</code> 个字符。（ <code>k</code> <strong>从索引 1 开始</strong>）</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: n = 1, k = 1</span><br><span class="hljs-section">输出: 0</span><br><span class="hljs-section">解释: 第一行：0</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: n = 2, k = 1</span><br><span class="hljs-section">输出: 0</span><br><span class="hljs-section">解释: </span><br><span class="hljs-section">第一行: 0 </span><br><span class="hljs-section">第二行: 01</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 3:</strong></p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: n = 2, k = 2</span><br><span class="hljs-section">输出: 1</span><br><span class="hljs-section">解释:</span><br><span class="hljs-section">第一行: 0</span><br><span class="hljs-section">第二行: 01</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>提示:</strong></p>
+<p>next方法被调用时，我们便进行入栈操作。在入栈之前，我们需要循环判断当前栈顶元素的 <code>price</code> 是否小于等于当前股票的 <code>price</code>:</p>
 <ul>
-<li><code>1 &lt;= n &lt;= 30</code></li>
-<li><code>1 &lt;= k &lt;= 2n - 1</code></li>
+<li>若小于等于，则对栈顶元素进行出栈，并且将栈顶元素的 <code>days</code> 累加到当前股票的 <code>days</code> 上</li>
 </ul>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="方法一：找规律-二分迭代"><a href="#方法一：找规律-二分迭代" class="headerlink" title="方法一：找规律 + 二分迭代"></a>方法一：找规律 + 二分迭代</h4><p>以n&#x3D;5，k&#x3D;10为例</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">n</span> = <span class="hljs-number">1</span> -&gt; <span class="hljs-number">0</span><br><span class="hljs-attribute">n</span> = <span class="hljs-number">2</span> -&gt; <span class="hljs-number">01</span><br><span class="hljs-attribute">n</span> = <span class="hljs-number">3</span> -&gt; <span class="hljs-number">0110</span><br><span class="hljs-attribute">n</span> = <span class="hljs-number">4</span> -&gt; <span class="hljs-number">0110</span> <span class="hljs-number">1001</span><br><span class="hljs-attribute">n</span> = <span class="hljs-number">5</span> -&gt; <span class="hljs-number">0110</span> <span class="hljs-number">1001</span> <span class="hljs-number">1001</span> <span class="hljs-number">0110</span><br></code></pre></td></tr></table></figure>
+<p>循环判断完毕后，当前股票的 <code>price</code> 为最小股票价格，满足单调递减，即可入栈。并将当前股票对应的 <code>days</code> 返回。</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python3">class StockSpanner:<br>    def __init__(self):<br>        self.stack = []<br><br>    def next(self, price: int) -&gt; int:<br>        stack = self.stack<br>        days = 1 # days要初始化为1，因为最大连续天数中包含其自身<br>        while stack and stack[-1][0] &lt;= price:<br>            days += stack[-1][1]<br>            stack.pop(-1)<br>        stack.append([price, days])<br>        return days<br></code></pre></td></tr></table></figure>
 
-<p>从中我们很容易发现，每一个 <code>n</code> 对应的长度为：<code>len = 2 ^ (n-1)</code>，用 <code>s</code> 表示每个 <code>n</code> 对应的字符串</p>
-<p>因此我们发现这样一个规律：</p>
-<ul>
-<li>如果 <code>k &gt; len / 2</code>，那么 <code>s[k] = !s[k - len / 2]</code>。换句话说如果 <code>s[k]</code> 为1，那么 <code>s[k - len / 2]</code>为0，互为取反。</li>
-</ul>
-<p>借助此规律，我们可以首先计算出对应的长度，用 <code>flag</code> 表示当前位置是否取反（很容易得知取反次数为偶数次时，保持不变）</p>
-<p>循环迭代：</p>
-<ul>
-<li>通过长度 <code>len</code> 判断是当前位置 <code>k</code> 是在左半边还是在右半边，以此决定是否取反。<ul>
-<li>若 <code>k</code> 在右半边，则取反 <code>flag = !flag</code>，并将 <code>k -= len / 2</code></li>
-</ul>
-</li>
-<li>每次对当前字符串进行二分，即长度 <code>len</code> 进行折半</li>
-<li>每次对 <code>n</code> 进行自减</li>
-</ul>
-<p>最终当 <code>n = 2</code> 时，停止迭代。此时 <code>k = 1</code>或 <code>k = 2</code>，便可根据 <code>flag</code> 得出最终答案</p>
-<h5 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">kthGrammar</span>(<span class="hljs-params">self, n: <span class="hljs-built_in">int</span>, k: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        length = <span class="hljs-number">2</span> ** (n - <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">if</span> length &lt;= <span class="hljs-number">2</span>:<br>            <span class="hljs-keyword">return</span> k - <span class="hljs-number">1</span><br>        flag = <span class="hljs-literal">True</span><br>        <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">2</span>:<br>            <span class="hljs-keyword">if</span> k &gt; length // <span class="hljs-number">2</span>:<br>                k -= length // <span class="hljs-number">2</span><br>                flag = <span class="hljs-keyword">not</span> flag<br>            n -= <span class="hljs-number">1</span><br>            length //= <span class="hljs-number">2</span><br>        <span class="hljs-keyword">if</span> flag:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> k == <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> k == <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">StockSpanner</span> &#123;<br>    Deque&lt;<span class="hljs-type">int</span>[]&gt; d;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">StockSpanner</span><span class="hljs-params">()</span> &#123;<br>        d = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">next</span><span class="hljs-params">(<span class="hljs-type">int</span> price)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">days</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// days要初始化为1，因为最大连续天数中包含其自身</span><br>        <span class="hljs-keyword">while</span> (!d.isEmpty() &amp;&amp; d.peekLast()[<span class="hljs-number">0</span>] &lt;= price) &#123;<br>            days += d.pollLast()[<span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-type">int</span>[] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;price, days&#125;;<br>        d.addLast(arr);<br>        <span class="hljs-keyword">return</span> days;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">kthGrammar</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> (<span class="hljs-type">int</span>)Math.pow(<span class="hljs-number">2</span>, n - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span>(len &lt;= <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> k - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">while</span>(n &gt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">if</span>(k &gt; len / <span class="hljs-number">2</span>) &#123;<br>                k -= len / <span class="hljs-number">2</span>;<br>                flag = !flag;<br>            &#125;<br>            n--;<br>            len /= <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(flag) &#123;<br>            <span class="hljs-keyword">return</span> k == <span class="hljs-number">1</span> ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> k == <span class="hljs-number">1</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h5 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">kthGrammar</span><span class="hljs-params">(n <span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> &#123;<br>    <span class="hljs-built_in">len</span> := <span class="hljs-type">int</span>(math.Pow(<span class="hljs-number">2</span>, <span class="hljs-type">float64</span>(n - <span class="hljs-number">1</span>)))<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span> &lt;= <span class="hljs-number">2</span> &#123;<br>        <span class="hljs-keyword">return</span> k - <span class="hljs-number">1</span><br>    &#125;<br>    flag := <span class="hljs-literal">true</span><br>    <span class="hljs-keyword">for</span> n &gt; <span class="hljs-number">2</span> &#123;<br>        <span class="hljs-keyword">if</span> k &gt; <span class="hljs-built_in">len</span> / <span class="hljs-number">2</span> &#123;<br>            k -= <span class="hljs-built_in">len</span> / <span class="hljs-number">2</span><br>            flag = !flag<br>        &#125;<br>        n--<br>        <span class="hljs-built_in">len</span> /= <span class="hljs-number">2</span><br>    &#125;<br>    <span class="hljs-keyword">if</span> flag &#123;<br>        <span class="hljs-keyword">if</span> k == <span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125; <br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">if</span> k == <span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> StockSpanner <span class="hljs-keyword">struct</span> &#123;<br>    stack [][<span class="hljs-number">2</span>] <span class="hljs-type">int</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Constructor</span><span class="hljs-params">()</span></span> StockSpanner &#123;<br>    <span class="hljs-keyword">return</span> StockSpanner&#123;[][<span class="hljs-number">2</span>] <span class="hljs-type">int</span> &#123;&#125;&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(this *StockSpanner)</span></span> Next(price <span class="hljs-type">int</span>) <span class="hljs-type">int</span> &#123;<br>    days := <span class="hljs-number">1</span> <span class="hljs-comment">// days要初始化为1，因为最大连续天数中包含其自身</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(this.stack) &gt; <span class="hljs-number">0</span> &amp;&amp; price &gt;= this.stack[<span class="hljs-built_in">len</span>(this.stack) - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] &#123;<br>        days += this.stack[<span class="hljs-built_in">len</span>(this.stack) - <span class="hljs-number">1</span>][<span class="hljs-number">1</span>]<br>        this.stack = this.stack[:<span class="hljs-built_in">len</span>(this.stack) - <span class="hljs-number">1</span>]<br>    &#125;<br>    this.stack = <span class="hljs-built_in">append</span>(this.stack, [<span class="hljs-number">2</span>]<span class="hljs-type">int</span>&#123;price, days&#125;)<br>    <span class="hljs-keyword">return</span> days<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第28篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第29篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -390,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-Solution 779. K-th Symbol in Grammar</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/20/LC-Solution-779-K-th-Symbol-in-Grammar/</div>
+      <div>LC-Solution 901. Online Stock Span</div>
+      <div>https://ltyzzzxxx.github.io/2022/10/21/LC-Solution-901-Online-Stock-Span/</div>
     </div>
     <div class="license-meta">
       
@@ -403,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月20日</div>
+          <div>2022年10月21日</div>
         </div>
       
       
@@ -435,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/21/LC-Solution-901-Online-Stock-Span/" title="LC-Solution 901. Online Stock Span">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC-Solution 901. Online Stock Span</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/19/LC-Solution-1700-Number-of-Students-Unable-to-Eat-Lunch/" title="LC-Solution 1700. Number of Students Unable to Eat Lunch">
-                        <span class="hidden-mobile">LC-Solution 1700. Number of Students Unable to Eat Lunch</span>
+                      <a href="/2022/10/20/LC-Solution-779-K-th-Symbol-in-Grammar/" title="LC-Solution 779. K-th Symbol in Grammar">
+                        <span class="hidden-mobile">LC-Solution 779. K-th Symbol in Grammar</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
