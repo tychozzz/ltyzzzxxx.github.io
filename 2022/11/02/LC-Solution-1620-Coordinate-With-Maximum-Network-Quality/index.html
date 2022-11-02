@@ -16,16 +16,16 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="784. 字母大小写全排列题目描述给定一个字符串 s ，通过将字符串 s 中的每个字母转变大小写，我们可以获得一个新的字符串。 返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。 示例 1： 12输入：s &#x3D; &quot;a1b2&quot;输出：[&quot;a1b2&quot;, &quot;a1B2&quot;, &quot;A1b2&quot;, &quot;A1B2&quot;]">
+    <meta name="description" content="1620. 网络信号最好的坐标题目描述给你一个数组 towers 和一个整数 radius 。 数组 towers 中包含一些网络信号塔，其中 towers[i] &#x3D; [xi, yi, qi] 表示第 i 个网络信号塔的坐标是 (xi, yi) 且信号强度参数为 qi 。所有坐标都是在 X-Y 坐标系内的 整数 坐标。两个坐标之间的距离用 欧几里得距离 计算。 整数 radius 表示一个塔 能到">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC Solution 784. Letter Case Permutation">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/10/30/LC-Solution-784-Letter-Case-Permutation/index.html">
+<meta property="og:title" content="LC Solution 1620. Coordinate With Maximum Network Quality">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="784. 字母大小写全排列题目描述给定一个字符串 s ，通过将字符串 s 中的每个字母转变大小写，我们可以获得一个新的字符串。 返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。 示例 1： 12输入：s &#x3D; &quot;a1b2&quot;输出：[&quot;a1b2&quot;, &quot;a1B2&quot;, &quot;A1b2&quot;, &quot;A1B2&quot;]">
+<meta property="og:description" content="1620. 网络信号最好的坐标题目描述给你一个数组 towers 和一个整数 radius 。 数组 towers 中包含一些网络信号塔，其中 towers[i] &#x3D; [xi, yi, qi] 表示第 i 个网络信号塔的坐标是 (xi, yi) 且信号强度参数为 qi 。所有坐标都是在 X-Y 坐标系内的 整数 坐标。两个坐标之间的距离用 欧几里得距离 计算。 整数 radius 表示一个塔 能到">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc784.jpg">
-<meta property="article:published_time" content="2022-10-30T06:53:16.000Z">
-<meta property="article:modified_time" content="2022-10-30T06:54:59.248Z">
+<meta property="article:published_time" content="2022-11-02T08:46:41.000Z">
+<meta property="article:modified_time" content="2022-11-02T08:47:55.651Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC Solution 784. Letter Case Permutation - ltyzzz&#39;s Blog</title>
+  <title>LC Solution 1620. Coordinate With Maximum Network Quality - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC Solution 784. Letter Case Permutation"></span>
+            <span id="subtitle" data-typed-text="LC Solution 1620. Coordinate With Maximum Network Quality"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-30 14:53" pubdate>
-          2022年10月30日 下午
+        <time datetime="2022-11-02 16:46" pubdate>
+          2022年11月2日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.4k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          15 分钟
+          20 分钟
         
       </span>
     
@@ -292,37 +292,52 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC Solution 784. Letter Case Permutation</h1>
+            <h1 style="display: none">LC Solution 1620. Coordinate With Maximum Network Quality</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="784-字母大小写全排列"><a href="#784-字母大小写全排列" class="headerlink" title="784. 字母大小写全排列"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-case-permutation/">784. 字母大小写全排列</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串 <code>s</code> ，通过将字符串 <code>s</code> 中的每个字母转变大小写，我们可以获得一个新的字符串。</p>
-<p>返回 <em>所有可能得到的字符串集合</em> 。以 <strong>任意顺序</strong> 返回输出。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：s = <span class="hljs-string">&quot;a1b2&quot;</span><br>输出：[<span class="hljs-string">&quot;a1b2&quot;</span>, <span class="hljs-string">&quot;a1B2&quot;</span>, <span class="hljs-string">&quot;A1b2&quot;</span>, <span class="hljs-string">&quot;A1B2&quot;</span>]<br></code></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入: s = <span class="hljs-string">&quot;3z4&quot;</span><br>输出: [<span class="hljs-string">&quot;3z4&quot;</span>,<span class="hljs-string">&quot;3Z4&quot;</span>]<br></code></pre></td></tr></table></figure>
-
-<p><strong>提示:</strong></p>
+                <h1 id="1620-网络信号最好的坐标"><a href="#1620-网络信号最好的坐标" class="headerlink" title="1620. 网络信号最好的坐标"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coordinate-with-maximum-network-quality/">1620. 网络信号最好的坐标</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个数组 <code>towers</code> 和一个整数 <code>radius</code> 。</p>
+<p>数组 <code>towers</code> 中包含一些网络信号塔，其中 <code>towers[i] = [xi, yi, qi]</code> 表示第 <code>i</code> 个网络信号塔的坐标是 <code>(xi, yi)</code> 且信号强度参数为 <code>qi</code> 。所有坐标都是在 X-Y 坐标系内的 <strong>整数</strong> 坐标。两个坐标之间的距离用 <strong>欧几里得距离</strong> 计算。</p>
+<p>整数 <code>radius</code> 表示一个塔 <strong>能到达</strong> 的 <strong>最远距离</strong> 。如果一个坐标跟塔的距离在 <code>radius</code> 以内，那么该塔的信号可以到达该坐标。在这个范围以外信号会很微弱，所以 <code>radius</code> 以外的距离该塔是 <strong>不能到达的</strong> 。</p>
+<p>如果第 <code>i</code> 个塔能到达 <code>(x, y)</code> ，那么该塔在此处的信号为 <code>⌊qi / (1 + d)⌋</code> ，其中 <code>d</code> 是塔跟此坐标的距离。一个坐标的 <strong>信号强度</strong> 是所有 <strong>能到达</strong> 该坐标的塔的信号强度之和。</p>
+<p>请你返回数组 <code>[cx, cy]</code> ，表示 <strong>信号强度</strong> 最大的 <strong>整数</strong> 坐标点 <code>(cx, cy)</code> 。如果有多个坐标网络信号一样大，请你返回字典序最小的 <strong>非负</strong> 坐标。</p>
+<p><strong>注意：</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 12</code></li>
-<li><code>s</code> 由小写英文字母、大写英文字母和数字组成</li>
+<li>坐标 <code>(x1, y1)</code> 字典序比另一个坐标 <code>(x2, y2)</code> 小，需满足以下条件之一：<ul>
+<li>要么 <code>x1 &lt; x2</code> ，</li>
+<li>要么 <code>x1 == x2</code> 且 <code>y1 &lt; y2</code> 。</li>
 </ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：回溯"><a href="#方法一：回溯" class="headerlink" title="方法一：回溯"></a>方法一：回溯</h3><p>遇到全排列问题时，第一反应便是回溯解决。</p>
-<p>题目要求遇到字母时，将其转换为大写或者小写字母，从而得到新的字符串。</p>
-<p>从中可以想到，可以构造一个二叉树，二叉树的深度便是字符串 <code> s</code> 中字母的数量。每个父节点是当前的字母，其两个子节点对应下一个字母的大小写。</p>
-<p>构造回溯方法，其包含三个参数，第一个参数为题目给定的字符串 <code>s</code>， 第二个参数为当前正在构造的字符串 <code>cur</code>，第三个参数记录下标位置。遍历到的字符若为数字，则跳到下一位置；若为字母，则分别对字母的大小写进行递归遍历。</p>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">letterCasePermutation</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]:<br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">traverse</span>(<span class="hljs-params">s, cur, begin</span>):<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(cur) == <span class="hljs-built_in">len</span>(s):<br>                ans.append(cur)<br>                <span class="hljs-keyword">return</span><br>            <span class="hljs-keyword">if</span> s[begin].isalpha():<br>                traverse(s, cur + s[begin].swapcase(), begin + <span class="hljs-number">1</span>)<br>            traverse(s, cur + s[begin], begin + <span class="hljs-number">1</span>)<br>        ans = []<br>        traverse(s, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> ans<br></code></pre></td></tr></table></figure>
+</li>
+<li><code>⌊val⌋</code> 表示小于等于 <code>val</code> 的最大整数（向下取整函数）。</li>
+</ul>
+<p>示例 1：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：towers = <span class="hljs-string">[[1,2,5],[2,1,7],[3,1,9]]</span>, radius = <span class="hljs-number">2</span><br>输出：[<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br>解释：<br>坐标 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>) 信号强度之和为 <span class="hljs-number">13</span><br>- 塔 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>) 强度参数为 <span class="hljs-number">7</span> ，在该点强度为 ⌊<span class="hljs-number">7</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">0</span>)⌋ = ⌊<span class="hljs-number">7</span>⌋ = <span class="hljs-number">7</span><br>- 塔 (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) 强度参数为 <span class="hljs-number">5</span> ，在该点强度为 ⌊<span class="hljs-number">5</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>)⌋ = ⌊<span class="hljs-number">2.07</span>⌋ = <span class="hljs-number">2</span><br>- 塔 (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>) 强度参数为 <span class="hljs-number">9</span> ，在该点强度为 ⌊<span class="hljs-number">9</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">1</span>)⌋ = ⌊<span class="hljs-number">4.5</span>⌋ = <span class="hljs-number">4</span><br>没有别的坐标有更大的信号强度。<br></code></pre></td></tr></table></figure>
 
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    List&lt;String&gt; ans;<br><br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">letterCasePermutation</span><span class="hljs-params">(String s)</span> &#123;<br>        ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        traverse(s, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">traverse</span><span class="hljs-params">(String s, String cur, <span class="hljs-type">int</span> begin)</span> &#123;<br>        <span class="hljs-keyword">if</span>(s.length() == cur.length()) &#123;<br>            ans.add(cur);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        traverse(s, cur + s.charAt(begin), begin + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span>(Character.isLetter(s.charAt(begin))) &#123;<br>            traverse(s, cur + (<span class="hljs-type">char</span>)(s.charAt(begin) ^ <span class="hljs-number">32</span>), begin + <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;   <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：towers = <span class="hljs-string">[[23,11,21]]</span>, radius = <span class="hljs-number">9</span><br>输出：[<span class="hljs-number">23</span>,<span class="hljs-number">11</span>]<br>解释：由于仅存在一座信号塔，所以塔的位置信号强度最大。<br></code></pre></td></tr></table></figure>
 
-<h4 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">letterCasePermutation</span><span class="hljs-params">(s <span class="hljs-type">string</span>)</span></span> []<span class="hljs-type">string</span> &#123;<br>    ans := <span class="hljs-built_in">make</span>([]<span class="hljs-type">string</span>, <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">var</span> f <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(<span class="hljs-type">string</span>, <span class="hljs-type">string</span>, <span class="hljs-type">int</span>)</span></span><br>    f = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(s <span class="hljs-type">string</span>, cur <span class="hljs-type">string</span>, begin <span class="hljs-type">int</span>)</span></span> &#123;<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s) == <span class="hljs-built_in">len</span>(cur) &#123;<br>            ans = <span class="hljs-built_in">append</span>(ans, cur)<br>            <span class="hljs-keyword">return</span><br>        &#125;<br>        f(s, cur + <span class="hljs-type">string</span>(s[begin]), begin + <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">if</span> unicode.IsLetter(<span class="hljs-type">rune</span>(s[begin])) &#123;<br>            f(s, cur + <span class="hljs-type">string</span>(s[begin] ^ <span class="hljs-number">32</span>), begin + <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>    f(s, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">return</span> ans<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>示例 3：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：towers = <span class="hljs-comment">[<span class="hljs-comment">[1,2,13]</span>,<span class="hljs-comment">[2,1,7]</span>,<span class="hljs-comment">[0,1,9]</span>]</span>, radius = 2<br>输出：<span class="hljs-comment">[1,2]</span><br>解释：坐标 (1, 2) 的信号强度最大。<br></code></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= towers.length &lt;= 50</code></li>
+<li><code>towers[i].length == 3</code></li>
+<li><code>0 &lt;= xi, yi, qi &lt;= 50</code></li>
+<li><code>1 &lt;= radius &lt;= 50</code></li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：枚举"><a href="#方法一：枚举" class="headerlink" title="方法一：枚举"></a>方法一：枚举</h3><p>题目要求找到一个坐标，使得该点到所有信号塔的信号强度之和最大。</p>
+<p>题目给出的坐标范围最小为 <code>(0, 0)</code>，最大为 <code>(50, 50)</code>，而灯塔数量最多为50。即使采用三重 <code>for</code> 循环去遍历求解，计算次数也不会超过10e8，不存在TLE问题。因此选择枚举求解。</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python3">class Solution:<br>    def bestCoordinate(self, towers: List[List[int]], radius: int) -&gt; List[int]:<br>        max_v = 0<br>        ans = [0, 0]<br>        for i in range(51):<br>            for j in range(51):<br>                cur = 0<br>                for x, y, q in towers:<br>                    d = ((x - i) ** 2 + (y - j) ** 2) ** 0.5<br>                    if d &lt;= radius:<br>                        cur += floor(q / (1 + d))<br>                if cur &gt; max_v:<br>                    ans = [i, j]<br>                    max_v = cur<br>        return ans<br></code></pre></td></tr></table></figure>
+
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] bestCoordinate(<span class="hljs-type">int</span>[][] towers, <span class="hljs-type">int</span> radius) &#123;<br>        <span class="hljs-type">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">50</span>; i++) &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt;= <span class="hljs-number">50</span>; j++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] v : towers) &#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> v[<span class="hljs-number">0</span>], y = v[<span class="hljs-number">1</span>], q = v[<span class="hljs-number">2</span>];<br>                    <span class="hljs-type">double</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> Math.sqrt((x - i) * (x - i) + (y - j) * (y - j));<br>                    <span class="hljs-keyword">if</span>(d &lt;= radius) &#123;<br>                        cur += (<span class="hljs-type">int</span>)(q / (<span class="hljs-number">1</span> + d));<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(max &lt; cur) &#123;<br>                    ans[<span class="hljs-number">0</span>] = i; ans[<span class="hljs-number">1</span>] = j;<br>                    max = cur;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">bestCoordinate</span><span class="hljs-params">(towers [][]<span class="hljs-type">int</span>, radius <span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> &#123;<br>    ans := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;<br>    max := <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">50</span>; i++ &#123;<br>        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt;= <span class="hljs-number">50</span>; j++ &#123;<br>            cur := <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> towers &#123;<br>                x, y, q := v[<span class="hljs-number">0</span>], v[<span class="hljs-number">1</span>], v[<span class="hljs-number">2</span>]<br>                d := math.Sqrt(<span class="hljs-type">float64</span>((x - i) * (x - i) + (y - j) * (y - j)))<br>                <span class="hljs-keyword">if</span> d &lt;= <span class="hljs-type">float64</span>(radius) &#123;<br>                    cur += <span class="hljs-type">int</span>(<span class="hljs-type">float64</span>(q) / (<span class="hljs-number">1</span> + d))<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> cur &gt; max &#123;<br>                max = cur<br>                ans[<span class="hljs-number">0</span>] = i<br>                ans[<span class="hljs-number">1</span>] = j<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第32篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第33篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -369,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC Solution 784. Letter Case Permutation</div>
-      <div>https://ltyzzzxxx.github.io/2022/10/30/LC-Solution-784-Letter-Case-Permutation/</div>
+      <div>LC Solution 1620. Coordinate With Maximum Network Quality</div>
+      <div>https://ltyzzzxxx.github.io/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月30日</div>
+          <div>2022年11月2日</div>
         </div>
       
       
@@ -414,18 +429,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/" title="LC Solution 1620. Coordinate With Maximum Network Quality">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC Solution 1620. Coordinate With Maximum Network Quality</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/24/LC-Solution-915-Partition-Array-into-Disjoint-Intervals/" title="LC Solution 915. Partition Array into Disjoint Intervals">
-                        <span class="hidden-mobile">LC Solution 915. Partition Array into Disjoint Intervals</span>
+                      <a href="/2022/10/30/LC-Solution-784-Letter-Case-Permutation/" title="LC Solution 784. Letter Case Permutation">
+                        <span class="hidden-mobile">LC Solution 784. Letter Case Permutation</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
