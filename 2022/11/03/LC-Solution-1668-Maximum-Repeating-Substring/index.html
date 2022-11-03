@@ -16,26 +16,26 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1620. 网络信号最好的坐标题目描述给你一个数组 towers 和一个整数 radius 。 数组 towers 中包含一些网络信号塔，其中 towers[i] &#x3D; [xi, yi, qi] 表示第 i 个网络信号塔的坐标是 (xi, yi) 且信号强度参数为 qi 。所有坐标都是在 X-Y 坐标系内的 整数 坐标。两个坐标之间的距离用 欧几里得距离 计算。 整数 radius 表示一个塔 能到">
+    <meta name="description" content="1668. 最大重复子字符串题目描述给你一个字符串 sequence ，如果字符串 word 连续重复 k 次形成的字符串是 sequence 的一个子字符串，那么单词 word 的 重复值为 k 。单词 word 的 最****大重复值 是单词 word 在 sequence 中最大的重复值。如果 word 不是 sequence 的子串，那么重复值 k 为 0 。 给你一个字符串 sequen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC Solution 1620. Coordinate With Maximum Network Quality">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/index.html">
+<meta property="og:title" content="LC Solution 1668. Maximum Repeating Substring">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2022/11/03/LC-Solution-1668-Maximum-Repeating-Substring/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="1620. 网络信号最好的坐标题目描述给你一个数组 towers 和一个整数 radius 。 数组 towers 中包含一些网络信号塔，其中 towers[i] &#x3D; [xi, yi, qi] 表示第 i 个网络信号塔的坐标是 (xi, yi) 且信号强度参数为 qi 。所有坐标都是在 X-Y 坐标系内的 整数 坐标。两个坐标之间的距离用 欧几里得距离 计算。 整数 radius 表示一个塔 能到">
+<meta property="og:description" content="1668. 最大重复子字符串题目描述给你一个字符串 sequence ，如果字符串 word 连续重复 k 次形成的字符串是 sequence 的一个子字符串，那么单词 word 的 重复值为 k 。单词 word 的 最****大重复值 是单词 word 在 sequence 中最大的重复值。如果 word 不是 sequence 的子串，那么重复值 k 为 0 。 给你一个字符串 sequen">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1620.jpg">
-<meta property="article:published_time" content="2022-11-02T08:46:41.000Z">
-<meta property="article:modified_time" content="2022-11-02T08:48:20.931Z">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1668.jpg">
+<meta property="article:published_time" content="2022-11-03T05:23:39.000Z">
+<meta property="article:modified_time" content="2022-11-03T05:24:46.026Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1620.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/lc1668.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC Solution 1620. Coordinate With Maximum Network Quality - ltyzzz&#39;s Blog</title>
+  <title>LC Solution 1668. Maximum Repeating Substring - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC Solution 1620. Coordinate With Maximum Network Quality"></span>
+            <span id="subtitle" data-typed-text="LC Solution 1668. Maximum Repeating Substring"></span>
           
         </div>
 
@@ -223,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-02 16:46" pubdate>
-          2022年11月2日 下午
+        <time datetime="2022-11-03 13:23" pubdate>
+          2022年11月3日 下午
         </time>
       </span>
     
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          2k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          20 分钟
+          17 分钟
         
       </span>
     
@@ -292,52 +292,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC Solution 1620. Coordinate With Maximum Network Quality</h1>
+            <h1 style="display: none">LC Solution 1668. Maximum Repeating Substring</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1620-网络信号最好的坐标"><a href="#1620-网络信号最好的坐标" class="headerlink" title="1620. 网络信号最好的坐标"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coordinate-with-maximum-network-quality/">1620. 网络信号最好的坐标</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个数组 <code>towers</code> 和一个整数 <code>radius</code> 。</p>
-<p>数组 <code>towers</code> 中包含一些网络信号塔，其中 <code>towers[i] = [xi, yi, qi]</code> 表示第 <code>i</code> 个网络信号塔的坐标是 <code>(xi, yi)</code> 且信号强度参数为 <code>qi</code> 。所有坐标都是在 X-Y 坐标系内的 <strong>整数</strong> 坐标。两个坐标之间的距离用 <strong>欧几里得距离</strong> 计算。</p>
-<p>整数 <code>radius</code> 表示一个塔 <strong>能到达</strong> 的 <strong>最远距离</strong> 。如果一个坐标跟塔的距离在 <code>radius</code> 以内，那么该塔的信号可以到达该坐标。在这个范围以外信号会很微弱，所以 <code>radius</code> 以外的距离该塔是 <strong>不能到达的</strong> 。</p>
-<p>如果第 <code>i</code> 个塔能到达 <code>(x, y)</code> ，那么该塔在此处的信号为 <code>⌊qi / (1 + d)⌋</code> ，其中 <code>d</code> 是塔跟此坐标的距离。一个坐标的 <strong>信号强度</strong> 是所有 <strong>能到达</strong> 该坐标的塔的信号强度之和。</p>
-<p>请你返回数组 <code>[cx, cy]</code> ，表示 <strong>信号强度</strong> 最大的 <strong>整数</strong> 坐标点 <code>(cx, cy)</code> 。如果有多个坐标网络信号一样大，请你返回字典序最小的 <strong>非负</strong> 坐标。</p>
-<p><strong>注意：</strong></p>
+                <h1 id="1668-最大重复子字符串"><a href="#1668-最大重复子字符串" class="headerlink" title="1668. 最大重复子字符串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-repeating-substring/">1668. 最大重复子字符串</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个字符串 <code>sequence</code> ，如果字符串 <code>word</code> 连续重复 <code>k</code> 次形成的字符串是 <code>sequence</code> 的一个子字符串，那么单词 <code>word</code> 的 <strong>重复值为 <code>k</code></strong> 。单词 <code>word</code> 的 <strong>最****大重复值</strong> 是单词 <code>word</code> 在 <code>sequence</code> 中最大的重复值。如果 <code>word</code> 不是 <code>sequence</code> 的子串，那么重复值 <code>k</code> 为 <code>0</code> 。</p>
+<p>给你一个字符串 <code>sequence</code> 和 <code>word</code> ，请你返回 <strong>最大重复值 <code>k</code></strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：sequence = <span class="hljs-string">&quot;ababc&quot;</span>, <span class="hljs-built_in">word</span> = <span class="hljs-string">&quot;ab&quot;</span><br>输出：<span class="hljs-number">2</span><br>解释：<span class="hljs-string">&quot;abab&quot;</span> 是 <span class="hljs-string">&quot;ababc&quot;</span> 的子字符串。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：sequence = <span class="hljs-string">&quot;ababc&quot;</span>, <span class="hljs-built_in">word</span> = <span class="hljs-string">&quot;ba&quot;</span><br>输出：<span class="hljs-number">1</span><br>解释：<span class="hljs-string">&quot;ba&quot;</span> 是 <span class="hljs-string">&quot;ababc&quot;</span> 的子字符串，但 <span class="hljs-string">&quot;baba&quot;</span> 不是 <span class="hljs-string">&quot;ababc&quot;</span> 的子字符串。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：sequence = <span class="hljs-string">&quot;ababc&quot;</span>, <span class="hljs-built_in">word</span> = <span class="hljs-string">&quot;ac&quot;</span><br>输出：<span class="hljs-number">0</span><br>解释：<span class="hljs-string">&quot;ac&quot;</span> 不是 <span class="hljs-string">&quot;ababc&quot;</span> 的子字符串。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>坐标 <code>(x1, y1)</code> 字典序比另一个坐标 <code>(x2, y2)</code> 小，需满足以下条件之一：<ul>
-<li>要么 <code>x1 &lt; x2</code> ，</li>
-<li>要么 <code>x1 == x2</code> 且 <code>y1 &lt; y2</code> 。</li>
+<li><code>1 &lt;= sequence.length &lt;= 100</code></li>
+<li><code>1 &lt;= word.length &lt;= 100</code></li>
+<li><code>sequence</code> 和 <code>word</code> 都只包含小写英文字母。</li>
 </ul>
-</li>
-<li><code>⌊val⌋</code> 表示小于等于 <code>val</code> 的最大整数（向下取整函数）。</li>
-</ul>
-<p>示例 1：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：towers = <span class="hljs-string">[[1,2,5],[2,1,7],[3,1,9]]</span>, radius = <span class="hljs-number">2</span><br>输出：[<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br>解释：<br>坐标 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>) 信号强度之和为 <span class="hljs-number">13</span><br>- 塔 (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>) 强度参数为 <span class="hljs-number">7</span> ，在该点强度为 ⌊<span class="hljs-number">7</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">0</span>)⌋ = ⌊<span class="hljs-number">7</span>⌋ = <span class="hljs-number">7</span><br>- 塔 (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) 强度参数为 <span class="hljs-number">5</span> ，在该点强度为 ⌊<span class="hljs-number">5</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>)⌋ = ⌊<span class="hljs-number">2.07</span>⌋ = <span class="hljs-number">2</span><br>- 塔 (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>) 强度参数为 <span class="hljs-number">9</span> ，在该点强度为 ⌊<span class="hljs-number">9</span> / (<span class="hljs-number">1</span> + <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">1</span>)⌋ = ⌊<span class="hljs-number">4.5</span>⌋ = <span class="hljs-number">4</span><br>没有别的坐标有更大的信号强度。<br></code></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：模拟"><a href="#方法一：模拟" class="headerlink" title="方法一：模拟"></a>方法一：模拟</h3><p>题目要求当 <code>word</code> 重复出现 <code>k</code> 次时形成的字符串为 <code>sequence</code> 的子字符串。要求返回最大的 <code>k</code> 值。</p>
+<p>我们可以假设理想情况下，即 <code>word</code> 重复 <code>k</code> 次之后与 <code>sequence</code> 相同。</p>
+<p>不难得出：理想情况下，当 <code>k</code> 最大时，应当满足 <code>ceil(len(word) * k) == len(sequence)</code>。其中 <code>ceil</code> 表示向上取整。</p>
+<p>因此，我们可以先通过 <code>len(sequence) // len(word)</code> 求得初始理论上最大的 <code>k</code>，然后循环递减 <code>k</code>，直到 <code>word</code> 重复 <code>k</code> 次后形成的字符串为 <code>sequence</code> 的子字符串</p>
+<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python3">class Solution:<br>    def maxRepeating(self, sequence: str, word: str) -&gt; int:<br>        s_len, w_len = len(sequence), len(word)<br>        cnt = s_len // w_len<br>        while cnt:<br>            if sequence.find(word * cnt) != -1:<br>                return cnt<br>            cnt -= 1<br>        return 0<br></code></pre></td></tr></table></figure>
 
-<p>示例 2：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：towers = <span class="hljs-string">[[23,11,21]]</span>, radius = <span class="hljs-number">9</span><br>输出：[<span class="hljs-number">23</span>,<span class="hljs-number">11</span>]<br>解释：由于仅存在一座信号塔，所以塔的位置信号强度最大。<br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxRepeating</span><span class="hljs-params">(String sequence, String word)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sLen</span> <span class="hljs-operator">=</span> sequence.length(), wLen = word.length();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> sLen / wLen;<br>        <span class="hljs-keyword">while</span>(cnt &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">repeatWord</span> <span class="hljs-operator">=</span> repeatK(word, cnt);<br>            <span class="hljs-keyword">if</span>(sequence.indexOf(repeatWord) != -<span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-keyword">return</span> cnt;<br>            &#125;<br>            cnt--;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">repeatK</span><span class="hljs-params">(String word, <span class="hljs-type">int</span> cnt)</span> &#123;<br>        <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cnt; i++) &#123;<br>            sb.append(word);<br>        &#125;<br>        <span class="hljs-keyword">return</span> sb.toString(); <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>示例 3：</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：towers = <span class="hljs-comment">[<span class="hljs-comment">[1,2,13]</span>,<span class="hljs-comment">[2,1,7]</span>,<span class="hljs-comment">[0,1,9]</span>]</span>, radius = 2<br>输出：<span class="hljs-comment">[1,2]</span><br>解释：坐标 (1, 2) 的信号强度最大。<br></code></pre></td></tr></table></figure>
-
-<p>提示：</p>
-<ul>
-<li><code>1 &lt;= towers.length &lt;= 50</code></li>
-<li><code>towers[i].length == 3</code></li>
-<li><code>0 &lt;= xi, yi, qi &lt;= 50</code></li>
-<li><code>1 &lt;= radius &lt;= 50</code></li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方法一：枚举"><a href="#方法一：枚举" class="headerlink" title="方法一：枚举"></a>方法一：枚举</h3><p>题目要求找到一个坐标，使得该点到所有信号塔的信号强度之和最大。</p>
-<p>题目给出的坐标范围最小为 <code>(0, 0)</code>，最大为 <code>(50, 50)</code>，而灯塔数量最多为50。即使采用三重 <code>for</code> 循环去遍历求解，计算次数也不会超过10e8，不存在TLE问题。因此选择枚举求解。</p>
-<h4 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python3">class Solution:<br>    def bestCoordinate(self, towers: List[List[int]], radius: int) -&gt; List[int]:<br>        max_v = 0<br>        ans = [0, 0]<br>        for i in range(51):<br>            for j in range(51):<br>                cur = 0<br>                for x, y, q in towers:<br>                    d = ((x - i) ** 2 + (y - j) ** 2) ** 0.5<br>                    if d &lt;= radius:<br>                        cur += floor(q / (1 + d))<br>                if cur &gt; max_v:<br>                    ans = [i, j]<br>                    max_v = cur<br>        return ans<br></code></pre></td></tr></table></figure>
-
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] bestCoordinate(<span class="hljs-type">int</span>[][] towers, <span class="hljs-type">int</span> radius) &#123;<br>        <span class="hljs-type">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">50</span>; i++) &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt;= <span class="hljs-number">50</span>; j++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] v : towers) &#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> v[<span class="hljs-number">0</span>], y = v[<span class="hljs-number">1</span>], q = v[<span class="hljs-number">2</span>];<br>                    <span class="hljs-type">double</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> Math.sqrt((x - i) * (x - i) + (y - j) * (y - j));<br>                    <span class="hljs-keyword">if</span>(d &lt;= radius) &#123;<br>                        cur += (<span class="hljs-type">int</span>)(q / (<span class="hljs-number">1</span> + d));<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(max &lt; cur) &#123;<br>                    ans[<span class="hljs-number">0</span>] = i; ans[<span class="hljs-number">1</span>] = j;<br>                    max = cur;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">bestCoordinate</span><span class="hljs-params">(towers [][]<span class="hljs-type">int</span>, radius <span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> &#123;<br>    ans := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;<br>    max := <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">50</span>; i++ &#123;<br>        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt;= <span class="hljs-number">50</span>; j++ &#123;<br>            cur := <span class="hljs-number">0</span><br>            <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> towers &#123;<br>                x, y, q := v[<span class="hljs-number">0</span>], v[<span class="hljs-number">1</span>], v[<span class="hljs-number">2</span>]<br>                d := math.Sqrt(<span class="hljs-type">float64</span>((x - i) * (x - i) + (y - j) * (y - j)))<br>                <span class="hljs-keyword">if</span> d &lt;= <span class="hljs-type">float64</span>(radius) &#123;<br>                    cur += <span class="hljs-type">int</span>(<span class="hljs-type">float64</span>(q) / (<span class="hljs-number">1</span> + d))<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> cur &gt; max &#123;<br>                max = cur<br>                ans[<span class="hljs-number">0</span>] = i<br>                ans[<span class="hljs-number">1</span>] = j<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxRepeating</span><span class="hljs-params">(sequence <span class="hljs-type">string</span>, word <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">int</span> &#123;<br>    sLen, wLen := <span class="hljs-built_in">len</span>(sequence), <span class="hljs-built_in">len</span>(word)<br>    cnt := sLen / wLen<br>    <span class="hljs-keyword">for</span> cnt &gt; <span class="hljs-number">0</span> &#123;<br>        repeatWord := repeatK(word, cnt)<br>        <span class="hljs-keyword">if</span> strings.Contains(sequence, repeatWord) &#123;<br>            <span class="hljs-keyword">return</span> cnt<br>        &#125;<br>        cnt--<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">repeatK</span><span class="hljs-params">(word <span class="hljs-type">string</span>, cnt <span class="hljs-type">int</span>)</span></span> (ans <span class="hljs-type">string</span>) &#123;<br>    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; cnt; i++ &#123;<br>        ans += word<br>    &#125;<br>    <span class="hljs-keyword">return</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="Encouragement"><a href="#Encouragement" class="headerlink" title="Encouragement"></a>Encouragement</h2><p>目前就读于新加坡国立大学，转码菜鸡一枚。</p>
 <p>决心通过日更一篇题解激励自己坚持刷题，坚持学习算法。</p>
-<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第33篇题解，欢迎各位star并提出Issue~</p>
+<p>这是我搭建<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/Leetcode-Everyday">Leetcode-Everyday</a>仓库后发布の第34篇题解，欢迎各位star并提出Issue~</p>
 <p>点击<a target="_blank" rel="noopener" href="https://leetcode.cn/u/ltyzzz/">这里</a>，进入我的个人Leetcode主页~</p>
 
                 
@@ -384,8 +373,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC Solution 1620. Coordinate With Maximum Network Quality</div>
-      <div>https://ltyzzzxxx.github.io/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/</div>
+      <div>LC Solution 1668. Maximum Repeating Substring</div>
+      <div>https://ltyzzzxxx.github.io/2022/11/03/LC-Solution-1668-Maximum-Repeating-Substring/</div>
     </div>
     <div class="license-meta">
       
@@ -397,7 +386,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月2日</div>
+          <div>2022年11月3日</div>
         </div>
       
       
@@ -429,18 +418,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/03/LC-Solution-1668-Maximum-Repeating-Substring/" title="LC Solution 1668. Maximum Repeating Substring">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC Solution 1668. Maximum Repeating Substring</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/30/LC-Solution-784-Letter-Case-Permutation/" title="LC Solution 784. Letter Case Permutation">
-                        <span class="hidden-mobile">LC Solution 784. Letter Case Permutation</span>
+                      <a href="/2022/11/02/LC-Solution-1620-Coordinate-With-Maximum-Network-Quality/" title="LC Solution 1620. Coordinate With Maximum Network Quality">
+                        <span class="hidden-mobile">LC Solution 1620. Coordinate With Maximum Network Quality</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
