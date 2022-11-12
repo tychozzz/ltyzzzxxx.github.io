@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/mysql-learning.jpg">
 <meta property="article:published_time" content="2022-11-11T15:49:03.000Z">
-<meta property="article:modified_time" content="2022-11-11T15:53:45.327Z">
+<meta property="article:modified_time" content="2022-11-12T12:27:52.431Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="事务">
 <meta property="article:tag" content="MySQL">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k 字
+          6.6k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          35 分钟
+          55 分钟
         
       </span>
     
@@ -466,7 +466,90 @@
 <p>Explain 执行计划中各个字段的含义: </p>
 <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221111234650646.png" srcset="/img/loading.gif" lazyload alt="image-20221111234650646" style="zoom:50%;" />
 
-<h2 id="4-SQL优化"><a href="#4-SQL优化" class="headerlink" title="4. SQL优化"></a>4. SQL优化</h2>
+<h3 id="3-6-索引使用规则"><a href="#3-6-索引使用规则" class="headerlink" title="3.6 索引使用规则"></a>3.6 索引使用规则</h3><h2 id="4-SQL优化"><a href="#4-SQL优化" class="headerlink" title="4. SQL优化"></a>4. SQL优化</h2><h3 id="4-1-插入数据"><a href="#4-1-插入数据" class="headerlink" title="4.1 插入数据"></a>4.1 插入数据</h3><ul>
+<li><p>insert优化</p>
+<ul>
+<li>执行批量插入：500 ~ 1000条</li>
+<li>手动开启与提交事务</li>
+<li>主键顺序插入</li>
+</ul>
+</li>
+<li><p>大批量插入数据</p>
+<ul>
+<li>如果一次性需要插入大批量数据，使用insert语句插入性能较低，此时需要MySQL提供的load指令</li>
+</ul>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221112163647221.png" srcset="/img/loading.gif" lazyload alt="image-20221112163647221"></p>
+<p>使用如下指令，将数据脚本文件中的数据加载到表结构中</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 客户端连接服务端时，加上参数 -–local-infile </span><br>mysql –<span class="hljs-operator">-</span><span class="hljs-keyword">local</span><span class="hljs-operator">-</span>infile <span class="hljs-operator">-</span>u root <span class="hljs-operator">-</span>p <br><span class="hljs-comment">-- 设置全局参数local_infile为1，开启从本地加载文件导入数据的开关 </span><br><span class="hljs-keyword">set</span> <span class="hljs-keyword">global</span> local_infile <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; <br><span class="hljs-comment">-- 执行load指令将准备好的数据，加载到表结构中 </span><br>load data <span class="hljs-keyword">local</span> infile <span class="hljs-string">&#x27;/root/sql1.log&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> tb_user fields <br>terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;,&#x27;</span> lines terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\n&#x27;</span> ;<br></code></pre></td></tr></table></figure>
+
+<p>开启local_infile之后，在任意一个数据库中创建一张表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `tb_user` ( <br>    `id` <span class="hljs-type">INT</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT, <br>    `username` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>, <br>    `password` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>, <br>    `name` <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>, `birthday` <span class="hljs-type">DATE</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>, <br>    `sex` <span class="hljs-type">CHAR</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>, <br>    <span class="hljs-keyword">PRIMARY</span> KEY (`id`), <br>    <span class="hljs-keyword">UNIQUE</span> KEY `unique_user_username` (`username`) <br>) ENGINE<span class="hljs-operator">=</span>INNODB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 ;<br></code></pre></td></tr></table></figure>
+
+<p>然后在数据库上加载对应的文件</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">load</span> data <span class="hljs-keyword">local</span> infile <span class="hljs-string">&#x27;/Users/xxx/Documents/load_user_100w_sort.sql&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> tb_user fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;,&#x27;</span> lines terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\n&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221112164957718.png" srcset="/img/loading.gif" lazyload alt="image-20221112164957718"></p>
+<p>从中可见性能提升了很多</p>
+</li>
+</ul>
+<h3 id="4-2-主键优化"><a href="#4-2-主键优化" class="headerlink" title="4.2 主键优化"></a>4.2 主键优化</h3><p>在InnoDB存储引擎中，表数据都是根据主键顺序组织存放的，这种存储方式的表称为索引组织表</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221112165939874.png" srcset="/img/loading.gif" lazyload alt="image-20221112165939874" style="zoom:50%;" />
+
+<p>在InnoDB引擎中，数据行是记录在逻辑结构 page 页中的，而每一个页的大小是固定的，默认16K。那也就意味着， 一个页中所存储的行也是有限的，如果插入的数据行row在该页存储不小，将会存储到下一个页中，页与页之间会通过指针连接。</p>
+<ul>
+<li><p>页分裂</p>
+<p>页可以为空，也可以填充一半，也可以填充100%。每个页包含了2-N行数据(如果一行数据过大，会行溢出)，根据主键排列。</p>
+<ul>
+<li>主键顺序插入时，当前页满了之后，会插入到下一页。页与页之间用指针相连。</li>
+<li>主键乱序插入时，当插入的主键id在中间且当前页已经写满时，会将当前页的后一半数据移动到新的一页，然后再插入该主键id，此时需要重新设置页与页之间的链表指针 &#x3D;&gt; 页分裂</li>
+</ul>
+</li>
+<li><p>页合并</p>
+<ul>
+<li>当删除一行记录时，实际上记录并没有被物理删除，只是记录被标记（flaged）为删除并且它的空间变得允许被其他记录声明使用。</li>
+<li>当页中删除的记录达到 MERGE_THRESHOLD（默认为页的50%），InnoDB会开始寻找最靠近的页（前或后）看看是否可以将两个页合并以优化空间使用。</li>
+</ul>
+</li>
+</ul>
+<p>索引设计原则：</p>
+<ol>
+<li>满足业务需求的情况下，尽量降低主键的长度。</li>
+<li>插入数据时，尽量选择顺序插入，选择使用AUTO_INCREMENT自增主键。</li>
+<li>尽量不要使用UUID做主键或者是其他自然主键，如身份证号。</li>
+<li>业务操作时，避免对主键的修改。</li>
+</ol>
+<h3 id="4-3-order-by优化"><a href="#4-3-order-by优化" class="headerlink" title="4.3 order by优化"></a>4.3 order by优化</h3><p>MySQL的排序，有两种方式：</p>
+<ul>
+<li>Using filesort : 通过表的索引或全表扫描，读取满足条件的数据行，然后在排序缓冲区sortbuffer中完成排序操作，所有不是通过索引直接返回排序结果的排序都叫 FileSort 排序。</li>
+<li>Using index : 通过有序索引顺序扫描直接返回有序数据，这种情况即为 using index，不需要额外排序，操作效率高。</li>
+</ul>
+<p>在优化排序操作时，尽量采用Using Index</p>
+<p>order by优化原则</p>
+<ol>
+<li>根据排序字段建立合适的索引，多字段排序时，也遵循最左前缀法则</li>
+<li>尽量使用覆盖索引</li>
+<li>多字段排序, 一个升序一个降序，此时需要注意联合索引在创建时的规则（ASC&#x2F;DESC）</li>
+<li>如果不可避免的出现filesort，大数据量排序时，可以适当增大排序缓冲区大小sort_buffer_size，默认256K</li>
+</ol>
+<h3 id="4-4-group-by优化"><a href="#4-4-group-by优化" class="headerlink" title="4.4 group by优化"></a>4.4 group by优化</h3><p>在分组操作中，我们需要通过以下两点进行优化，以提升性能：</p>
+<ol>
+<li>在分组操作时，可以通过索引来提高效率。</li>
+<li>分组操作时，索引的使用也是满足最左前缀法则的。</li>
+</ol>
+<h3 id="4-5-limit优化"><a href="#4-5-limit优化" class="headerlink" title="4.5 limit优化"></a>4.5 limit优化</h3><p>优化思路: 一般分页查询时，通过创建 覆盖索引 能够比较好地提高性能，可以通过覆盖索引加子查询形式进行优化。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">explain <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> tb_sku t , (<span class="hljs-keyword">select</span> id <span class="hljs-keyword">from</span> tb_sku <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> id limit <span class="hljs-number">2000000</span>,<span class="hljs-number">10</span>) a <span class="hljs-keyword">where</span> t.id <span class="hljs-operator">=</span> a.id;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-6-count优化"><a href="#4-6-count优化" class="headerlink" title="4.6 count优化"></a>4.6 count优化</h3><p>当表的数据量很大时，对表执行count操作是非常耗时的</p>
+<ul>
+<li>MyISAM 引擎把一个表的总行数存在了磁盘上，因此执行 count(*) 的时候会直接返回这个数，效率很高； 但是如果是带条件的count，MyISAM也慢。</li>
+<li>InnoDB执行 count(*) 的时候，需要把数据一行一行地从引擎里面读出来，然后累积计数。</li>
+<li>如果想大幅度提升InnoDB表的count效率，可以借助Redis手动统计计数</li>
+</ul>
+<p>count用法：count(字段) &lt; count(主键 id) &lt; count(1) ≈ count(*)</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221112200822172.png" srcset="/img/loading.gif" lazyload alt="image-20221112200822172" style="zoom:50%;" />
+
+<h3 id="4-7-update优化"><a href="#4-7-update优化" class="headerlink" title="4.7 update优化"></a>4.7 update优化</h3><p>在采用update语句进行更新数据操作时，最好将索引作为查询数据的条件。这是因为InnoDB的行锁是针对索引加锁，而不是针对记录加锁。如果索引失效，则行锁会自动升级为表锁。</p>
+
                 
               </div>
             
