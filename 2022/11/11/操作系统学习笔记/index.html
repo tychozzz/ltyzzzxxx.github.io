@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/os.jpg">
 <meta property="article:published_time" content="2022-11-11T15:57:34.000Z">
-<meta property="article:modified_time" content="2022-11-14T09:41:25.709Z">
+<meta property="article:modified_time" content="2022-11-15T14:58:16.519Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="操作系统">
 <meta property="article:tag" content="并发">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          6.3k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          47 分钟
+          53 分钟
         
       </span>
     
@@ -644,7 +644,64 @@
 <li>短进程只用较少的时间就可完成</li>
 <li>可灵活地调整各类进程的偏好程度</li>
 </ol>
+<h3 id="2-3-进程同步与互斥"><a href="#2-3-进程同步与互斥" class="headerlink" title="2.3 进程同步与互斥"></a>2.3 进程同步与互斥</h3><p>同步：两个或多个进程协调工作次序</p>
+<p>互斥：一个时间段只允许一个进程访问该资源，互斥访问临界资源</p>
+<ul>
+<li><p>进入区、临界区、退出区、剩余区</p>
+</li>
+<li><p>空闲让进：临界区空闲时，可以允许一个请求进入临界区的进程立即进入临界区</p>
+</li>
+<li><p>忙则等待：当已有进程进入临界区时，其他试图进入临界区的进程必须等待</p>
+</li>
+<li><p>有限等待：对请求访问的进程，应保证能在有限时间内进入临界区（保证不会饥饿）</p>
+</li>
+<li><p>让权等待：当进程不能进入临界区时，应立即释放处理机，防止进程忙等待</p>
+</li>
+</ul>
+<h4 id="2-3-1-进程互斥实现"><a href="#2-3-1-进程互斥实现" class="headerlink" title="2.3.1 进程互斥实现"></a>2.3.1 进程互斥实现</h4><ol>
+<li><p>单标志法：</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221114180859131.png" srcset="/img/loading.gif" lazyload alt="image-20221114180859131"></p>
+<p>缺点：Starvation：If P0 never enters CS, P1 starve</p>
+</li>
+<li><p>双标志先检查法</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221114181642885.png" srcset="/img/loading.gif" lazyload alt="image-20221114181642885"></p>
+<p>缺点：存在并发问题，违反忙则等待原则。原因是while循环的检查与上锁两个步骤不具有原子性，在这之间可能出现线程切换。</p>
+<p>双标志后检查法：调换了检查与上锁步骤</p>
+<p>缺点：存在并发问题，造成死锁，导致线程均无法进入临界区。</p>
+</li>
+<li><p>Perterson算法 </p>
+<p>孔融让梨思想：先表达自己的意愿，再主动请对方先使用临界区</p>
+<p><img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221114182353399.png" srcset="/img/loading.gif" lazyload alt="image-20221114182353399"></p>
+</li>
+</ol>
+<h4 id="2-3-2-信号量机制"><a href="#2-3-2-信号量机制" class="headerlink" title="2.3.2 信号量机制"></a>2.3.2 信号量机制</h4><p>用户进程可以使用操作系统提供的一对原语对信号量进行操作</p>
+<ul>
+<li>信号量：表示系统中某种资源的数量</li>
+<li>一对原语：wait、signal 或 P、V操作</li>
+</ul>
+<p>整型信号量</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221115211728841.png" srcset="/img/loading.gif" lazyload alt="image-20221115211728841" style="zoom:50%;" />
 
+<p>记录型信号量</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221115211815584.png" srcset="/img/loading.gif" lazyload alt="image-20221115211815584" style="zoom: 50%;" />
+
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221115211905535.png" srcset="/img/loading.gif" lazyload alt="image-20221115211905535" style="zoom: 50%;" />
+
+<h5 id="信号量实现进程互斥"><a href="#信号量实现进程互斥" class="headerlink" title="信号量实现进程互斥"></a>信号量实现进程互斥</h5><p>对于不同的临界资源需要设置不同的互斥信号量</p>
+<ol>
+<li>划定临界区</li>
+<li>设置互斥信号量为mutex，初始值为1</li>
+<li>在临界区之前执行 P(mutex)</li>
+<li>在临界区之后执行 V(mutex)</li>
+</ol>
+<p>P-V操作必须成对出现</p>
+<h5 id="信号量实现进程同步"><a href="#信号量实现进程同步" class="headerlink" title="信号量实现进程同步"></a>信号量实现进程同步</h5><p>进程并发执行，存在异步性，因此两者交替推进的次序是不确定的。</p>
+<ol>
+<li>设置同步信号量S，初始值为0</li>
+<li>在前操作之后执行 V(S)</li>
+<li>在后操作之前执行 P(S)</li>
+</ol>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221115213153034.png" srcset="/img/loading.gif" lazyload alt="image-20221115213153034" style="zoom:50%;" />
                 
               </div>
             
