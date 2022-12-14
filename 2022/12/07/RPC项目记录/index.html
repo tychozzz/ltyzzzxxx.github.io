@@ -16,16 +16,16 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="RPC项目记录1. 引入Proxy代理层采用JDK类代理，执行的逻辑为：将请求方法放入SEND_QUEUE队列中，自旋等待结果响应结果（从RESP_MAP中取出） 关键代码如下： 123456789RESP_MAP.put(rpcInvocation.getUuid(), OBJECT);SEND_QUEUE.add(rpcInvocation); &#x2F;&#x2F; 放入阻塞队列中&#x2F;&#x2F; 可以设置超时时间whi">
+    <meta name="description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;ltyzzzxxx&#x2F;ltyzzz-rpc RPC项目树模块树123456789101112├── rpc-consumer│   ├── rpc-consumer-demo		-&gt; 未接入spring：consumer测试类│   └── rpc-consumer-spring		-&gt; 接入spring：consumer本地服务接口├──">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RPC项目记录">
 <meta property="og:url" content="https://ltyzzzxxx.github.io/2022/12/07/RPC%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="RPC项目记录1. 引入Proxy代理层采用JDK类代理，执行的逻辑为：将请求方法放入SEND_QUEUE队列中，自旋等待结果响应结果（从RESP_MAP中取出） 关键代码如下： 123456789RESP_MAP.put(rpcInvocation.getUuid(), OBJECT);SEND_QUEUE.add(rpcInvocation); &#x2F;&#x2F; 放入阻塞队列中&#x2F;&#x2F; 可以设置超时时间whi">
+<meta property="og:description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;ltyzzzxxx&#x2F;ltyzzz-rpc RPC项目树模块树123456789101112├── rpc-consumer│   ├── rpc-consumer-demo		-&gt; 未接入spring：consumer测试类│   └── rpc-consumer-spring		-&gt; 接入spring：consumer本地服务接口├──">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/rpc.jpg">
 <meta property="article:published_time" content="2022-12-07T06:16:37.000Z">
-<meta property="article:modified_time" content="2022-12-07T06:21:43.372Z">
+<meta property="article:modified_time" content="2022-12-14T08:59:46.609Z">
 <meta property="article:author" content="ltyzzz">
 <meta property="article:tag" content="Zookeeper">
 <meta property="article:tag" content="分布式">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          17k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          98 分钟
+          138 分钟
         
       </span>
     
@@ -299,7 +299,40 @@
             
               <div class="markdown-body">
                 
-                <h1 id="RPC项目记录"><a href="#RPC项目记录" class="headerlink" title="RPC项目记录"></a>RPC项目记录</h1><h2 id="1-引入Proxy代理层"><a href="#1-引入Proxy代理层" class="headerlink" title="1. 引入Proxy代理层"></a>1. 引入Proxy代理层</h2><p>采用JDK类代理，执行的逻辑为：将请求方法放入SEND_QUEUE队列中，自旋等待结果响应结果（从RESP_MAP中取出）</p>
+                <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/ltyzzz-rpc">https://github.com/ltyzzzxxx/ltyzzz-rpc</a></p>
+<h1 id="RPC项目树"><a href="#RPC项目树" class="headerlink" title="RPC项目树"></a>RPC项目树</h1><h2 id="模块树"><a href="#模块树" class="headerlink" title="模块树"></a>模块树</h2><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xl">├── rpc-consumer<br>│   ├── <span class="hljs-function"><span class="hljs-title">rpc</span>-consumer-demo		-&gt;</span> 未接入spring：consumer测试类<br>│   └── <span class="hljs-function"><span class="hljs-title">rpc</span>-consumer-spring		-&gt;</span> 接入spring：consumer本地服务接口<br>├── <span class="hljs-function"><span class="hljs-title">rpc</span>-core					-&gt;</span> rpc核心实现逻辑模块<br>├── <span class="hljs-function"><span class="hljs-title">rpc</span>-interface				-&gt;</span> 远程服务接口<br>├── rpc-provider<br>│   ├── <span class="hljs-function"><span class="hljs-title">rpc</span>-provider-demo		-&gt;</span> 未接入spring：provider测试类<br>│   ├── <span class="hljs-function"><span class="hljs-title">rpc</span>-provider-goods	    -&gt;</span> 接入spring：provider远程服务<br>│   ├── <span class="hljs-function"><span class="hljs-title">rpc</span>-provider-pay        -&gt;</span> 接入spring：provider远程服务<br>│   └── <span class="hljs-function"><span class="hljs-title">rpc</span>-provider-user		-&gt;</span> 接入spring：provider远程服务<br>├── <span class="hljs-function"><span class="hljs-title">rpc</span>-spring-starter			-&gt;</span> spring-starter接入类<br>└── <span class="hljs-function"><span class="hljs-title">simple</span>-rpc					-&gt;</span> 简易rpc<br></code></pre></td></tr></table></figure>
+
+<h2 id="核心模块树"><a href="#核心模块树" class="headerlink" title="核心模块树"></a>核心模块树</h2><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs xl">├── <span class="hljs-function"><span class="hljs-title">annotations</span>                 -&gt;</span> 项目注解包<br>├── <span class="hljs-function"><span class="hljs-title">cache</span>						-&gt;</span> 项目全局缓存<br>├── <span class="hljs-function"><span class="hljs-title">client</span>						-&gt;</span> 客户端相关类（请求处理、启动加载）<br>├── <span class="hljs-function"><span class="hljs-title">common</span>						-&gt;</span> 通用模块<br>├── <span class="hljs-function"><span class="hljs-title">config</span>						-&gt;</span> 项目配置（服务端、客户端属性配置）<br>├── <span class="hljs-function"><span class="hljs-title">constants</span>					-&gt;</span> 项目常量<br>├── <span class="hljs-function"><span class="hljs-title">dispatcher</span>					-&gt;</span> 服务端请求解耦<br>├── <span class="hljs-function"><span class="hljs-title">event</span>						-&gt;</span> 事件监听机制<br>├── <span class="hljs-function"><span class="hljs-title">exception</span>					-&gt;</span> 全局异常<br>├── <span class="hljs-function"><span class="hljs-title">filter</span>						-&gt;</span> 责任链模式过滤请求<br>├── <span class="hljs-function"><span class="hljs-title">proxy</span>						-&gt;</span> 动态代理<br>├── <span class="hljs-function"><span class="hljs-title">registry</span>					-&gt;</span> 注册中心<br>├── <span class="hljs-function"><span class="hljs-title">router</span>						-&gt;</span> 路由选择负载均衡<br>├── <span class="hljs-function"><span class="hljs-title">serialize</span>					-&gt;</span> 序列化与反序列化<br>├── <span class="hljs-function"><span class="hljs-title">server</span>						-&gt;</span> 服务端相关类（请求处理、启动加载）<br>├── <span class="hljs-function"><span class="hljs-title">service</span>						-&gt;</span> 测试服务接口<br>├── <span class="hljs-function"><span class="hljs-title">spi</span>							-&gt;</span> SPI自定义加载类<br>└── <span class="hljs-function"><span class="hljs-title">utils</span>						-&gt;</span> 项目工具包<br></code></pre></td></tr></table></figure>
+
+<h1 id="RPC项目测试"><a href="#RPC项目测试" class="headerlink" title="RPC项目测试"></a>RPC项目测试</h1><h2 id="普通测试"><a href="#普通测试" class="headerlink" title="普通测试"></a>普通测试</h2><ol>
+<li><p>进入rpc-provider&#x2F;rpc-provider-demo模块下，运行ProviderDemo主方法</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221214155224257.png" srcset="/img/loading.gif" lazyload alt="image-20221214155224257" style="zoom:50%;" />
+</li>
+<li><p>进入rpc-consumer&#x2F;rpc-consumer-demo模块下，运行ConsumerDemo主方法</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221214155301390.png" srcset="/img/loading.gif" lazyload alt="image-20221214155301390" style="zoom:50%;" /></li>
+</ol>
+<h2 id="接入Springboot测试"><a href="#接入Springboot测试" class="headerlink" title="接入Springboot测试"></a>接入Springboot测试</h2><ol>
+<li><p>进入rpc-provider模块下，分别运行rpc-provider-goods、rpc-provider-pay、rpc-provider-user三个服务启动类</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221214155517934.png" srcset="/img/loading.gif" lazyload alt="image-20221214155517934" style="zoom: 50%;" />
+
+<ol start="2">
+<li><p>进入rpc-consumer&#x2F;rpc-consumer-spring模块下，运行服务启动类</p>
+<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20221214155636798.png" srcset="/img/loading.gif" lazyload alt="image-20221214155636798" style="zoom:50%;" />
+</li>
+<li><p>Consumer默认端口为8081，在浏览器中输入 <a target="_blank" rel="noopener" href="http://localhost:8081/api-test/do-test">http://localhost:8081/api-test/do-test</a> 进行远程服务调用基本测试</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h2><p>在项目模块的resouces文件下，有 <code>irpc.properties</code> 文件，用于配置Consumer（服务消费者）与Provider（服务提供者）的基本属性</p>
+<ol>
+<li><p>Consumer基本配置</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 应用名</span><br><span class="hljs-attr">irpc.applicationName</span>=<span class="hljs-string">irpc-consumer</span><br><span class="hljs-comment"># 注册中心地址</span><br><span class="hljs-attr">irpc.registerAddr</span>=<span class="hljs-string">localhost:2181</span><br><span class="hljs-comment"># 注册中心类型</span><br><span class="hljs-attr">irpc.registerType</span>=<span class="hljs-string">zookeeper</span><br><span class="hljs-comment"># 动态代理类型</span><br><span class="hljs-attr">irpc.proxyType</span>=<span class="hljs-string">javassist</span><br><span class="hljs-comment"># 路由策略类型</span><br><span class="hljs-attr">irpc.router</span>=<span class="hljs-string">rotate</span><br><span class="hljs-comment"># 序列化类型</span><br><span class="hljs-attr">irpc.clientSerialize</span>=<span class="hljs-string">jdk</span><br><span class="hljs-comment"># 请求超时时间</span><br><span class="hljs-attr">irpc.client.default.timeout</span>=<span class="hljs-string">3000</span><br><span class="hljs-comment"># 最大发送数据包</span><br><span class="hljs-attr">irpc.client.max.data.size</span>=<span class="hljs-string">4096</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Provider基本配置</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 服务提供者端口号</span><br><span class="hljs-attr">irpc.serverPort</span>=<span class="hljs-string">9021</span><br><span class="hljs-comment"># 服务提供者名称</span><br><span class="hljs-attr">irpc.applicationName</span>=<span class="hljs-string">good-provider</span><br><span class="hljs-comment"># 注册中心地址</span><br><span class="hljs-attr">irpc.registerAddr</span>=<span class="hljs-string">localhost:2181</span><br><span class="hljs-comment"># 注册中心类型</span><br><span class="hljs-attr">irpc.registerType</span>=<span class="hljs-string">zookeeper</span><br><span class="hljs-comment"># 序列化类型</span><br><span class="hljs-attr">irpc.serverSerialize</span>=<span class="hljs-string">fastJson</span><br><span class="hljs-comment"># 服务端异步处理队列大小</span><br><span class="hljs-attr">irpc.server.queue.size</span>=<span class="hljs-string">513</span><br><span class="hljs-comment"># 服务端线程池大小</span><br><span class="hljs-attr">irpc.server.biz.thread.nums</span>=<span class="hljs-string">257</span><br><span class="hljs-comment"># 服务端最大连接数</span><br><span class="hljs-attr">irpc.server.max.connection</span>=<span class="hljs-string">100</span><br><span class="hljs-comment"># 服务端可接收数据包最大值</span><br><span class="hljs-attr">irpc.server.max.data.size</span>=<span class="hljs-string">4096</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="RPC项目介绍"><a href="#RPC项目介绍" class="headerlink" title="RPC项目介绍"></a>RPC项目介绍</h1><h2 id="1-引入Proxy代理层"><a href="#1-引入Proxy代理层" class="headerlink" title="1. 引入Proxy代理层"></a>1. 引入Proxy代理层</h2><p>采用JDK类代理，执行的逻辑为：将请求方法放入SEND_QUEUE队列中，自旋等待结果响应结果（从RESP_MAP中取出）</p>
 <p>关键代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">RESP_MAP.put(rpcInvocation.getUuid(), OBJECT);<br>SEND_QUEUE.add(rpcInvocation); <span class="hljs-comment">// 放入阻塞队列中</span><br><span class="hljs-comment">// 可以设置超时时间</span><br><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">object</span> <span class="hljs-operator">=</span> RESP_MAP.get(rpcInvocation.getUuid());<br>    <span class="hljs-keyword">if</span> (object <span class="hljs-keyword">instanceof</span> RpcInvocation) &#123;<br>        <span class="hljs-keyword">return</span> ((RpcInvocation) object).getResponse();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -503,6 +536,73 @@
 <p>若该字段为True，则在动态代理层中，不需要同步阻塞等待响应结果，直接返回null即可。</p>
 </li>
 </ol>
+<h2 id="8-容错设计"><a href="#8-容错设计" class="headerlink" title="8. 容错设计"></a>8. 容错设计</h2><h3 id="8-1-报错日志打印"><a href="#8-1-报错日志打印" class="headerlink" title="8.1 报错日志打印"></a>8.1 报错日志打印</h3><p>当客户端发送请求到指定的服务提供者后，其调用对应的方法，但此时方法出现异常Exception。</p>
+<p>若将异常只记录在服务端中，则客户端较难定位异常发生的时间、位置与原因，因为同一个服务可能有多个服务提供者。</p>
+<p>因此，服务端在处理异常时，需要将所有异常捕获，并写回到客户端。</p>
+<p>实现流程如下：</p>
+<ol>
+<li><p>RpcInvocation类中添加异常字段</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> Throwable e;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>服务端处理接收到的请求时，用try-catch进行捕获，并设置异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 业务异常</span><br>rpcInvocation.setE(e);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>客户端处理器ClientHandler中，读取响应结果时，对异常进行判断。如果该字段不为空，则打印异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (rpcInvocation.getE() != <span class="hljs-literal">null</span>) &#123;<br>    rpcInvocation.getE().printStackTrace();<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="8-2-超时重试机制"><a href="#8-2-超时重试机制" class="headerlink" title="8.2 超时重试机制"></a>8.2 超时重试机制</h3><p>TODO:</p>
+<h3 id="8-3-服务端流量控制"><a href="#8-3-服务端流量控制" class="headerlink" title="8.3 服务端流量控制"></a>8.3 服务端流量控制</h3><h4 id="8-3-1-总体限流"><a href="#8-3-1-总体限流" class="headerlink" title="8.3.1 总体限流"></a>8.3.1 总体限流</h4><p>限制服务端的总体连接数，超过指定连接数时，拒绝剩余的连接请求。</p>
+<p>TODO:</p>
+<h4 id="8-3-2-单服务限流"><a href="#8-3-2-单服务限流" class="headerlink" title="8.3.2 单服务限流"></a>8.3.2 单服务限流</h4><p>采用 <strong>Semaphore</strong> 进行流量控制，在每一个服务进行注册时，便指定服务对应的最大连接数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//设置服务端的限流器</span><br>SERVER_SERVICE_SEMAPHORE_MAP.put(interfaceClass.getName(), <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerServiceSemaphoreWrapper</span>(serviceWrapper.getLimit()));<br></code></pre></td></tr></table></figure>
+
+<p>在请求到达服务端之前，配置一层前置过滤器。</p>
+<ul>
+<li>当当前连接数超过最大连接数时，根据Semaphore的tryAcquire原理，会直接返回False，据此判断流量超峰，抛出异常。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(RpcInvocation rpcInvocation)</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">serviceName</span> <span class="hljs-operator">=</span> rpcInvocation.getTargetServiceName();<br>    <span class="hljs-type">ServerServiceSemaphoreWrapper</span> <span class="hljs-variable">serverServiceSemaphoreWrapper</span> <span class="hljs-operator">=</span> SERVER_SERVICE_SEMAPHORE_MAP.get(serviceName);<br>    <span class="hljs-comment">//从缓存中提取semaphore对象</span><br>    <span class="hljs-type">Semaphore</span> <span class="hljs-variable">semaphore</span> <span class="hljs-operator">=</span> serverServiceSemaphoreWrapper.getSemaphore();<br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">tryResult</span> <span class="hljs-operator">=</span> semaphore.tryAcquire();<br>    <span class="hljs-keyword">if</span> (!tryResult) &#123;<br>        LOGGER.error(<span class="hljs-string">&quot;[ServerServiceBeforeLimitFilterImpl] &#123;&#125;&#x27;s max request is &#123;&#125;,reject now&quot;</span>, rpcInvocation.getTargetServiceName(), serverServiceSemaphoreWrapper.getMaxNums());<br>        <span class="hljs-type">MaxServiceLimitRequestException</span> <span class="hljs-variable">iRpcException</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MaxServiceLimitRequestException</span>(rpcInvocation);<br>        rpcInvocation.setE(iRpcException);<br>        <span class="hljs-keyword">throw</span> iRpcException;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当当前请求结束之后，需要对资源进行释放，也就是对Semaphore持有资源数加1。通过请求后置过滤器实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(RpcInvocation rpcInvocation)</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">serviceName</span> <span class="hljs-operator">=</span> rpcInvocation.getTargetServiceName();<br>    <span class="hljs-type">ServerServiceSemaphoreWrapper</span> <span class="hljs-variable">serverServiceSemaphoreWrapper</span> <span class="hljs-operator">=</span> SERVER_SERVICE_SEMAPHORE_MAP.get(serviceName);<br>    serverServiceSemaphoreWrapper.getSemaphore().release();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="9-接入SpringBoot"><a href="#9-接入SpringBoot" class="headerlink" title="9. 接入SpringBoot"></a>9. 接入SpringBoot</h2><h3 id="9-1-定义注解"><a href="#9-1-定义注解" class="headerlink" title="9. 1 定义注解"></a>9. 1 定义注解</h3><ol>
+<li><p>客户端对需要调用的服务添加 <code>@IRpcReference</code> 注解</p>
+<p>在Spring容器启动过程中，将带有此注解的字段进行构建，<strong>让它们的句柄可以指向一个代理类</strong></p>
+<p><strong>这样在使用UserService和OrderService类对应的方法时候就会感觉到似乎在执行本地调用一样，降低开发者的代码编写难度。</strong></p>
+</li>
+<li><p>服务端通过 <code>@IRpcService</code> 注解对服务进行暴露，将其注入到Spring容器中</p>
+<ul>
+<li>该注解内部添加了 <code>@Component</code> 注解，因此能被扫描到Spring容器中</li>
+</ul>
+</li>
+</ol>
+<h3 id="9-2-定义自动装配对象类"><a href="#9-2-定义自动装配对象类" class="headerlink" title="9.2 定义自动装配对象类"></a>9.2 定义自动装配对象类</h3><h4 id="9-2-1-服务端"><a href="#9-2-1-服务端" class="headerlink" title="9.2.1 服务端"></a>9.2.1 服务端</h4><p>服务端自动装配流程</p>
+<ol>
+<li><p>初始化服务端配置</p>
+<ul>
+<li>从 <code>irpc.properties</code> 中读取相关配置并写入config</li>
+<li>初始化线程池、队列</li>
+<li>通过 <code>SPI</code> 初始化序列化框架、过滤链</li>
+<li>初始化并注册启动事件监听器</li>
+</ul>
+</li>
+<li><p>Spring从容器中筛选出带有 <code>@IRpcService</code> 注解的类，以Map形式封装</p>
+</li>
+<li><p>将每一个Map中的对象封装为 <code>ServiceWrapper</code> 对象，并从注解中提取并设置相应的属性，将service注册到注册中心</p>
+</li>
+<li><p>开启服务端，准备接收任务</p>
+</li>
+</ol>
+<h4 id="9-2-2-客户端"><a href="#9-2-2-客户端" class="headerlink" title="9.2.2 客户端"></a>9.2.2 客户端</h4><p>客户端自动装配流程</p>
+<ol>
+<li>初始化客户端配置<ul>
+<li>从 <code>irpc.properties</code> 中读取相关配置并写入config</li>
+<li>通过 <code>SPI</code> 初始化动态代理</li>
+</ul>
+</li>
+<li>获取带有 <code>@IRpcReference</code> 注解的类，从注解中提取并设置相应的属性</li>
+<li>在注册中心中订阅对应的服务</li>
+</ol>
 <h2 id="附：额外记录"><a href="#附：额外记录" class="headerlink" title="附：额外记录"></a>附：额外记录</h2><h3 id="附1-本地公共缓存"><a href="#附1-本地公共缓存" class="headerlink" title="附1 本地公共缓存"></a>附1 本地公共缓存</h3><p>缓存中主要存放客户端订阅信息、服务端注册信息、服务对应的通信连接信息、用于实现异步的队列等通用数据</p>
 <p>分为客户端缓存与服务端缓存： CommonClientCache 与 CommonServerCache</p>
 <h3 id="附2-服务端终止监听事件"><a href="#附2-服务端终止监听事件" class="headerlink" title="附2 服务端终止监听事件"></a>附2 服务端终止监听事件</h3><p>当某一服务提供者下线时，需要将其对应的服务器从Zookeeper注册中心中移除</p>
@@ -522,6 +622,17 @@
 <li><p>ChannelFutureWrapper：底层网络通信连接类，SERVICE_ROUTER_MAP存储的连接数组就是这个类</p>
 </li>
 </ul>
+<h3 id="附5-配置类设计"><a href="#附5-配置类设计" class="headerlink" title="附5 配置类设计"></a>附5 配置类设计</h3><p>将客户端与服务端的相关配置属性提取到配置文件中，避免硬编码，进一步解耦。</p>
+<p>需要修改相关属性时，直接对配置文件进行修改。</p>
+<p>基本流程为：服务端与客户端在启动时，通过配置方法从指定文件中读取配置项，将具体配置属性转化为配置对象。</p>
+<p>结构树如下：</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xl">├── rpc-consumer<br>│   ├── C<span class="hljs-function"><span class="hljs-title">lientConfig</span>.java		    -&gt;</span> 客户端配置属性类<br>│   ├── P<span class="hljs-function"><span class="hljs-title">ropertiesBootstrap</span>.java    -&gt;</span> 用于设置配置并返回配置类对象	<br>│   ├── P<span class="hljs-function"><span class="hljs-title">ropertiesLoader</span>.java		-&gt;</span> 用于从文件中读取加载配置<br>│   └── S<span class="hljs-function"><span class="hljs-title">erverConfig</span>.java			-&gt;</span> 服务端配置属性类<br></code></pre></td></tr></table></figure>
+
+<h1 id="RPC项目bug记录"><a href="#RPC项目bug记录" class="headerlink" title="RPC项目bug记录"></a>RPC项目bug记录</h1><ol>
+<li><p>测试不引入springboot远程调用时，采用kryo在服务端无法完成反序列化</p>
+<p>解决方案：暂时更换为jdk序列化</p>
+</li>
+</ol>
 
                 
               </div>
