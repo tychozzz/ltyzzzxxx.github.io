@@ -16,25 +16,27 @@
   <meta name="author" content="ltyzzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="关于开源今天腾讯面试，有幸和一位开源大佬进行了接近一个小时的面试，学习到了很多东西 这次面试与之前参加的面试都不同，面试官并没有问很多基础知识，也就是八股文，而是每一个问题都直击底层或者实际应用场景。 如果平常开发经验不足，很容易手忙脚乱。而且考察的并不只是后端知识，还有很多前后端交互的知识。 今天受益匪浅，最后大佬还分享了很多有关开源的经验。 我想记录下这不平凡的一天，以及大佬教给我的一些学习与">
+    <meta name="description" content="面试经验分享1. 前言大家好，我是ltyzzz。 我背景是NUS计算机硕士，武汉理工EE本科，春招收获腾讯、字节等后端实习Offer，目前仍在字节实习，今天给大家分享一下面试准备经验（接近5000字），我认为也同样适用于大家日常的学习。现在我实习刚满一个月，之后我会陆续给大家分享实习的工作经验～ 在开始分享之前，我想给大家抛出一个我认为的技术面试公式，仅供大家参考，欢迎大家一起讨论： 面试 &#x3D; 4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开源的第一步">
-<meta property="og:url" content="https://ltyzzzxxx.github.io/2023/03/24/%E5%BC%80%E6%BA%90%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5/index.html">
+<meta property="og:title" content="面试经验分享">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2023/06/06/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.html">
 <meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="关于开源今天腾讯面试，有幸和一位开源大佬进行了接近一个小时的面试，学习到了很多东西 这次面试与之前参加的面试都不同，面试官并没有问很多基础知识，也就是八股文，而是每一个问题都直击底层或者实际应用场景。 如果平常开发经验不足，很容易手忙脚乱。而且考察的并不只是后端知识，还有很多前后端交互的知识。 今天受益匪浅，最后大佬还分享了很多有关开源的经验。 我想记录下这不平凡的一天，以及大佬教给我的一些学习与">
+<meta property="og:description" content="面试经验分享1. 前言大家好，我是ltyzzz。 我背景是NUS计算机硕士，武汉理工EE本科，春招收获腾讯、字节等后端实习Offer，目前仍在字节实习，今天给大家分享一下面试准备经验（接近5000字），我认为也同样适用于大家日常的学习。现在我实习刚满一个月，之后我会陆续给大家分享实习的工作经验～ 在开始分享之前，我想给大家抛出一个我认为的技术面试公式，仅供大家参考，欢迎大家一起讨论： 面试 &#x3D; 4">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/first-step.jpg">
-<meta property="article:published_time" content="2023-03-24T09:51:51.000Z">
-<meta property="article:modified_time" content="2023-03-24T09:55:38.407Z">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/interview-experience.jpg">
+<meta property="article:published_time" content="2023-06-06T14:26:17.000Z">
+<meta property="article:modified_time" content="2023-06-06T14:32:03.563Z">
 <meta property="article:author" content="ltyzzz">
+<meta property="article:tag" content="面经">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/first-step.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/interview-experience.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>开源的第一步 - ltyzzz&#39;s Blog</title>
+  <title>面试经验分享 - ltyzzz&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="开源的第一步"></span>
+            <span id="subtitle" data-typed-text="面试经验分享"></span>
           
         </div>
 
@@ -222,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-24 17:51" pubdate>
-          2023年3月24日 下午
+        <time datetime="2023-06-06 22:26" pubdate>
+          2023年6月6日 晚上
         </time>
       </span>
     
@@ -234,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          551 字
+          4.1k 字
         
       </span>
     
@@ -245,7 +247,7 @@
         
         
         
-          5 分钟
+          35 分钟
         
       </span>
     
@@ -291,34 +293,61 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">开源的第一步</h1>
+            <h1 style="display: none">面试经验分享</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="关于开源"><a href="#关于开源" class="headerlink" title="关于开源"></a>关于开源</h1><p>今天腾讯面试，有幸和一位<a target="_blank" rel="noopener" href="https://github.com/overtrue">开源大佬</a>进行了接近一个小时的面试，学习到了很多东西</p>
-<p>这次面试与之前参加的面试都不同，面试官并没有问很多基础知识，也就是八股文，而是每一个问题都直击底层或者实际应用场景。</p>
-<p>如果平常开发经验不足，很容易手忙脚乱。而且考察的并不只是后端知识，还有很多前后端交互的知识。</p>
-<p>今天受益匪浅，最后大佬还分享了很多有关开源的经验。</p>
-<p>我想记录下这不平凡的一天，以及大佬教给我的一些学习与开源经验</p>
+                <h1 id="面试经验分享"><a href="#面试经验分享" class="headerlink" title="面试经验分享"></a>面试经验分享</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>大家好，我是ltyzzz。</p>
+<p>我背景是NUS计算机硕士，武汉理工EE本科，春招收获腾讯、字节等后端实习Offer，目前仍在字节实习，今天给大家分享一下面试准备经验（接近5000字），我认为也同样适用于大家日常的学习。现在我实习刚满一个月，之后我会陆续给大家分享实习的工作经验～</p>
+<p>在开始分享之前，我想给大家抛出一个我认为的技术面试公式，仅供大家参考，欢迎大家一起讨论：</p>
+<p><code>面试 = 40% 八股 + 30% 算法题 + 20% 项目经验 + 10% Idea</code></p>
+<p>在接下来的面试准备经验分享中，我会着重介绍项目经验与Idea。</p>
+<h2 id="2-八股-amp-算法题"><a href="#2-八股-amp-算法题" class="headerlink" title="2. 八股&amp;算法题"></a>2. 八股&amp;算法题</h2><p>八股和算法题我想市面上资料已经数不胜数了，这里我简略说一下。</p>
+<p>如果大家已经对此部分准备足够充分或者已经有着自己的方法论或学习路线，可以直接快进到 <strong>项目经验 &amp; Idea</strong>。</p>
+<h3 id="2-1-八股准备"><a href="#2-1-八股准备" class="headerlink" title="2.1 八股准备"></a>2.1 八股准备</h3><p>对于八股准备，我主要以 <strong>Java Guide</strong> 和 <strong>小林Coding</strong> 为主，书本（如Redis设计与实现、JVM圣经、Java并发编程的艺术、高性能MySQL）为辅。如果大家时间紧张，可以不看书。此外，我是面试驱动复习，八股文复习与面试相互交叉，是一个相互促进的过程。</p>
 <ul>
-<li>开源方面：<ul>
-<li>从日常开发需求入手，比如平常使用到的第三方库与中间件，去发现其中存在的问题以及可以改善的点，提出Issue</li>
-<li>在提出Issue的过程中，加深对该中间件的理解，尝试着去提出PR</li>
-<li>以日常需求为主做开源，而不是为了开源而开源</li>
-<li>一旦开始做开源，就坚持维护下去，即使只有自己在使用</li>
-<li>尽可能地提升自己在开源社区的影响力，帮助他人解决问题</li>
+<li>第一轮复习我花费了大概1到2周的时间，粗糙浅显地过了一遍MySQL、Redis、JUC、JVM、操作系统、计算机网络、微服务等基础知识，大概是1～2天一个板块，能够简单的应付一下基础面试题，一轮复习完之后正好对应于字节跳动的一轮面试。</li>
+<li>第二轮复习我花费了大约20天的时间，着重深入地学习与复习之前各个板块的知识点，并搭配面经（百度或Google搜索：某某公司后端&#x2F;前端面经），反复地查漏补缺，遇到陌生的题目或知识点，从书上或网上寻找答案，记录下来，便于之后复习。我大概看了不到50篇面经，梳理了接近150道不熟悉的面试题目，大家有需要的话，之后也可以在星球中分享给大家。第二轮复习与美团、字节、腾讯、阿里面试相互交叉。这段时间准备的很多八股面试题目，在面试中也有被问到。</li>
+</ul>
+<p>大家可以参照我的复习路线与经验，<strong>以面试作为驱动力</strong>，高效地复习八股文。这一阶段不考验智商，<strong>只考验耐心、毅力</strong>。因为一轮复习的时候大家可能会很新鲜，接触或复习到很多有意思的知识点，感觉自己有很大的提升，这一阶段可能还比较有趣。但是在二轮复习尤其是穿插了面试之后，大家可能会遇到两个问题：一个是感觉到很慌，认为自己什么都不会，看一个面经慌一次；另一个是感觉到很枯燥但又不敢不看。不管是哪一个问题，都需要<strong>静下心来，戒骄戒躁，迅速调整心态，不要乱了阵脚</strong>。八股文这里我相信只要能花费<strong>20天～1个月</strong>的时间，每天拉满，一定能攻克。</p>
+<h3 id="2-2-算法题准备"><a href="#2-2-算法题准备" class="headerlink" title="2.2 算法题准备"></a>2.2 算法题准备</h3><p>对于算法题准备，<strong>没有任何捷径除非天赋加持，刷就完了</strong>。我当时候是LC刷了500多道题目，还有在其他平台也零散地做了一些题，总体刷了8个月。其实精刷200～300道题就足够用了。大家可以以Leetcode为主，着重做<strong>剑指Offer</strong>，最好做<strong>2～3遍</strong>。接下来我根据复习时间长短，提供两种策略。</p>
+<ul>
+<li>时间长且充裕：每天坚持刷LC每日一题，拓宽思路。抽出一定时间刷 <strong>LC HOT100</strong> 与 **精选200 **题单，也可以做一些知名的算法博主总结的题单（推荐宫水三叶姐的LC题单）。总之就是多刷多看，加上剑指Offer的题目，半年多时间可以刷够300多道题，足够应付一般算法题。</li>
+<li>时间短且紧：集中性地刷 <strong>剑指Offer</strong>，比如集中一周时间甚至更短。看题10分钟没思路的话就直接看题解，重复的刷题，反复不断地刻意训练，直到背过为止。若仍有余力，可以再抽空刷刷 <strong>LC HOT100</strong> 题单。即便时间如此之短，此时的刷题量也可达到100道题左右。</li>
+</ul>
+<h2 id="3-项目经验"><a href="#3-项目经验" class="headerlink" title="3. 项目经验"></a>3. 项目经验</h2><p>接下来，我将重点介绍 项目经验 与 “Idea”。</p>
+<p>对于项目经验，我先为大家介绍项目，然后从项目准备中分享我的经验。</p>
+<p>我准备了三个项目：智能停车场项目、仿B站项目、RPC项目。这些都是我自己日常学习的项目，不是实习项目。顺便说一下我在此之前只有一段很水的实习。</p>
+<ul>
+<li><strong>智能停车场项目</strong>，简单总结就是一个增删改查项目，技术含量不是很高。前端通过小程序和后台管理系统展现。前端技术栈是Uniapp + Vue，后端技术栈是Springboot、SpringCloud、Mybatis等。只是用了一些简单的微服务技术（Feign、Gateway、Nacos），后台管理系统用了RBAC实现权限管理。但是在包装项目时，我添加了几个亮点：Redis数据缓存、分布式Session、分布式ID、分布式锁技术、与网络摄像头联调开启道闸。如果大家后续需要，我可以重构一遍项目后端，并开源出来，供大家学习（自认为小程序界面写的还算好看哈哈哈哈）。</li>
+<li><strong>仿B站项目</strong>，这个项目含金量要高一些。它后端基本框架是我参考Ruoyi Cloud Plus实现的，脚手架自带了很多功能如数据脱敏、幂等、微服务限流、可观测监控、分布式Session单点登录、安全性措施等。光是脚手架自带的功能点就够在面试上聊很多。此外，该项目我着重于Redis相关的系统设计，如动态Feed流推拉、点赞评论相关的计数系统、数据缓存，运用了很多Redis的数据结构。此外，还设计了站内信、单聊群聊、视频弹幕等功能点。这个项目是我和朋友一起做的，还没有做完，所以暂时无法开源给大家。<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="emoji"></li>
+<li><strong>RPC项目</strong>，这个项目是我参照掘金小册中的RPC做的。此类项目已经很多了，但是在面试过程中，还是会被经常问到这个项目是如何设计的。我一般会详细说出代理层、路由层、注册中心层、异步设计等的设计思路。有的面试官可能还会问压测相关的内容。如果说要将RPC项目写到简历中，一定要清楚核心功能的设计，并且反复地尝试自己练习表达几次。</li>
+</ul>
+<p>现在，我来总结一下项目准备中需要注意的点：</p>
+<ul>
+<li>准备的项目一定要是自己非常熟悉的项目，起码写到简历当中的功能点能够经得起面试官的盘问。一般面试官也不会问的特别复杂，只要准备充分，都是可以回答上来的。不熟悉的功能点最好不要写，不打无准备之仗。</li>
+<li>准备的项目最好是两个以上，一个可以为Web前后端项目，另一个可以为框架开发、中间件开发。这样一方面可以体现你业务能力okay，熟悉常见的开发场景，当mentor或leader派活的时候，你知道如何下手去做，有自己的实现思路；另一方面可以体现你有一定的钻研自学能力与解决问题能力，能够啃动硬骨头。</li>
+<li>此外，我认为大家可以从日常开发中发现需求，自己设计网站从实际出发，去解决痛点，这样的话在面试中更是加分项。因为实习或工作中，就是从实际需求出发，解决一个个业务场景。面试官会更加认可你的项目。这一点也与我之后要说的 “Idea” 有关。</li>
+</ul>
+<h2 id="4-“Idea”"><a href="#4-“Idea”" class="headerlink" title="4. “Idea”"></a>4. “Idea”</h2><p>对于 “Idea”，我认为占比是最少的甚至可能面试官压根不会问你，但是我认为它对我而言是最有用的，实际上也指导了我整个面试过程甚至是学习编程的过程。我这里的 “Idea”是指 <strong>你想要什么</strong> &amp; <strong>你的一些灵光乍现的想法</strong>。</p>
+<ul>
+<li><p>“Idea”第一层：我认为需要清晰地认识到自己学习编程、想要进大厂是为了什么，这一点实际上直接或间接地指引着我们的日常学习或工作。我可以先和大家分享一下我在实习之前的 “Idea”（实习后我又有了新的认知与变化，这部分大家有兴趣我之后再做详细的分享）。</p>
+<ul>
+<li>我学习编程的目的就是觉得有意思，做网站、开发小程序、学习前后端、部署服务器等都很有挑战性，做出以后也很有成就感，于是一发不可收拾。想要进大厂一方面是因为大厂给钱确实多，另一方面还是因为想要进公司学到一些真正企业落地的技术，并能够真正做出一些产品或项目，直接点说就是想要干点真东西出来。此外我也对自己的职业生涯有着较为清晰的规划，我想的是工作中以后端为主，深耕技术，向架构师的方向迈进；日常学习中提升自己的技术广度，以兴趣为导向，涉猎各个领域，尝试各种新东西。</li>
+<li>我上述所说的 “Idea”，确实对我面试过程中起到了推波助澜的作用。因为当面试官和我聊起日常学习、职业规划时，我整个人的头脑是清晰的，我可以清晰地给他讲述我的想法。这一点可以给面试官留下很好的印象，毕竟程序员面试并不仅仅是技术的考察，而是综合评估。此外，我还可以给大家举出一个最近组内的case，我一个同事面试其他后端实习生，但是当问到那位同学有没有投其他岗位时，他犹豫不定。他说自己不确定，之后会尝试算法岗。面试官就认为这位同学没有很清晰的规划，即使招进来，他可能心思也不会完全地投入到后端工作中。（可能还有其他多方面因素导致面试挂掉）</li>
 </ul>
 </li>
-<li>学习方面：<ul>
-<li>深入理解框架的底层原理，而不是停留在用的阶段</li>
-<li>深入学习协议的底层</li>
+<li><p>“Idea”第二层：是否有一些奇思妙想、是否正在尝试做自己的开源项目。这一点我在腾讯面试的过程中深有体会，我先和大家分享一下这段面试经历。</p>
+<ul>
+<li>三轮面试几乎没有问什么八股文，第三轮面试在拷打项目，另外两轮都是业务场景设计题以及聊日常学习、聊开源。尤其是第一轮面试给我的印象最深刻，面试官估计很多人都听说过，是一位PHP的开源大佬。面试中他一直在给我抛出与实际业务相贴近的场景设计题，开放题目，没有固定答案，我觉得是在考察我的思维广度和技术广度。这些问题我也都给出了自己的思考。此外，我们也聊到了开源项目，他向我分享了他做开源的初衷与过程。而我也一直想要去做自己的开源项目，我和他说了我的想法。这一场面试也让我学习到了很多在八股文中无法学习到的东西。第二轮面试中，面试官最后问了我最近在学习什么，我很自然地说了关于GPT的一些话题以及我想要做一个AIGC的简历项目。本来面试已经准备结束了，但是面试官可能对这个话题比较感兴趣，又和我聊了不到10分钟。</li>
+<li>从我这两场面试中，我感觉到有着自己的想法很重要，是否每天有在探索并思考一些新东西，并去实际地做出来一些有意思的项目或产品。这一点是我从学编程以来的兴趣所在，兴趣推动着我不断地去探索一些新东西，经常性地产出自己的”Idea”。尽管有一些似乎和后端关联性不大，但是它其实最终在一定程度上帮我拿到了Offer。而且”Idea”也可以促使自己即使在春招秋招结束后，还能够有自驱力并且快乐开心地去学习编程，这一点也是我认为最重要的。</li>
 </ul>
 </li>
 </ul>
-<p>之前自己一直想着做开源，但是始终找不到一个很好的切入点。今天听了大佬经验分享之后，感觉醍醐灌顶。</p>
-<p>从入门后端开发到现在，也已经有一年半的时间了，感觉是时候去思考如何将日常的需求与开源结合在一起，塑造自己的开源价值。</p>
-<p>我想从自己平常经常使用到的框架或日常需求入手，逐渐地学习开源，慢慢进步，希望一年后能看到变化！</p>
+<p>总结一下”Idea”就是：清晰认知自我，不断尝试探索。</p>
+<p>这就是我的面试经验分享啦～</p>
+<p>此外，如果大家感兴趣，我可以之后分享一下我近期实习工作的经验思考，与准备面试时相比，又产生了一些变化。</p>
 
                 
               </div>
@@ -349,6 +378,15 @@
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E7%BB%8F/">#面经</a>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+    </div>
+  
 </div>
 
 
@@ -357,8 +395,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>开源的第一步</div>
-      <div>https://ltyzzzxxx.github.io/2023/03/24/开源的第一步/</div>
+      <div>面试经验分享</div>
+      <div>https://ltyzzzxxx.github.io/2023/06/06/面试经验分享/</div>
     </div>
     <div class="license-meta">
       
@@ -370,7 +408,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月24日</div>
+          <div>2023年6月6日</div>
         </div>
       
       
@@ -402,18 +440,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/06/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="面试经验分享">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">面试经验分享</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/06/Web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/" title="Web安全漏洞">
-                        <span class="hidden-mobile">Web安全漏洞</span>
+                      <a href="/2023/03/24/%E5%BC%80%E6%BA%90%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5/" title="开源的第一步">
+                        <span class="hidden-mobile">开源的第一步</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
