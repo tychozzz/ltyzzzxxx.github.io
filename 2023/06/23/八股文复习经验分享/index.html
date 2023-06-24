@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
+  <link rel="icon" href="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/avatar.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="周三不Coding">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 前言大家好，我是 「周三不Coding」，之前名字是 ltyzzz。想了想还是起个接地气的名字吧哈哈哈哈～之后我再与大家闲聊这个名字的意义！ 之前我分享了春招收获大厂 Offer 的面经后，很有小伙伴来问我如何准备八股文。其实在我写面经的时候，认为大家可能最缺乏的是项目经验，或者对面试没有清晰的认知。于是我当时给大家抛出了一个公式，并着重分析了其中的 Idea 部分，也是大家容易忽视的一点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="八股文复习经验分享">
+<meta property="og:url" content="https://ltyzzzxxx.github.io/2023/06/23/%E5%85%AB%E8%82%A1%E6%96%87%E5%A4%8D%E4%B9%A0%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.html">
+<meta property="og:site_name" content="周三不Coding&#39;s Blog">
+<meta property="og:description" content="1. 前言大家好，我是 「周三不Coding」，之前名字是 ltyzzz。想了想还是起个接地气的名字吧哈哈哈哈～之后我再与大家闲聊这个名字的意义！ 之前我分享了春招收获大厂 Offer 的面经后，很有小伙伴来问我如何准备八股文。其实在我写面经的时候，认为大家可能最缺乏的是项目经验，或者对面试没有清晰的认知。于是我当时给大家抛出了一个公式，并着重分析了其中的 Idea 部分，也是大家容易忽视的一点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-23T11:23:54.000Z">
+<meta property="article:modified_time" content="2023-06-24T07:08:59.632Z">
+<meta property="article:author" content="周三不Coding">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="学习经验">
+<meta property="article:tag" content="学习总结">
+<meta property="article:tag" content="面试经验">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>八股文复习经验分享 - 周三不Coding&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ltyzzzxxx.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ltyzzz&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                <i class="iconfont icon-pen"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://ltyzzz.com/">
+                <i class="iconfont icon-books"></i>
+                作品集
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/banner.jpeg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="八股文复习经验分享"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-23 19:23" pubdate>
+          2023年6月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">八股文复习经验分享</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>大家好，我是 「周三不Coding」，之前名字是 ltyzzz。想了想还是起个接地气的名字吧哈哈哈哈～之后我再与大家闲聊这个名字的意义！</p>
+<p>之前我分享了春招收获大厂 Offer 的<a target="_blank" rel="noopener" href="https://juejin.cn/post/7244810003591725114">面经</a>后，很有小伙伴来问我如何准备八股文。其实在我写面经的时候，认为大家可能最缺乏的是项目经验，或者对面试没有清晰的认知。于是我当时给大家抛出了一个公式，并着重分析了其中的 Idea 部分，也是大家容易忽视的一点。</p>
+<p>今天，我来给大家分享一下，我是如何准备八股文板块的。</p>
+<p>在分享之前，我再给大家抛出一个我认为的 5 个核心点：</p>
+<p><strong>多轮复习法 + 刻意训练 + 事件驱动 + 擅用 GPT + 自我安慰</strong>。</p>
+<p>接下来，我会逐个分析我是怎么做的。</p>
+<h2 id="2-方法论核心"><a href="#2-方法论核心" class="headerlink" title="2. 方法论核心"></a>2. 方法论核心</h2><h3 id="2-1-多轮复习法"><a href="#2-1-多轮复习法" class="headerlink" title="2.1 多轮复习法"></a>2.1 多轮复习法</h3><p>这个方法其实也不是我自己想到的，而是被无数人证实过非常有效、可靠的一套方法论。我想信很多小伙伴在高三的时候，各个学科都会开展一轮、二轮甚至是三轮复习，每一轮都有各自的侧重点、目标，循序渐进地将你过去所学习到的零散知识，整合成为一套完整的适应高考的知识体系。</p>
+<p>我们在准备面试时，也可以借鉴这个思路。将我们之前所学的零零散散的碎片知识，整合成为应对面试八股提的知识体系。之前学习的时候，我们只是简单地知道如何使用，模糊地记得一些概念；而经过复习之后，我们便对每个知识点的内容更加清晰，而且知道如何自如地回答。</p>
+<p>下面我提供一下我个人总结的多轮复习法：</p>
+<ul>
+<li><p>我们首先假定面试准备时间为 30 ～ 40 天，不宜过长也不宜过短。不能太长是因为战线拉长会使人非常疲惫，当时我准备到 30 多天的时候，整个人已经相当疲惫了。不能太短是因为你可能复习不完所有知识点，容易出大问题。如果你觉得 30 ～ 40 天的时间很紧的话，可能是因为知识点还没有学完，所以得赶紧趁着还没到面试复习阶段的时候，赶紧学一遍这些知识！</p>
+</li>
+<li><p>接着，我们确定一下在多轮复习中，每一轮需要做什么？</p>
+<ul>
+<li><p>第一轮复习：</p>
+<ul>
+<li><p>首先，确定我们需要复习的模块，比如我是以 <code>Java</code> 为主，我选择的模块是：Java基础、JUC、JVM、Spring、MySQL、Redis、计算机网络、操作系统、微服务、分布式等。</p>
+</li>
+<li><p>之后，准备复习所使用的工具：面经网站、对应知识点的书、GPT。主要以面经网站为主，对应知识点的书和 GPT 为辅助工具。面经网站我就简单提一下，大家应该都知道，Java Guide 和 小林Coding，深度与广度都足够。时间紧张的话，可以不用书籍，因为我当时候担心有些地方不够深，于是我便参考着书来复习的。GPT 主要帮助我们更好地复习，提高效率，接下来的内容中重点说。</p>
+</li>
+<li><p>接着，确定复习具体规划。具体复习规划因人而异，我一般是交叉着看，因为一整天都看一个模块，很容易疲惫。</p>
+</li>
+<li><p>开始真正的复习。如何高效地复习某个知识模块？拆分为两步，第一步是根据书和面经网站，巩固一遍之前所学过的知识点，清楚其中的大概内容，对面试中可能会被考察到的知识点做到心中有数。第一步对应到每个模块需要花费 2 天左右时间。之后，开始第二步，进行自查。这时候需要借助于 GPT，帮助我们列出某个知识点的问题清单。我当时是这么问的：帮我列出 100 道关于 xxx 的高频面试题。接着，咱们需要过滤一遍问题清单，因为其中可能存在很多重复的问题。最后，我们对照着问题清单，开始自问自答，感觉回答不上来、模糊的问题，及时去查找资料复习，并将最终完善的答案记录到清单中。（文件中附一份我的 Redis 问题清单笔记）</p>
+</li>
+<li><p>这样一来，我们便稳扎稳打地复习完了每一个模块对应的知识点，并且进行了及时的自查，加深了对题目的印象，实现了八股文的 “原始积累”。</p>
+<p>这一轮大约需要花费 20 多天左右的时间</p>
+</li>
+</ul>
+</li>
+<li><p>第二轮复习：</p>
+<ul>
+<li>第一轮复习完之后，我们可能还是很难接得住面试，大家应该很容易发现问题所在。在第一轮复习时，我们都是趁热打铁，复习完一个模块后，就去自问自答对应模块的面试题。但是实际面试是打乱问的。并且，在第一轮复习中遇到的都是常规面试题，很容易忽略零碎、细节且复杂的问题（比如情景设计题、面试官突发奇想问的题目），所以咱们还需要继续加强。在这一轮复习中，咱们就不分模块了，每天直接 “大杂烩”，至于怎么 “烩”，接下来重点说明。</li>
+<li>首先，我们在牛客、知乎、Leetcode等各大网站中寻找面经，如果此时已经接到了面试，可以直接寻找对应公司的面试题。</li>
+<li>找到面经之后，一道道题目挨着过，仍然是自问自答。新建一个 Markdown 文档，遇到你含糊不清、没有把握甚至完全陌生的题目，记录到文档中。此时先别急着找答案，先把这份面经过完，最后自己统计一下，在这份面经中能回答上来的题目数量。如果看了几份后，每份都能回答上来 80% 以上，说明第一轮复习十分有成效。但事实是可能只有 60% 左右。接下来，我们就需要走出一轮复习的 Comfort Zone，进入较高强度的环节：刷面经、记录陌生题目、搜答案、口头复述（自问自答），循环此过程，直到自认为总体准确率达到 80%。</li>
+<li>我当时第二轮复习花了大概 10 天吧，看了几十份面经、几百道题目（应该不超过 500），记录了 100 多道题目，平均一天就只记录 10 题左右的样子。主要还是因为复习过程中比较焦虑、烦躁，复习到后期的时候心烦意乱，所以第二轮复习效率不是很高，之后我也会提到怎么最大程度地克服这种情绪。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-刻意训练"><a href="#2-2-刻意训练" class="headerlink" title="2.2 刻意训练"></a>2.2 刻意训练</h3><p>相信很多小伙伴听过这个方法论，我个人一直十分信服这一方法论。之前的多轮复习法中，很多地方也有运用这一方法论。它的核心就是：明确目标、走出舒适区、执行力与自我反馈。如果可以有一个提供指导的前辈，那么就比较接近于真正的刻意训练。</p>
+<ul>
+<li><strong>明确目标</strong>：在第一轮、第二轮复习中，我们都有明确的目标。第一轮目标是巩固复习基础知识点，第二轮目标是查漏补缺，遍历搜寻零碎知识点。</li>
+<li><strong>走出舒适区</strong>：在第一轮复习之前，我们的舒适区是近期正在学的知识或者正在做的项目，陌生的是很久之前学过的知识模块；在第二轮复习之前，我们的舒适区是第一轮复习所学的常规基础知识，陌生的是非常规、难度大的真实面试题。每一轮复习，我们并不是在做自己熟悉的事情，而是在反复地接触不熟悉的东西。</li>
+<li><strong>执行力</strong>：这一点大家心里都清楚，我相信能够点进来看这篇文章的小伙伴，执行力都不会差。而且大家一定十分清楚执行力的重要性。在第三个部分 「事件驱动」中，我会进一步告诉大家如何提高执行力。</li>
+<li><strong>自我反馈</strong>：我们在两轮复习中，借助于问题清单、真实面经，反复地进行自问自答，不停地给自己反馈，告诉自己哪里做的不够好，哪里还需要继续完善，并且心中有一个准确率数字。达到某个程度，我们就给自己一个正反馈：我目前复习的还算可以。</li>
+</ul>
+<p>我们通过有效运用「刻意训练」 方法论，达到最终可以应对基本面试的程度。</p>
+<h3 id="2-3-事件驱动"><a href="#2-3-事件驱动" class="headerlink" title="2.3 事件驱动"></a>2.3 事件驱动</h3><p>这一点其实是相当关键的，根本原因在于，我们很多情况下清楚各种方法论，但总是因为驱动力不足，造成无法有效执行，最终使得计划泡汤。</p>
+<p>我也是这样子的，所以我直到投简历的前几天才开始复习，这其实就是事件驱动。</p>
+<p>我们需要一个真实可见的动力，驱动我们去复习准备八股文。比如投简历、笔试面试临近等等。</p>
+<p>但是需要注意的点是，事件驱动 ≠ 临时抱佛脚，我们需要将事件驱动控制在一个合理的范围内。</p>
+<ul>
+<li>比如：在投简历的前 10 天，你便开始第一轮复习，这样你复习的时候就在想，会不会我一投简历就立马发面试？（极有可能）这样，你不会懈怠，执行力十足；在面试的前一周，你便迅速进入第二轮复习，根据面试企业往年的面经，查漏补缺。这样也不太有可能出现懈怠的情况。</li>
+</ul>
+<p>我们在不拉长战线的情况下，在每一个时间节点，都给自己一个事件驱动，那么我们懈怠的时间就相对少很多，而且复习效率足够高，很有可能使我们拿到第一波 Offer。</p>
+<h3 id="2-4-擅用-GPT"><a href="#2-4-擅用-GPT" class="headerlink" title="2.4 擅用 GPT"></a>2.4 擅用 GPT</h3><p>这一点我们其实在多轮复习中已经提到啦。根据我的经验，<code>GPT</code> 给出的面试题回答大部分还是比较准确的，比一些面经的质量要高很多。只要该知识点是 2021年9月 之前的，都可以问问 <code>GPT</code>。</p>
+<p>在你时间很紧张的情况下，直接问 GPT 比你在各大网站中大海捞针，效率要高得多。而且对于基本的面试题，不需要用到什么 <code>Prompt Engineering</code> 技巧，直接问就可以，成本极低。</p>
+<h3 id="2-5-自我安慰"><a href="#2-5-自我安慰" class="headerlink" title="2.5 自我安慰"></a>2.5 自我安慰</h3><p>在准备面试的过程中，无论准备的情况有多好，一定是伴随着焦虑的，这点无法避免。但是我们可以尽可能地减少焦虑时间，结合之前提到的事件驱动、刻意训练等，不停地反复地找面试题、复习面试题。如果能够一直保持这种复习状态，应该很少有时间焦虑。</p>
+<p>这里主要提到的是通过自我安慰来克服焦虑。即使我们一直在准备面试题，但是在复习过程中，可能还会遇到突然的焦虑，比如说：突然复习到一道很陌生的题，完全没有思路，完全不会，这个时候可能就会很慌、很焦虑，并把自己代入到真实的面试情景，想象自己面试中被问到这道题，手心已经在出汗了。这便是我经常遇到的情况，但是，很奇怪的是，这些题目我几乎没有在面试中遇到过，其实按理来说，遇到这些题目的概率本身就不足 50%。所以，我们需要根据这个概率数字，时刻给自己一个正向心理暗示，不要自己吓自己。</p>
+<p>此外，我还遇到一种情况，就是复习状态火热，达到很亢奋，很想立马来一场面试的情况。这个时候我便很难静下心来去看八股文、面试题。当时还是挺慌的，但现在细想一下，其实有一个亢奋的复习状态是可以促进面试的表现。所以大家遇到这种情况不必慌张，是好事哈哈哈哈。</p>
+<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>以上 5 个核心点到这里就都聊完啦～ </p>
+<p>最后，我再提一下面试复盘的问题。其实我只做过一次文档形式的面试复盘，因为我个人觉得只需要心里记住这次面试遇到不会的问题，面试结束后赶紧去寻找答案，并记录下来即可。自己会的问题就没必要重复记录啦～</p>
+<p>此外，有些同学可能会复盘面试过程中，除技术外表现不好的部分，它有一定必要性，但是没有想象中的那么重要与必要。在时间有限的情况下，这其实是一个 <code>trade-off</code>。</p>
+<ul>
+<li>如果你认为这场面试中，你的语言表达使你的面试大大减分，那么确实需要引起重视，及时调整与提升（比如，有一些你确定你会的知识点，但是由于沟通能力或表达能力问题，使你没有说出来或者面试官没有听懂，那么就需要及时复盘）</li>
+<li>如果你觉得你面试题准备得足够充分，那么你可以利用剩下的时间去想一想如何更加自然流畅地表达想法。</li>
+</ul>
+<p>这就是今天的全部分享啦，希望能够对大家有所帮助。</p>
+<p>之前很多同学想要看看我做的笔记，目前还在整理中，我把其中一部分放到了我的知识库网站中，等全部做完后，我再与大家进行后续的分享～</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/" class="category-chain-item">日常总结</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C/">#学习经验</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">#学习总结</a>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">#面试经验</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>八股文复习经验分享</div>
+      <div>https://ltyzzzxxx.github.io/2023/06/23/八股文复习经验分享/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>周三不Coding</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/19/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="工作经验分享">
+                        <span class="hidden-mobile">工作经验分享</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"PAsgiGlK7bh6KGRouj9kLXmO-gzGzoHsz","appKey":"z6HB6YSs6EDZYIr2fHLvYQbu","path":"window.location.pathname","placeholder":"请留下你的足迹～ Please put forward your valuable comments :)","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

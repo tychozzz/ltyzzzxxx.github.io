@@ -13,33 +13,33 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="ltyzzz">
+  <meta name="author" content="周三不Coding">
   <meta name="keywords" content="">
   
-    <meta name="description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;ltyzzzxxx&#x2F;gpt-web-terminal 欢迎大家Star、提出PR，共同维护，打造真正意义上的 GPT 终端！ 项目介绍GPT Terminal 是一个让你在终端上与 GPT 进行自由对话的平台。 在这里，你可以更加轻易地实现更多定制化的功能，拥有专属于你的 GPT 终端！ 项目快速启动文档参考：https:&#x2F;&#x2F;github.com&#x2F;l">
+    <meta name="description" content="项目专栏合集 耗时一下午，我实现了 GPT Terminal，真正拥有了专属于我的 GPT 终端！ 如何用 GPT 在 5 分钟内 ”调教“ 出一个专属于你的 ”小黑子“？ 如何丝滑实现 GPT 打字机流式回复？Server-Sent Events！ 我是如何让我的 GPT Terminal “长记性” 的？还是老配方！ 一个合格的类 GPT 应用需要具备什么？一文带你打通 GPT 产品功能！ 开">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GPT Terminal 项目笔记">
+<meta property="og:title" content="GPT Terminal 项目专栏">
 <meta property="og:url" content="https://ltyzzzxxx.github.io/2023/06/11/GPT%20Terminal%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="ltyzzz&#39;s Blog">
-<meta property="og:description" content="项目地址：https:&#x2F;&#x2F;github.com&#x2F;ltyzzzxxx&#x2F;gpt-web-terminal 欢迎大家Star、提出PR，共同维护，打造真正意义上的 GPT 终端！ 项目介绍GPT Terminal 是一个让你在终端上与 GPT 进行自由对话的平台。 在这里，你可以更加轻易地实现更多定制化的功能，拥有专属于你的 GPT 终端！ 项目快速启动文档参考：https:&#x2F;&#x2F;github.com&#x2F;l">
+<meta property="og:site_name" content="周三不Coding&#39;s Blog">
+<meta property="og:description" content="项目专栏合集 耗时一下午，我实现了 GPT Terminal，真正拥有了专属于我的 GPT 终端！ 如何用 GPT 在 5 分钟内 ”调教“ 出一个专属于你的 ”小黑子“？ 如何丝滑实现 GPT 打字机流式回复？Server-Sent Events！ 我是如何让我的 GPT Terminal “长记性” 的？还是老配方！ 一个合格的类 GPT 应用需要具备什么？一文带你打通 GPT 产品功能！ 开">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/gpt.jpg">
+<meta property="og:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/GPT.png">
 <meta property="article:published_time" content="2023-06-11T14:42:54.000Z">
-<meta property="article:modified_time" content="2023-06-11T14:42:56.881Z">
-<meta property="article:author" content="ltyzzz">
+<meta property="article:modified_time" content="2023-06-24T07:10:12.969Z">
+<meta property="article:author" content="周三不Coding">
 <meta property="article:tag" content="Vue">
 <meta property="article:tag" content="AIGC">
 <meta property="article:tag" content="Terminal">
 <meta property="article:tag" content="Node.js">
 <meta property="article:tag" content="Express">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/gpt.jpg">
+<meta name="twitter:image" content="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/GPT.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>GPT Terminal 项目笔记 - ltyzzz&#39;s Blog</title>
+  <title>GPT Terminal 项目专栏 - 周三不Coding&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GPT Terminal 项目笔记"></span>
+            <span id="subtitle" data-typed-text="GPT Terminal 项目专栏"></span>
           
         </div>
 
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k 字
+          4.6k 字
         
       </span>
     
@@ -262,7 +262,7 @@
         
         
         
-          37 分钟
+          39 分钟
         
       </span>
     
@@ -308,12 +308,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">GPT Terminal 项目笔记</h1>
+            <h1 style="display: none">GPT Terminal 项目专栏</h1>
             
             
               <div class="markdown-body">
                 
-                <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/gpt-web-terminal">https://github.com/ltyzzzxxx/gpt-web-terminal</a></p>
+                <h1 id="项目专栏合集"><a href="#项目专栏合集" class="headerlink" title="项目专栏合集"></a>项目专栏合集</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7243252896392151097">耗时一下午，我实现了 GPT Terminal，真正拥有了专属于我的 GPT 终端！</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7244174817679573047">如何用 GPT 在 5 分钟内 ”调教“ 出一个专属于你的 ”小黑子“？</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7244604894408933432">如何丝滑实现 GPT 打字机流式回复？Server-Sent Events！</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7245812754027823160">我是如何让我的 GPT Terminal “长记性” 的？还是老配方！</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7246435689419604026">一个合格的类 GPT 应用需要具备什么？一文带你打通 GPT 产品功能！</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7246917539766091837">开发一个 ChatGPT 真的只是当 “接口侠” 吗？GPT Terminal 细节分享！</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7247167843498115130">如何借助于 OpenAI 以命令的方式在 GPT 终端上画一只 “坤”？</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7247906556229828645">不满足当 ChatGPT “接口侠”？轻松可视化 Fine-tuning 训练你的模型！</a></p>
+</blockquote>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ltyzzzxxx/gpt-web-terminal">https://github.com/ltyzzzxxx/gpt-web-terminal</a></p>
 <p>欢迎大家Star、提出PR，共同维护，打造真正意义上的 GPT 终端！</p>
 <h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>GPT Terminal 是一个让你在终端上与 GPT 进行自由对话的平台。</p>
 <p>在这里，你可以更加轻易地实现更多定制化的功能，拥有专属于你的 GPT 终端！</p>
@@ -500,14 +510,14 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GPT Terminal 项目笔记</div>
+      <div>GPT Terminal 项目专栏</div>
       <div>https://ltyzzzxxx.github.io/2023/06/11/GPT Terminal 项目笔记/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>ltyzzz</div>
+          <div>周三不Coding</div>
         </div>
       
       
@@ -544,6 +554,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/06/19/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="工作经验分享">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">工作经验分享</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
